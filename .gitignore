@@ -5,6 +5,7 @@ template/auto/*
 *.blg
 *.log
 *.toc
+*.out
 Template-Documentation.tex
 main.pdf
 main-blx.bib
