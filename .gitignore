@@ -6,6 +6,7 @@ template/auto/*
 *.log
 *.toc
 *.out
+*.lof
 Template-Documentation.tex
 main.pdf
 main-blx.bib
