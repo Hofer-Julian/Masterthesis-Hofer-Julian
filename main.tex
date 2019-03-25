@@ -77,7 +77,7 @@
 \newcommand{\mybiblatexfile}{references-biblatex.bib}
 %% Name of the biblatex file that holds the references.
 
-\newcommand{\mydispositioncolor}{30,103,182}
+\newcommand{\mydispositioncolor}{0,0,0}
 %% e.g., "30,103,182" (blue/turquois), "0,0,0" (black), ...
 %% Color of the headings and so forth in RGB (red,green,blue) values.
 %% NOTE: if you are using "0,0,0" for black, printers might still
@@ -88,10 +88,10 @@
 %%       to "\definecolor{DispositionColor}{gray}{0}" and thus
 %%       overwriting the value of \mydispositioncolor above.
 
-\newcommand{\mycolorlinks}{true}  %% "true" or "false"
+\newcommand{\mycolorlinks}{false}  %% "true" or "false"
 %% Enables or disables colored links (hyperref package).
 
-\newcommand{\mytitlepage}{template/title_Thesis_TU_Graz}
+\newcommand{\mytitlepage}{titlepage/coversheet.pdf}
 %% Your own or one of following pre-defined title pages:
 %% "template/title_plain_maketitle": simple maketitle page
 %% "template/title_Diplomarbeit_KF_Uni_Graz.tex": fancy (german) title page for KF Uni Graz
@@ -123,7 +123,7 @@
 %% table of contents. If \mytodonotesoptions is set to "disable", no
 %% list of todos is added, independent of this setting here.
 
-\setboolean{english_affidavit}{true}  %% "true" or "false"
+\setboolean{english_affidavit}{false}  %% "true" or "false"
 %% If set to "true": the language of the statutory declaration text is set to
 %% English, otherwise it is in German.
 
@@ -133,38 +133,13 @@
 %% ========================================================================
 
 %% general metadata:
-\newcommand{\myauthor}{AUTHOR}  %% also used for PDF metadata (hyperref)
-\newcommand{\myauthorwithexistingtitles}{\myauthor{}, OLDDEGREE}  %% including
+\newcommand{\myauthor}{Julian Hofer}  %% also used for PDF metadata (hyperref)
+\newcommand{\myauthorwithexistingtitles}{\myauthor{}, BSc}  %% including
                                 %% university degree already held
                                 %% (BSc, MSc, ...)
 \newcommand{\mytitle}{TITLE}  %% also used for PDF metadata (hyperref)
-\newcommand{\mysubtitle}{ }  %% only used with title_Thesis_TU_Graz_-_kazemakase
 \newcommand{\mysubject}{SUBJECT}  %% also used for PDF metadata (hyperref)
 \newcommand{\mykeywords}{KEYWORDS}  %% also used for PDF metadata (hyperref)
-
-%% this information is used only for generating the title page:
-\newcommand{\myworktitle}{Master's Thesis}  %% official type of work like ``Master theses''
-\newcommand{\mygrade}{Master of Science} %% title you are getting with this work like ``Master of ...''
-\newcommand{\mystudy}{Telematik} %% your study like ``Arts''
-\newcommand{\mydegreeprogramme}{Master's degree programme: \mystudy} %% Master's or PhD degree programme
-\newcommand{\myuniversity}{Graz University of Technology} %% your university/school
-\newcommand{\myfaculty}{ }  %% only used with title_Thesis_TU_Graz_-_kazemakase
-\newcommand{\myinstitute}{Institute for Softwaretechnology} %% affiliation
-\newcommand{\myinstitutehead}{Univ.-Prof.\,Dipl-Ing.\,Dr.techn.~Some One} %% head of institute
-\newcommand{\mysupervisor}{Dr.~Some Body} %% your supervisor
-\newcommand{\mycosupervisor}{\ }  %% only used with title_Thesis_TU_Graz_-_kazemakase
-\newcommand{\myevaluator}{Prof.~Some Genius} %% your evaluator
-\newcommand{\myhomestreet}{Street~42} %% your home street (with house number)
-\newcommand{\myhometown}{Graz} %% your home town
-\newcommand{\myhomepostalnumber}{8010} %% your postal number of home town
-\newcommand{\mysubmissionmonth}{November} %% month you are handing in
-\newcommand{\mysubmissionyear}{2013} %% year you are handing in
-\newcommand{\mysubmissiontown}{\myhometown} %% town of handing in (or \myhometown)
-
-
-%% additional information for generic_documentation title page
-\newcommand{\myid}{1234567} %% Matrikelnummer
-\newcommand{\mylecture}{LECTURE} %%
 
 
 %% ========================================================================
@@ -185,6 +160,7 @@
 %% ... it's OK to put here your own usepackage commands ...
 
 
+\usepackage{pdfpages}
 
 
 %% ========================================================================
@@ -196,7 +172,6 @@
 
 
 
-\newcommand{\myLaT}{\LaTeX{}@TUG\xspace} %% LaTeX@TUG text "logo"
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
 %% here (Ver-\"of-fent-li-chung), you have to check for
@@ -232,11 +207,10 @@
 \input{colophon}                %% defines information about editor, LaTeX, font, ...
 
 %% Choose your desired title page:
-\input{\mytitlepage}            %% include title page
+\includepdf{\mytitlepage}            %% include title page
 
-
-\input{template/declaration_TU_Graz}  %% Statutory Declaration
-% \input{thanks}                %% this is a suggestion: you have to create this file on demand
+\input{template/declaration_JKU}  %% Statutory Declaration
+\input{chapters/acknowledgement}                    
 % \input{foreword}              %% this is a suggestion: you have to create this file on demand
 
 
