@@ -161,8 +161,11 @@
 %% ... it's OK to put here your own usepackage commands ...
 
 
-\usepackage{pdfpages}
-\usepackage{blindtext}
+\usepackage{pdfpages}           % For including pdf-pages
+\usepackage{blindtext}          % Blindtext
+\usepackage{booktabs}           % Tables
+\usepackage{siunitx}            % Standardized unit usage
+\usepackage{float}				% Allows strict positioning
 
 
 %% ========================================================================
@@ -171,7 +174,7 @@
 
 %% ... it's OK to put here your own newcommand/newenvironment-definitions ...
 
-
+\sisetup{range-units=brackets}
 
 
 
@@ -235,6 +238,7 @@
 
 %% include tex file chapters:
 \include{chapters/introduction}
+\include{chapters/quantum-dot}
 \include{chapters/chirp}
 \include{chapters/fabry-perot}
 
@@ -243,8 +247,6 @@
 
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
-
-
 
 
 
