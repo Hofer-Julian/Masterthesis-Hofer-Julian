@@ -1,4 +1,5 @@
-% !BIB TS-program = biber
+% !BIB program = biber
+
 %%%% Time-stamp: <2018-03-24 14:05:09 vk>
 %% ========================================================================
 %%%% Disclaimer
@@ -58,7 +59,7 @@
 %% See babel documentation for further details.
 
 %% BibLaTeX-settings: (see biblatex reference for further description)
-\newcommand{\mybiblatexstyle}{authoryear}
+\newcommand{\mybiblatexstyle}{numeric}
 %% e.g., "alphabetic", "authoryear", ...
 %% The biblatex style which is being used for referencing. See
 %% biblatex documentation for further details and more values.
@@ -74,9 +75,6 @@
 
 \newcommand{\mybiblatexbackref}{true}  %% "true" or "false"
 %% If true: create backward links from reference to citations.
-
-\newcommand{\mybiblatexfile}{references-biblatex.bib}
-%% Name of the biblatex file that holds the references.
 
 \newcommand{\mydispositioncolor}{0,0,0}
 %% e.g., "30,103,182" (blue/turquois), "0,0,0" (black), ...
@@ -112,6 +110,7 @@
 
 %% Load main settings for document preamble:
 \input{template/preamble}%% DO NOT REMOVE THIS LINE!
+
 
 \setboolean{myaddcolophon}{true}  %% "true" or "false"
 %% If set to "true": a colophon (with notes about this document
@@ -247,8 +246,6 @@
 
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
-
-
 
 
 %%%% end{document}

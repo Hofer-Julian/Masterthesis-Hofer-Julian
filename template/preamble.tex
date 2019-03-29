@@ -546,16 +546,9 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% \end{itemize}
 %doc%
 %doc%
-\usepackage[backend=biber, %% using "biber" to compile references (instead of "biblatex")
-style=\mybiblatexstyle, %% see biblatex documentation
-%style=alphabetic, %% see biblatex documentation
-dashed=\mybiblatexdashed, %% do *not* replace recurring reference authors with a dash
-backref=\mybiblatexbackref, %% create backlings from references to citations
-natbib=true, %% offering natbib-compatible commands
-hyperref=true, %% using hyperref-package references
-]{biblatex}  %% remove, if using BibTeX instead of biblatex
+\usepackage[backend=biber, style=\mybiblatexstyle, backref=\mybiblatexbackref, natbib=true, hyperref=true]{biblatex}
 
-\addbibresource{\mybiblatexfile} %% remove, if using BibTeX instead of biblatex
+\addbibresource{references-biblatex.bib} %% remove, if using BibTeX instead of biblatex
 
 
 

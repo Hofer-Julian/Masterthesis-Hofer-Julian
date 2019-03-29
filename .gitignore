@@ -7,6 +7,8 @@ template/auto/*
 *.toc
 *.out
 *.lof
+*.fdb_latexmk
+*.fls
 Template-Documentation.tex
 main.pdf
 main-blx.bib
