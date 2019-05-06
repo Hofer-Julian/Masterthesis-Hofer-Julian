@@ -56,15 +56,33 @@ Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference betw
 \end{align}
 
 \subsection{Airy distribution of the Fabry-Pérot interferometer}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/Schematic_of_the_Fabry-Perot_interferometer}
-	\caption{Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$}
+	\caption[Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$]{Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$. Indicated in this figure are the electric fields resulting from an incoming $E_{inc}$, the reflected field $E_{refl,1}$ and transmitted field $E_{laun}$. $E_{circ}$ and $E_{circ,b}$ circulate inside the resonator, resulting in $E_{RT}$ after one round-trip. $E_{back}$ is the backwards transmitted field.\cite{noauthor_fabryperot_nodate}}
 	\label{fig:schematicofthefabry-perotinterferometer}
 \end{figure}
+The response of the Fabry-Pérot interferometer is calculated with the circulating-field approach~\cite{ismail_fabry-perot_2016}, where a steady-state is assumed.
+$E_{circ}$ is the result of $E_{laun}$ interfering with $E_{RT}$.
+$E_{laun}$ is the transmission of the incoming light $E_{inc}$ and $E_{RT}$ is $E_circ$ after one round-trip in the resonator, i.e., after the outcoupling losses of mirror 1 and 2.
+Therefore, the field $E_{circ}$ can be calculated from $E_{launch}$ by
+\begin{equation}
+E_{circ} = E_{laun} + E_{RT} = E_{laun} + r_1 r_2 e^{-i 2 \phi} E_{circ} \Rightarrow \frac{E_{circ}}{E_{laun}} = \frac{1}{1 - r_1 r_2 e^{-i 2 \phi}}
+\end{equation}
+where $r_1$ and $r_2$ are the electric-field reflectivities of mirror 1 and 2.
 
+The generic Airy distribution considers only light inside the mirrors and is defined as
+\begin{equation}
+A_{circ} = \frac{I_{circ}}{I_{laun}} = \frac{|E_{circ}|^2}{|E_{laun}|^2} = \frac{1}{\left|1 - r_1 r_2 e^{-i2\phi}\right|^2} = \frac{1}{\left(1-\sqrt{R_1 R_2}\right)^2 + 4\sqrt{R_1 R_2} \sin^2(\phi)}
+\end{equation}
+with
+\begin{align*}
+\left|1-r_1 r_2 e^{-i2\phi}\right|^2 &= \left|1- r_1 r_2 \cos(2\phi) + i r_1 r_2 \sin(2\phi)\right|^2 = \left[1-r_1 r_2 \cos(2\phi)\right]^2 + r_1^2 r_2^2 \sin^2(2\phi) \\
+ &=1+R_1 R_2 - 2\sqrt{R_1 R_2} \cos(2\phi) = \left(1-\sqrt{R_1 R_2}\right)^2 + 4 \sqrt{R_1 R_2} \sin^2(\phi)
+\end{align*}
+and additionally $R_i = r_i^2$ and $\cos(2\phi) = 1 -2\sin^2(\phi)$.
 
-\cite{noauthor_fabryperot_nodate}
 \subsection{Simulation}
 
 \begin{figure}[H]

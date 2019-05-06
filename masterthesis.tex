@@ -210,8 +210,9 @@
 
 %% Choose your desired title page:
 \includepdf{\mytitlepage}         %% include title page
-\pagenumbering{gobble}
-\KOMAoptions{open=left}
+\pagenumbering{gobble}            %% Disable page numbering for first few pages
+%% Needed for first blank page
+\KOMAoptions{open=left}          
 \thispagestyle{empty}
 \mbox{}
 \clearpage
