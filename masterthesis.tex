@@ -118,7 +118,7 @@
 %% Please do not set to "false" without a good reason. The colophon
 %% helps your readers to get in touch with LaTeX and to find this template.
 
-\setboolean{myaddlistoftodos}{true}  %% "true" or "false"
+\setboolean{myaddlistoftodos}{false}  %% "true" or "false"
 %% If set to "true": the current list of open todos is added after the
 %% table of contents. If \mytodonotesoptions is set to "disable", no
 %% list of todos is added, independent of this setting here.
@@ -165,7 +165,7 @@
 \usepackage{booktabs}           % Tables
 \usepackage{siunitx}            % Standardized unit usage
 \usepackage{float}				% Allows strict positioning
-
+\usepackage{amsmath}            % Math
 
 %% ========================================================================
 %%%% MISC self-defined commands and settings
@@ -174,8 +174,6 @@
 %% ... it's OK to put here your own newcommand/newenvironment-definitions ...
 
 \sisetup{range-units=brackets}
-
-
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
 %% here (Ver-\"of-fent-li-chung), you have to check for
@@ -211,9 +209,15 @@
 \input{colophon}                %% defines information about editor, LaTeX, font, ...
 
 %% Choose your desired title page:
-\includepdf{\mytitlepage}            %% include title page
+\includepdf{\mytitlepage}         %% include title page
+\pagenumbering{gobble}
+\KOMAoptions{open=left}
+\thispagestyle{empty}
+\mbox{}
+\clearpage
 
 \input{template/declaration_JKU}  %% Statutory Declaration
+
 \input{chapters/acknowledgement}
 
 
@@ -236,6 +240,7 @@
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 %% include tex file chapters:
+\KOMAoptions{open=right}
 \include{chapters/introduction}
 \include{chapters/quantum-dot}
 \include{chapters/chirp}

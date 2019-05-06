@@ -16,7 +16,7 @@ Dot-Spectra in far field is (TEM$_{00}$).
 The Fabry-Pérot interferometer is an optical resonator developed by Charles Fabry and Alfred Pérot.
 An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}
 
-\subsection{Resonator losses an outcoupled light}
+\subsection{Resonator losses}
 For the following discussion of the Fabry-Pérot interferometer, a two-mirror-resonator with the reflecting surfaces facing each other and air as medium in between is assumed. The time the light needs for one roundtrip is then given by ~\cite{ismail_fabry-perot_2016}
 \begin{equation}
 t_{RT} = \frac{2l}{c}
@@ -31,15 +31,40 @@ where $R_1$ and $R_2$ are the corresponding intensity reflectivities of the mirr
 
 The number of photons at frequency $\nu$ inside the resonator is described by the differential rate equation
 \begin{equation}
-\frac{d}{dt} \varphi(t) = - \frac{1}{\tau_c}\varphi(t)
+\frac{d}{dt} \varphi(t) = - \frac{1}{\tau_c}\varphi(t).
 \end{equation}
-With a number $\varphi_s$ of photons at $t=$ the integration gives
+With a number $\varphi_s$ of photons at $t=0$ the integration gives
 \begin{equation}
 \varphi(t)=\varphi_s e^{-t/\tau_c}
 \end{equation}
 
-\subsection{Airy distribution of the Fabry-Pérot interferometer}
+\subsection{Resonance frequencies and free spectral range}
+The round-trip phase shift at frequency $\nu$ is given by 
+\begin{equation}
+\label{eq:round-trip-phase-shift}
+2 \phi(\nu) = 2 \pi \nu t_{RT} = 2 \pi \nu \frac{2l}{c}
+\end{equation}
+where $\phi(\nu)$ is the single-pass phase shift between the mirrors.
 
+Resonances are visible for frequencies $\nu$ at which the light interferes constructively after one round trip.
+Two adjacent resonance frequencies differ in their round trip phase shift by $2 \pi$.
+Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference between two adjacent resonance frequencies, can be calculated from equation~\eqref{eq:round-trip-phase-shift}
+\begin{align}
+2\Delta\phi = 2\pi \\
+\Rightarrow 2\pi\Delta\nu_{FSR}\frac{2l}{c} = 2\pi\\
+\Rightarrow \Delta\nu_{FSR} = \frac{c}{2l}
+\end{align}
+
+\subsection{Airy distribution of the Fabry-Pérot interferometer}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/Schematic_of_the_Fabry-Perot_interferometer}
+	\caption{Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$}
+	\label{fig:schematicofthefabry-perotinterferometer}
+\end{figure}
+
+
+\cite{noauthor_fabryperot_nodate}
 \subsection{Simulation}
 
 \begin{figure}[H]
