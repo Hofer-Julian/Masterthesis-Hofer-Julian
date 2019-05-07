@@ -1,20 +1,18 @@
 % !TEX root = ../masterthesis.tex
 \chapter{Scanning Fabry-Pérot Interferometer}
 
-\section{Motivation}
+\section{Introduction and Motivation}
 
-Resolve QD emission line.
-
-\section{Theory}
-
-\subsection{Gaussian Beam}
-
-Dot-Spectra in far field is (TEM$_{00}$).
-
-\subsection{Fabry-Pérot Interferometer}
 
 The Fabry-Pérot interferometer is an optical resonator developed by Charles Fabry and Alfred Pérot.
 An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}
+
+Resolve QD emission line.
+
+
+
+\section{Theory}
+
 
 \subsection{Resonator losses}
 For the following discussion of the Fabry-Pérot interferometer, a two-mirror-resonator with the reflecting surfaces facing each other and air as medium in between is assumed. The time the light needs for one roundtrip is then given by ~\cite{ismail_fabry-perot_2016}
@@ -23,7 +21,7 @@ t_{RT} = \frac{2l}{c}
 \end{equation}
 where $l$ is the geometrical length of the resonator and $c$ is the speed of light in air. 
 
-The photon-decay time $\tau_c{\nu}$ of the interferometer is then given by
+The photon-decay time $\tau_c$ of the interferometer is then given by
 \begin{equation}
 \frac{1}{\tau_c} = - \frac{\ln(R_1 \cdot R_2)}{t_{RT}}
 \end{equation}
@@ -35,10 +33,11 @@ The number of photons at frequency $\nu$ inside the resonator is described by th
 \end{equation}
 With a number $\varphi_s$ of photons at $t=0$ the integration gives
 \begin{equation}
+\label{eq:photon-decay}
 \varphi(t)=\varphi_s e^{-t/\tau_c}
 \end{equation}
 
-\subsection{Resonance frequencies and free spectral range}
+\subsection{Resonance frequencies, free spectral range and spectral line shapes}
 The round-trip phase shift at frequency $\nu$ is given by 
 \begin{equation}
 \label{eq:round-trip-phase-shift}
@@ -55,6 +54,35 @@ Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference betw
 \Rightarrow \Delta\nu_{FSR} = \frac{c}{2l}
 \end{align}
 
+According to equation~\eqref{eq:photon-decay} the number of photons decay with the photon-decay time $\tau_c$. With $E_{q,s}$ representing the initial amplitude, the electric field at $\nu_q$ can is given by
+\begin{equation}
+E_q(t) = 
+\begin{cases}
+E_{q,s} e^{i2\pi\nu_qt} e^{-t/(2\tau_c)} &  t\geq 1 \\
+0 &  t > 0
+\end{cases}
+.
+\end{equation}
+The Fourier transformation of the electric field can be expressed as
+\begin{equation}
+\tilde{E}_q(\nu) = \int_{-\infty}^\infty E_q(t)e^{-i2\pi\nu t}dt = E_q(t) \int_{0}^\infty e^{.[1/(2\tau_c)+i2\pi(\nu-\nu_q)]t}dt = E_{q,s} \frac{1}{(2\tau_c)^{-1}+i2\pi(\nu-\nu_q)}.
+\end{equation}
+The normalized spectral line shape per unit frequency is then given by
+\begin{align}
+\tilde{\gamma_q}(\nu)&=\frac{1}{\tau_c}\left|\frac{\tilde{E}_q(\nu)}{E_{q,s}}\right|^2=\frac{1}{\tau_c}\left|\frac{1}{(2\tau_c)^{-1}+i2\pi(\nu-\nu_q)}\right|^2 = \frac{1}{\tau_c}\frac{1}{(2\tau_c)^{-2}+4\pi^2(\nu-\nu_q)^2} \\
+&=\frac{1}{\pi}\frac{1/(4\pi\tau_c)}{1/(4\pi\tau_c)^2+(\nu-\nu_q)^2}
+\end{align}
+with $\int \tilde{\gamma_q}(\nu)d\nu=1$.
+By defining the full-width-at-half-maximum linewidth $\Delta\nu_c$ we get
+\begin{equation}
+\Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}
+\end{equation}
+By normalizing the Lorentzian lines so that the peak is at unity we finally obtain
+\begin{equation}
+\label{eq:lorentzian}
+\gamma_{q,L}(\nu)=\frac{\pi}{2}\Delta\nu_c\tilde{\gamma_q}(\nu)=\frac{(\Delta\nu_c)^2}{\left(\Delta \nu_c\right)^2+4\left(\nu-\nu_q\right)^2}
+\end{equation}
+with $\gamma_{q,L}(\nu_q)=1$.
 \subsection{Airy distribution of the Fabry-Pérot interferometer}
 
 \begin{figure}[H]
@@ -76,12 +104,34 @@ The generic Airy distribution considers only light inside the mirrors and is def
 \begin{equation}
 A_{circ} = \frac{I_{circ}}{I_{laun}} = \frac{|E_{circ}|^2}{|E_{laun}|^2} = \frac{1}{\left|1 - r_1 r_2 e^{-i2\phi}\right|^2} = \frac{1}{\left(1-\sqrt{R_1 R_2}\right)^2 + 4\sqrt{R_1 R_2} \sin^2(\phi)}
 \end{equation}
-with
+by using
 \begin{align*}
 \left|1-r_1 r_2 e^{-i2\phi}\right|^2 &= \left|1- r_1 r_2 \cos(2\phi) + i r_1 r_2 \sin(2\phi)\right|^2 = \left[1-r_1 r_2 \cos(2\phi)\right]^2 + r_1^2 r_2^2 \sin^2(2\phi) \\
  &=1+R_1 R_2 - 2\sqrt{R_1 R_2} \cos(2\phi) = \left(1-\sqrt{R_1 R_2}\right)^2 + 4 \sqrt{R_1 R_2} \sin^2(\phi)
 \end{align*}
 and additionally $R_i = r_i^2$ and $\cos(2\phi) = 1 -2\sin^2(\phi)$.
+
+Commonly, light is sent through the Fabry-Pérot resonator. Therefore the following sections will use the Airy distribution $A'_{trans}$.
+\begin{equation}
+\label{eq:A-trans}
+A'_{trans} = \frac{I_{trans}}{I_{inc}} = \frac{I_{circ} \cdot (1 - R_2)}{I_{laun} / (1 - R_1)} = (1-R_1)(1-R_2)A_{circ} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2+4\sqrt{R_1R_2}\sin^2(\phi)}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
+	\caption{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}}
+	\label{fig:airydistributionofafabry-perotinterferometer}
+\end{figure}
+
+
+\subsection{Airy linewidth and finesse}
+
+
+
+\subsection{Gaussian Beam}
+
+Dot-Spectra in far field is (TEM$_{00}$).
 
 \subsection{Simulation}
 
