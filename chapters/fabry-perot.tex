@@ -40,7 +40,7 @@ With a number $\varphi_s$ of photons at $t=0$ the integration gives
 \subsection{Resonance frequencies, free spectral range and spectral line shapes}
 The round-trip phase shift at frequency $\nu$ is given by 
 \begin{equation}
-\label{eq:round-trip-phase-shift}
+\label{eq:round-trip-phase-shift-phi}
 2 \phi(\nu) = 2 \pi \nu t_{RT} = 2 \pi \nu \frac{2l}{c}
 \end{equation}
 where $\phi(\nu)$ is the single-pass phase shift between the mirrors.
@@ -49,8 +49,9 @@ Resonances are visible for frequencies $\nu$ at which the light interferes const
 Two adjacent resonance frequencies differ in their round trip phase shift by $2 \pi$.
 Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference between two adjacent resonance frequencies, can be calculated from equation~\eqref{eq:round-trip-phase-shift}
 \begin{align}
-2\Delta\phi = 2\pi \\
+2\Delta\phi_{FSR} = 2\pi \\
 \Rightarrow 2\pi\Delta\nu_{FSR}\frac{2l}{c} = 2\pi\\
+\label{eq:free-spectral-range}
 \Rightarrow \Delta\nu_{FSR} = \frac{c}{2l}
 \end{align}
 
@@ -69,11 +70,12 @@ The Fourier transformation of the electric field can be expressed as
 \end{equation}
 The normalized spectral line shape per unit frequency is then given by
 \begin{align}
+\label{eq:round-trip-phase-shift}
 \tilde{\gamma_q}(\nu)&=\frac{1}{\tau_c}\left|\frac{\tilde{E}_q(\nu)}{E_{q,s}}\right|^2=\frac{1}{\tau_c}\left|\frac{1}{(2\tau_c)^{-1}+i2\pi(\nu-\nu_q)}\right|^2 = \frac{1}{\tau_c}\frac{1}{(2\tau_c)^{-2}+4\pi^2(\nu-\nu_q)^2} \\
 &=\frac{1}{\pi}\frac{1/(4\pi\tau_c)}{1/(4\pi\tau_c)^2+(\nu-\nu_q)^2}
 \end{align}
 with $\int \tilde{\gamma_q}(\nu)d\nu=1$.
-By defining the full-width-at-half-maximum linewidth $\Delta\nu_c$ we get
+By defining the full-width-at-half-maximum linewidth (FWHM) $\Delta\nu_c$ we get
 \begin{equation}
 \Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}
 \end{equation}
@@ -85,7 +87,7 @@ By normalizing the Lorentzian lines so that the peak is at unity we finally obta
 with $\gamma_{q,L}(\nu_q)=1$.
 \subsection{Airy distribution of the Fabry-Pérot interferometer}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/Schematic_of_the_Fabry-Perot_interferometer}
 	\caption[Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$]{Fabry-Pérot interferometer with electric field mirror reflectivities $r_1$ and $r_2$. Indicated in this figure are the electric fields resulting from an incoming $E_{inc}$, the reflected field $E_{refl,1}$ and transmitted field $E_{laun}$. $E_{circ}$ and $E_{circ,b}$ circulate inside the resonator, resulting in $E_{RT}$ after one round-trip. $E_{back}$ is the backwards transmitted field.\cite{noauthor_fabryperot_nodate}}
@@ -116,17 +118,57 @@ Commonly, light is sent through the Fabry-Pérot resonator. Therefore the follow
 \label{eq:A-trans}
 A'_{trans} = \frac{I_{trans}}{I_{inc}} = \frac{I_{circ} \cdot (1 - R_2)}{I_{laun} / (1 - R_1)} = (1-R_1)(1-R_2)A_{circ} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2+4\sqrt{R_1R_2}\sin^2(\phi)}
 \end{equation}
+$A'_{trans}$ is displayed in figure~\ref{fig:airydistributionofafabry-perotinterferometer} for $R_1=R_2$. The peak value at one of its resonance frequencies calculates as follows
+\begin{equation}
+A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1. 
+\end{equation}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
 	\caption{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}}
 	\label{fig:airydistributionofafabry-perotinterferometer}
 \end{figure}
 
 
 \subsection{Airy linewidth and finesse}
+The airy linewidth is defined as the FWHM of $A'_{trans}$. It can be set in relation with the free spectral range $\Delta \nu_{FSR}$ and the mirror reflectivities as follows.
 
+$A'_{trans}$ decreases to half of its peak value at $A'_{trans}(v_q) / 2$ when the phase shift $\phi$ changes by the amount $\Delta\phi$ so that the denominator of $A'_{trans}$ in equation~\eqref{eq:A-trans}  is twice as big
+\begin{align}
+\left(1-\sqrt{R_1R_2}\right)^2=4\sqrt{R_1R_2}\sin^2(\Delta\phi) \\
+\label{eq:phase-shift-R}
+\Rightarrow \Delta\phi=\arcsin\left(\frac{1-\sqrt{R_1R_2}}{2\sqrt[4]{R_1R_2}}\right)
+\end{align}
+With equation~\eqref{eq:round-trip-phase-shift-phi} and \eqref{eq:free-spectral-range}, the phase shift can be expressed as
+\begin{align}
+\phi &= \frac{\pi \nu}{\Delta \nu_{FSR}} \\
+\label{eq:phase-shift-nu}
+\Rightarrow \Delta \phi &= \frac{\pi (\Delta \nu_{Airy}/2)}{\Delta \nu_{FSR}}.
+\end{align}
+Therefore, with equation~\eqref{eq:phase-shift-R} and \eqref{eq:phase-shift-nu} the FWHM linewdith is given by
+\begin{equation}
+\Delta \nu_{Airy} = \Delta \nu_{FSR}\frac{2}{\pi}\arcsin\left(\frac{1-\sqrt{R_1R_2}}{2\sqrt[4]{R_1R_2}}\right).
+\end{equation}
+
+The finesse of the Airy distribution of a Fabry-Pérot interferometer is defined as
+\begin{equation}
+F_{Airy} := \frac{\Delta \nu_{FSR}}{\Delta \nu_{Airy}} = \frac{\pi}{2}\left[\arcsin\left(\frac{1-\sqrt{R_1R_2}}{2\sqrt[4]{R_1R_2}}\right)\right]^{-1}
+\end{equation}
+and is therefore only dependent on the mirror reflectivities $R_1$ and $R_2$.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_finesse_of_a_Fabry-Perot_interferometer}
+	\caption{Demonstration of the physical meaning of the Airy finesse $F_{Airy}$.
+		The coloured lines are Airy distributions created by light of frequencies $\nu_m = \nu_q+m\Delta \nu_{Airy}$. Since in this example $F_{airy}=6$  exactly six peaks fit inside the free spectral range according to the Taylor criterion. ~\cite{noauthor_fabryperot_nodate}}
+	\label{fig:airyfinesseofafabry-perotinterferometer}
+\end{figure}
+
+
+The Airy finesse determining property when it comes to the spectral resolution of the Fabry-Pérot interferometer. This can be made visible by comparing its message with the Taylor criterion for the resolution of two adjacent peaks.
+The Taylor criterion proposes that two spectral lines are resolvable when the separation of the maxima is greater than the FWHM. As displayed in figure~\ref{fig:airyfinesseofafabry-perotinterferometer}, the Airy finesse is equal to the number of Airy distributions originating from light at a certain frequencies $\nu_m$ which do not overlap at a point higher than half of their maxima.
+Hence, the Airy finesse describes the spectral resolution consistently with the Taylor criterion.
 
 
 \subsection{Gaussian Beam}
@@ -135,7 +177,7 @@ Dot-Spectra in far field is (TEM$_{00}$).
 
 \subsection{Simulation}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{figures/plots/fabry-perot/simulation-comparison-dot-fabry-perot-modes}
 	\caption{}
