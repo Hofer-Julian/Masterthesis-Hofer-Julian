@@ -157,18 +157,20 @@ F_{Airy} := \frac{\Delta \nu_{FSR}}{\Delta \nu_{Airy}} = \frac{\pi}{2}\left[\arc
 \end{equation}
 and is therefore only dependent on the mirror reflectivities $R_1$ and $R_2$.
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_finesse_of_a_Fabry-Perot_interferometer}
-	\caption{Demonstration of the physical meaning of the Airy finesse $F_{Airy}$.
-		The coloured lines are Airy distributions created by light of frequencies $\nu_m = \nu_q+m\Delta \nu_{Airy}$. Since in this example $F_{airy}=6$  exactly six peaks fit inside the free spectral range according to the Taylor criterion. ~\cite{noauthor_fabryperot_nodate}}
-	\label{fig:airyfinesseofafabry-perotinterferometer}
-\end{figure}
-
-
 The Airy finesse determining property when it comes to the spectral resolution of the Fabry-Pérot interferometer. This can be made visible by comparing its message with the Taylor criterion for the resolution of two adjacent peaks.
 The Taylor criterion proposes that two spectral lines are resolvable when the separation of the maxima is greater than the FWHM. As displayed in figure~\ref{fig:airyfinesseofafabry-perotinterferometer}, the Airy finesse is equal to the number of Airy distributions originating from light at a certain frequencies $\nu_m$ which do not overlap at a point higher than half of their maxima.
 Hence, the Airy finesse describes the spectral resolution consistently with the Taylor criterion.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_finesse_of_a_Fabry-Perot_interferometer}
+	\caption[Demonstration of the physical meaning of the Airy finesse $F_{Airy}$]{Demonstration of the physical meaning of the Airy finesse $F_{Airy}$.
+		The coloured lines are Airy distributions created by light at distinct frequencies $\nu_m$, while scanning the resonator length. When the light occurs at frequencies $\nu_m = \nu_q+m\Delta \nu_{Airy}$, the adjacent Airy distributions are separated from each other by $\nu_{Airy}$, therefore fulfilling the Taylor criterion.
+		Since in this example $F_{airy}=6$  exactly six peaks fit inside the free spectral range.
+		As can be seen in the figure the Airy finesse $F_{Airy}$ quantifies the maximum number of peaks that can be resolved. ~\cite{noauthor_fabryperot_nodate}}
+	\label{fig:airyfinesseofafabry-perotinterferometer}
+\end{figure}
+
 
 
 \subsection{Gaussian Beam}
@@ -176,13 +178,6 @@ Hence, the Airy finesse describes the spectral resolution consistently with the 
 Dot-Spectra in far field is (TEM$_{00}$).
 
 \subsection{Simulation}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{figures/plots/fabry-perot/simulation-comparison-dot-fabry-perot-modes}
-	\caption{}
-	\label{fig:simulation-comparison-dot-fabry-perot-modes}
-\end{figure}
 
 \section{Setup}
 

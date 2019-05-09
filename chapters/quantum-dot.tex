@@ -6,15 +6,27 @@
 \section{Properties of our dots}
 
 \begin{table}[H]
-	\caption{My caption}
+	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
+	Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{???}) up to broader lines which are still valued enough to be measured.
+	The phonon sideband resembles data taken from \textcite{scholl_resonance_2019}.}
 	\label{tab:quantum-dot-emission}
-	\begin{tabular}{@{}lll@{}}
+	\begin{tabular}{@{}llll@{}}
 		\toprule
-		Quantum dot emission & Energy           & Frequency                  \\ \midrule
-		Center               & \SIrange{1.38}{2.07}{\electronvolt} & \SIrange[fixed-exponent = 14, scientific-notation = fixed]{3.33e14}{5.00e14}{\hertz}\\
-		Spectral range       & \SIrange{100}{500}{\micro \electronvolt}  & \SIrange[fixed-exponent = 9, scientific-notation = fixed]{24.20e9}{120.90e9}{\hertz} \\ \bottomrule
+		Quantum dot emission & Center wavelength $\lambda_0$           & Spectral range $\Delta \lambda$ & Waveform                  \\ \midrule
+		Zero-phonon line               & \SIrange{700}{800}{\nano \metre} & \SIrange{1.0}{1.4}{\pico \metre} & Cauchy\\
+		Phonon sideband       & ~\SI{0.25}{\nano \metre} higher than zero-phonon line  & ~\SI{500}{\pico \metre} & Gauss  \\ \bottomrule
 	\end{tabular}
 \end{table}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/quantum_dot_emission_wavelength_energy}
+	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on the wavelength $\lambda$ and the Energy $E$.
+	The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
+	\label{fig:quantumdotemissionwavelengthenergy}
+\end{figure}
+
+
 
 
 \section{Adiabatic Rapid Passage}
