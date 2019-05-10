@@ -175,28 +175,38 @@ Hence, the Airy finesse describes the spectral resolution consistently with the 
 
 \subsection{Gaussian Beam}
 
-In this subsection, light beams are described by the wave picture according to. They fulfil the Maxwell equations and therefore the electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
+In this subsection, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
+They fulfil the Maxwell equations and therefore the electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
 \begin{equation}
 \label{eq:wave-equation}
 \left(\nabla^2 - \frac{1}{c^2}\frac{\partial}{\partial t^2}\right)\mathbf{E}(\mathbf{r},t) = 0.
 \end{equation}
 Along the propagation direction $z$ a light beam behaves similarly to a plane wave with constant amplitude $A_0$ which is a known solution to the wave equation~\eqref{eq:wave-equation}
 \begin{equation}
-\label{eq:plan-wave}
+\label{eq:plain-wave}
 E(z,t)=A_0e^{-i(\omega t - kz)}
 \end{equation}
 However, far from its source light is expected to behave like a spherical wave
 \begin{equation}
 E(\mathbf{r},t)=A_0\frac{e^{-i(\omega t -\mathbf{kr})}}{|\mathbf{kr}|}.
 \end{equation}
-To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered. Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$. Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
+To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered.
+Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$. Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
 \begin{equation}
 \label{eq:e-field-after-fresnel-approximation}
 E(\mathbf{r})=\frac{A(\mathbf{r})}{|\mathbf{kr}|}e^{i\mathbf{kr}}\simeq\frac{A(z,\rho)}{kz}\exp\left(i\frac{k\rho^2}{2z}\right)e^{ikz}
 \end{equation}
 with $r = \sqrt{z^2+\rho^2} \simeq z+\rho^2/2z$.
 
-
+Equation~\eqref{eq:e-field-after-fresnel-approximation} resembles the plain wave in equation~\eqref{eq:plain-wave}, with the spacial phase transversal modulated by $\exp(ik\rho^2/2z)$.
+Another spherical wave solution can be obtained by applying the following replacement ($z_0$ is a real number)
+\begin{equation}
+z \rightarrow q(z)=z-iz_0.
+\end{equation}
+Thereby, the fundamental (or TEM$_{00}$) Gaussian mode has been constructed
+\begin{equation}
+E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
+\end{equation}
 
 
 \begin{figure}[H]
