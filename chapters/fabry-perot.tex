@@ -175,7 +175,55 @@ Hence, the Airy finesse describes the spectral resolution consistently with the 
 
 \subsection{Gaussian Beam}
 
+In this subsection, light beams are described by the wave picture according to. They fulfil the Maxwell equations and therefore the electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
+\begin{equation}
+\label{eq:wave-equation}
+\left(\nabla^2 - \frac{1}{c^2}\frac{\partial}{\partial t^2}\right)\mathbf{E}(\mathbf{r},t) = 0.
+\end{equation}
+Along the propagation direction $z$ a light beam behaves similarly to a plane wave with constant amplitude $A_0$ which is a known solution to the wave equation~\eqref{eq:wave-equation}
+\begin{equation}
+\label{eq:plan-wave}
+E(z,t)=A_0e^{-i(\omega t - kz)}
+\end{equation}
+However, far from its source light is expected to behave like a spherical wave
+\begin{equation}
+E(\mathbf{r},t)=A_0\frac{e^{-i(\omega t -\mathbf{kr})}}{|\mathbf{kr}|}.
+\end{equation}
+To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered. Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$. Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
+\begin{equation}
+\label{eq:e-field-after-fresnel-approximation}
+E(\mathbf{r})=\frac{A(\mathbf{r})}{|\mathbf{kr}|}e^{i\mathbf{kr}}\simeq\frac{A(z,\rho)}{kz}\exp\left(i\frac{k\rho^2}{2z}\right)e^{ikz}
+\end{equation}
+with $r = \sqrt{z^2+\rho^2} \simeq z+\rho^2/2z$.
+
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gaussian-mode-near-beam-waist}
+	\caption[A Gaussian beam near its beam waist.]
+	{A Gaussian beam near its beam waist.
+		Near the center they resemble plan wave fronts, while outside they converge towards spherical wave fronts.
+		They Rayleighzone is shaded at the lower part of the figure.\cite{meschede_optik_2008}}
+	\label{fig:gaussian-mode-near-beam-waist}
+\end{figure}
+
+
 Dot-Spectra in far field is (TEM$_{00}$).
+
+
+\subsection{Mode and Mode-Matching}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/resonator-mode-matching}
+	\caption{Gaussian beam and resonator mirrors}
+	\label{fig:resonator-mode-matching}
+\end{figure}
+
+
+\subsection{Confocal Setups}
 
 \subsection{Simulation}
 

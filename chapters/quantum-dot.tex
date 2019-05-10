@@ -5,6 +5,35 @@
 
 \section{Properties of our dots}
 
+\subsection{Calculate spectral range of zero-phonon line}
+A typical lifetime of a GaAs quantum dot is $\Delta t = 250~ps$.
+According to the time-energy uncertainty relation
+\begin{align}
+\Delta E \cdot \Delta t = \frac{h}{2 \pi}\\
+\Rightarrow \Delta E = \SI{2.64}{\micro \electronvolt}
+\end{align}
+The frequency uncertainty can be obtained through
+\begin{equation}
+\Delta \nu = \frac{\Delta E}{h}
+\end{equation}
+By developing $\lambda$into a taylor series
+\begin{align}
+\label{eq:planck-einstein}
+\lambda &= \frac{c}{\nu}\\
+\Rightarrow \lambda(\nu) &\approx \lambda(\nu_0) + \lambda'(\nu_0) \cdot (\nu - \nu_0)
+\end{align}
+$\Delta \lambda$ can be expressed as
+\begin{align}
+\Delta \lambda &= \lambda(\nu_0 - \Delta \nu) - \lambda(\nu_0)\\
+ &= \lambda(\nu_0) - \lambda'(\nu_0)\cdot\Delta \nu - \lambda(\nu_0)\\
+ &= - \lambda'(\nu_0)\cdot \Delta \nu.
+\end{align}
+With equation~\eqref{eq:planck-einstein} this gives
+\begin{align}
+\Rightarrow \Delta \lambda &= \frac{c}{\nu_0^2} \cdot \Delta \nu = \frac{\lambda_0^2}{c}\cdot\Delta \nu\\
+&\approx \SI{1.0}{\pico \metre}
+\end{align}
+
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
 	Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{???}) up to broader lines which are still valued enough to be measured.
