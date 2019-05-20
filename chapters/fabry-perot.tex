@@ -176,7 +176,7 @@ Hence, the Airy finesse describes the spectral resolution consistently with the 
 \subsection{Gaussian Beam}
 
 In this subsection, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
-They fulfil the Maxwell equations and therefore the electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
+They fulfil the Maxwell equations and therefore their electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
 \begin{equation}
 \label{eq:wave-equation}
 \left(\nabla^2 - \frac{1}{c^2}\frac{\partial}{\partial t^2}\right)\mathbf{E}(\mathbf{r},t) = 0.
@@ -184,7 +184,7 @@ They fulfil the Maxwell equations and therefore the electric field $\mathbf{E}(\
 Along the propagation direction $z$ a light beam behaves similarly to a plane wave with constant amplitude $A_0$ which is a known solution to the wave equation~\eqref{eq:wave-equation}
 \begin{equation}
 \label{eq:plain-wave}
-E(z,t)=A_0e^{-i(\omega t - kz)}
+E(z,t)=A_0e^{-i(\omega t - kz)}.
 \end{equation}
 However, far from its source light is expected to behave like a spherical wave
 \begin{equation}
@@ -205,6 +205,7 @@ z \rightarrow q(z)=z-iz_0.
 \end{equation}
 Thereby, the fundamental (or TEM$_{00}$) Gaussian mode has been constructed
 \begin{equation}
+\label{eq:fundamental-gaussian-mode}
 E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 \end{equation}
 
@@ -219,19 +220,43 @@ E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 	\label{fig:gaussian-mode-near-beam-waist}
 \end{figure}
 
+The electrical and magnetical fields of gauss modes are transversal to its propagation direction. These waveforms are called transversal elctrical and magnetic modes with indices $(m,n)$. Its fundamental solution is the TEM$_{00}$-Mode, which is the most important one and will therefore be examined in more detail in the rest of this subsection.
 
-Dot-Spectra in far field is (TEM$_{00}$).
+To express equation~\eqref{eq:fundamental-gaussian-mode} into a clearer way, the replacement $q(z)\rightarrow z-iz_0$ will be explicitly executed,
+\begin{equation}
+\frac{1}{q(z)}=\frac{z+iz_0}{z^2+z_0^2}=\frac{1}{R(z)}+i\frac{2}{k\omega^2(z)},
+\end{equation}
+and new variables $z_0$, $R(z)$ and $\omega(z)$ are introduced. With the decomposition of the Fresnel factors into real and imaginary part, two factors can be identified: one complex phase factor, which describes the curvature of the wavefronts and a real factor, which describes the envelope of the beam. Therefore, the exponential of equation~\eqref{eq:fundamental-gaussian-mode} becomes
+\begin{equation}
+\exp\left(i\frac{k\rho^2}{2q(z)}\right) \rightarrow \exp\left(i\frac{k\rho^2}{2R(z)}\right)\exp\left(-\left(\frac{\rho}{\omega(z)}\right)^2\right)
+\end{equation}
+
+\todo{introduce R(z) and $\omega_0$}
+
+\subsection{Higher Gauss Modes}
 
 
-\subsection{Mode and Mode-Matching}
+\subsection{Mode Matching and Coupling Losses}
+
+Do the stuff according to \textcite{yariv_photonics:_2007}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/resonator-mode-matching}
-	\caption{Gaussian beam and resonator mirrors}
-	\label{fig:resonator-mode-matching}
+	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/excitation-of-transverse-mode}
+	\caption{}
+	\label{fig:excitation-of-transverse-mode}
 \end{figure}
 
+
+
+\subsection{Gaussian Beam Focusing}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/gaussian-beam-focusing}
+	\caption{}
+	\label{fig:gaussian-beam-focusing}
+\end{figure}
 
 \subsection{Confocal Setups}
 
