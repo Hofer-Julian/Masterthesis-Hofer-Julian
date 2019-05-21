@@ -191,7 +191,8 @@ However, far from its source light is expected to behave like a spherical wave
 E(\mathbf{r},t)=A_0\frac{e^{-i(\omega t -\mathbf{kr})}}{|\mathbf{kr}|}.
 \end{equation}
 To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered.
-Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$. Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
+Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$.
+Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
 \begin{equation}
 \label{eq:e-field-after-fresnel-approximation}
 E(\mathbf{r})=\frac{A(\mathbf{r})}{|\mathbf{kr}|}e^{i\mathbf{kr}}\simeq\frac{A(z,\rho)}{kz}\exp\left(i\frac{k\rho^2}{2z}\right)e^{ikz}
@@ -220,36 +221,134 @@ E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 	\label{fig:gaussian-mode-near-beam-waist}
 \end{figure}
 
-The electrical and magnetical fields of gauss modes are transversal to its propagation direction. These waveforms are called transversal elctrical and magnetic modes with indices $(m,n)$. Its fundamental solution is the TEM$_{00}$-Mode, which is the most important one and will therefore be examined in more detail in the rest of this subsection.
+The electrical and magnetical fields of gauss modes are transversal to its propagation direction.
+These waveforms are called transversal elctrical and magnetic modes with indices $(m,n)$.
+Its fundamental solution is the TEM$_{00}$-Mode, which is the most important one and will therefore be examined in more detail in the rest of this subsection.
 
-To express equation~\eqref{eq:fundamental-gaussian-mode} into a clearer way, the replacement $q(z)\rightarrow z-iz_0$ will be explicitly executed,
+To express equation~\eqref{eq:fundamental-gaussian-mode} into a clearer way, the replacement $q(z)\rightarrow z-iz_0$ will be executed explicitly,
 \begin{equation}
 \frac{1}{q(z)}=\frac{z+iz_0}{z^2+z_0^2}=\frac{1}{R(z)}+i\frac{2}{k\omega^2(z)},
 \end{equation}
-and new variables $z_0$, $R(z)$ and $\omega(z)$ are introduced. With the decomposition of the Fresnel factors into real and imaginary part, two factors can be identified: one complex phase factor, which describes the curvature of the wavefronts and a real factor, which describes the envelope of the beam. Therefore, the exponential of equation~\eqref{eq:fundamental-gaussian-mode} becomes
+and new variables $z_0$, $R(z)$ and $\omega(z)$ are introduced.
+With the decomposition of the Fresnel factors into real and imaginary part, two factors can be identified: one complex phase factor, which describes the curvature of the wavefronts and a real factor, which describes the envelope of the beam.
+Therefore, the exponential in equation~\eqref{eq:fundamental-gaussian-mode} becomes
 \begin{equation}
 \exp\left(i\frac{k\rho^2}{2q(z)}\right) \rightarrow \exp\left(i\frac{k\rho^2}{2R(z)}\right)\exp\left(-\left(\frac{\rho}{\omega(z)}\right)^2\right)
 \end{equation}
-
-\todo{introduce R(z) and $\omega_0$}
+For the following description of gauss modes the following  parameters have to be introduced
+\begin{itemize}
+	\item \textbf{Radius of wavefronts} $R(z)$: \qquad $R(z)=z(1+(z_0/z)^2)$\\
+	The greatest curvature or the smallest radius of the wavefronts appear at $R(z_0)=2z_0$.
+	\item \textbf{Beam waist} $2\omega_0$: \qquad $\omega_0^2=\lambda z_0/\pi$\\
+	The beam waist $2\omega_0$ or beam radius $\omega_0$ describe the smallest  beam cross section at $z=0$.
+	If the wave propagates inside a medium with the refractive index $n$, $\lambda$ has to be replaced with $\lambda/n$.
+	The cross section of the beam waist  is then $\omega_0^2=\lambda z_0/(\pi n)$.
+\end{itemize}
+A Gaussian beam can at every point $z$ on the beam axis be completely characterized  either with the parameter couple $(\omega_0, z_0)$ or alternatively with the real and imaginary part of $q(z)$.
+The parameter of the Gaussian beam are transformed by linear operations, which coefficients are identical to those from geometrical optics:
+\begin{equation}
+q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
+\end{equation}
+with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
 
 \subsection{Higher Gauss Modes}
-
+The wave equation~\eqref{eq:wave-equation} can be further simplified, by only allowing monochromatic waves with harmonic time dependence
+\begin{equation}
+\mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i\omega t}\right).
+\end{equation}
+With $\omega^2=c^2\mathbf{k}^2$, the \textit{Helmholtz equation} can be deduced, which only depends on the location \textbf{r}
+\begin{equation}
+\left(\nabla^2+\mathbf{k}^2\right)\mathbf{E}(\mathbf{r})=0.
+\end{equation}
+In favour of a formal treatment of the Gaussian modes, the Helmholtz equation is splitted into its transversal and longitudinal contribution,
+\begin{equation}
+\nabla^2+k^2=\frac{\partial^2}{\partial z^2} + \nabla_T^2+k^2
+\quad\mathrm{with}\quad 
+\nabla_T^2=\frac{\partial}{\partial x^2}+\frac{\partial}{\partial y^2} \ ,
+\end{equation}
+and apply it on the electric field of equation~\eqref{eq:e-field-after-fresnel-approximation}.
+It is assumed that the amplitude $A$ only changes slowly in the order of the wavelength,
+\begin{equation}
+\frac{\partial}{\partial z} A = A' \ll kA \ ,
+\end{equation}
+obtain the approximation
+\begin{equation}
+\frac{\partial^2}{\partial z^2} A e^{ik\rho^2 /(2z)} \frac{e^{ikz}}{kz} \simeq (2ikA'-k^2A)e^{ik\rho^2/(2z)}\frac{e^{ikz}}{kz} \ ,
+\end{equation}
+and gain the \textit{paraxial Helmholtz equation},
+\begin{equation}
+\left(\nabla_T^2+2ik\frac{\partial}{\partial z}\right)A(\rho, z) = 0.
+\end{equation}
+The fundamental solution is the TEM$_{00}$ mode in equation~\eqref{eq:fundamental-gaussian-mode}. Examples of higher modes can be found in figure~\ref{fig:gauss-modes-higher-order}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gauss-modes-higher-order}
+	\caption[Gaussian modes higher order of a simple Ti-sapphire laser]{Gaussian modes higher order of a simple Ti-sapphire laser.
+	The asymmetry of the high modes are caused by technical inaccuracies of the resonator elements (mirrors, laser crystal).}
+	\label{fig:gauss-modes-higher-order}
+\end{figure}
 
 \subsection{Mode Matching and Coupling Losses}
 
-Do the stuff according to \textcite{yariv_photonics:_2007}
-
+One basic problem of Fabry Pérot interferometry is how to couple efficiently an incident beam of light to a given mode of the resonator.
+The following discussion is based on the work of \textcite{yariv_photonics:_2007} and \textcite{meschede_optik_2008}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/excitation-of-transverse-mode}
-	\caption{}
+	\caption{Incident monochromatic beam of light exciting transverse mode $m$, $n$ of a resonator~\cite{yariv_photonics:_2007}}
 	\label{fig:excitation-of-transverse-mode}
 \end{figure}
+
+In accordance with figure~\ref{fig:excitation-of-transverse-mode}, an input beam $E_{in}$ propagates to the resonator and potentially excite its modes $E_{mn}(x,y)$, where $m$, $n$ are the transverse mode integers of the Guassian beam of the optical resonator.
+Since the set $E_{mn}(x,y)$ describes a complete orthogonal set of wavefunctions they satisfy
+\begin{equation}
+\label{eq:complete-set-mn-modes}
+\iint E_{mn}(x,y) E^*_{m',n'}(x,y) dx dy = 0 \quad \mathrm{unless} \ m=m' \ \mathrm{and} \ n=n'.
+\end{equation}
+and
+\begin{equation}
+\label{eq:superposition-mn-modes}
+E_{in}(x,y) = \sum_{mn}a_{mn}E_{mn}(x,y)
+\end{equation}
+where $a_{mn}$ are constants.
+By multiplying both sides of equation~\eqref{eq:superposition-mn-modes} with $E_{mn}^*$, integrating over the whole $x$-$y$-plane and using equation~\eqref{eq:complete-set-mn-modes}, the following expression can be obtained
+\begin{equation}
+\label{eq:a-mn}
+a_{mn}=\frac{\iint E_{in}(x,y)E^*_{mn}(x,y) dx dy}{\iint E_{mn}(x,y)E^*_{mn}(x,y) dx dy}
+\end{equation}
+The efficiency of coupling an incident field into a spatial mode $E_{mn}$ is defined as
+\begin{equation}
+\label{eq:coupling-efficiency-first}
+\eta_{mn}=\frac{\textrm{Power coupled into mode } mn}{\textrm{Total incident power}}=
+\frac{\iint \left|a_{mn} E_{mn}(x,y)\right|^2 dx dy}{\iint \left|E_{in}(x,y)\right|^2 dx dy}.
+\end{equation}
+By inserting equation~\eqref{eq:a-mn} into equation~\eqref{eq:coupling-efficiency-first} the following expression can be obtained
+\begin{equation}
+\label{eq:coupling-efficiency-second}
+\eta_{mn}= \frac{\left|\iint E_{in}(x,y)E^*_{mn}(x,y) dx dy\right|^2}{\iint \left|E_{in}(x,y)\right|^2 dx dy \cdot \iint \left|E_{mn}(x,y)\right|^2 dx dy}.
+\end{equation}
+From equation~\eqref{eq:coupling-efficiency-second} can be deduced, that a input beam with the \textit{same} spatial dependency as the mode to be excited
+\begin{equation}
+E_{in}(x,y) \sim E_{mn}(x,y)
+\end{equation}
+all of the incident power goes into $E_{mn}$, i.e. $\eta_{mn}=1$ and all other $\eta_{m'n'}$ are zero.
+Usually the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupling-efficiency-second} implies that a pure Gaussian beam excites only the fundamental mode and the Fabry Pérot interferometer irradiates a pure TEM$_{00}$ mode as well. In practise, additional measures are necessary such as matching the radius of curvature by gaussian beam focusing (subsection~\ref{subsec:gaussian-beam-focusing}) and \textit{spatial filtering}.
+
+It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective area of a mode increases with its order $(m, n)$. Figure~\ref{fig:spatial-filtering-of-gauss-modes} shows one way to suppress higher modes consisting of a focusing lens and a pin hole which diameter TEM$_{00}$ mode.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/spatial-filtering-of-gauss-modes}
+	\caption[Spatial filtering of Gauss modes.]{Spatial filtering of Gauss modes.
+		In front of the aperture, the beam consists of a superposition of multiple Gauss modes.
+		In the example of TEM$_{01}$ is displayed, how higher modes are suppressed by the aperture.~\cite{meschede_optik_2008}}
+		\label{fig:spatial-filtering-of-gauss-modes}
+	\end{figure}
 
 
 
 \subsection{Gaussian Beam Focusing}
+\label{subsec:gaussian-beam-focusing}
 
 \begin{figure}[H]
 	\centering
