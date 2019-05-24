@@ -174,6 +174,7 @@ Hence, the Airy finesse describes the spectral resolution consistently with the 
 
 
 \subsection{Gaussian Beam}
+\label{subsec:gaussian-beam}
 
 In this subsection, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
 They fulfil the Maxwell equations and therefore their electric field $\mathbf{E}(\mathbf{r},t)$  the wave equation
@@ -237,9 +238,17 @@ Therefore, the exponential in equation~\eqref{eq:fundamental-gaussian-mode} beco
 \end{equation}
 For the following description of gauss modes the following  parameters have to be introduced
 \begin{itemize}
-	\item \textbf{Radius of wavefronts} $R(z)$: \qquad $R(z)=z(1+(z_0/z)^2)$\\
-	The greatest curvature or the smallest radius of the wavefronts appear at $R(z_0)=2z_0$.
-	\item \textbf{Beam waist} $2\omega_0$: \qquad $\omega_0^2=\lambda z_0/\pi$\\
+	\item \textbf{Evolving radius of curvature} $R(z)$:
+	\begin{equation}
+	\label{eq:radius-wavefronts}
+	R(z)=z(1+(z_0/z)^2)
+	\end{equation}
+	At the beam waist the curvature of the wavefronts is zero as well as for $z\rightarrow \infty$
+	\item \textbf{Beam waist} $2\omega_0$:
+	\begin{equation}
+	\label{eq:beam-waist}
+	\omega_0^2=\lambda z_0/\pi
+	\end{equation}
 	The beam waist $2\omega_0$ or beam radius $\omega_0$ describe the smallest  beam cross section at $z=0$.
 	If the wave propagates inside a medium with the refractive index $n$, $\lambda$ has to be replaced with $\lambda/n$.
 	The cross section of the beam waist  is then $\omega_0^2=\lambda z_0/(\pi n)$.
@@ -247,6 +256,7 @@ For the following description of gauss modes the following  parameters have to b
 A Gaussian beam can at every point $z$ on the beam axis be completely characterized  either with the parameter couple $(\omega_0, z_0)$ or alternatively with the real and imaginary part of $q(z)$.
 The parameter of the Gaussian beam are transformed by linear operations, which coefficients are identical to those from geometrical optics:
 \begin{equation}
+\label{eq:ABCD-rule}
 q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 \end{equation}
 with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
@@ -288,7 +298,7 @@ The fundamental solution is the TEM$_{00}$ mode in equation~\eqref{eq:fundamenta
 	\label{fig:gauss-modes-higher-order}
 \end{figure}
 
-\subsection{Mode Matching and Coupling Losses}
+\subsection{Mode Matching and Spatial Filtering}
 
 One basic problem of Fabry Pérot interferometry is how to couple efficiently an incident beam of light to a given mode of the resonator.
 The following discussion is based on the work of \textcite{yariv_photonics:_2007} and \textcite{meschede_optik_2008}.
@@ -332,9 +342,51 @@ From equation~\eqref{eq:coupling-efficiency-second} can be deduced, that a input
 E_{in}(x,y) \sim E_{mn}(x,y)
 \end{equation}
 all of the incident power goes into $E_{mn}$, i.e. $\eta_{mn}=1$ and all other $\eta_{m'n'}$ are zero.
-Usually the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupling-efficiency-second} implies that a pure Gaussian beam excites only the fundamental mode and the Fabry Pérot interferometer irradiates a pure TEM$_{00}$ mode as well. In practise, additional measures are necessary such as matching the radius of curvature by gaussian beam focusing (subsection~\ref{subsec:gaussian-beam-focusing}) and \textit{spatial filtering}.
+Usually the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupling-efficiency-second} implies that a pure Gaussian beam excites only the fundamental mode and the Fabry Pérot interferometer irradiates a pure TEM$_{00}$ mode as well. In practise, additional measures are necessary such as matching the radius of curvature by Gaussian beam focusing.
 
-It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective area of a mode increases with its order $(m, n)$. Figure~\ref{fig:spatial-filtering-of-gauss-modes} shows one way to suppress higher modes consisting of a focusing lens and a pin hole which diameter TEM$_{00}$ mode.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gaussian-beam-focusing}
+	\caption{}
+	\label{fig:gaussian-beam-focusing}
+\end{figure}
+
+In order to match the radius of curvature of the incoming Gaussian beam with the radius of curvature of the resonator a lens is inserted as depicted in figure~\ref{fig:gaussian-beam-focusing}. Light with a beam waist of $\omega_{01}$ gets focused into the resonator. Thin lenses can be described with the ABCD-rule introduced in subsection~\ref{subsec:gaussian-beam}:
+\begin{equation}
+\begin{pmatrix}
+A & B \\
+C & D
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0 \\
+\frac{-1}{f} & 1
+\end{pmatrix}
+\end{equation}
+with $f$ as the wavelength of the lens.
+The incoming beam described by $q_{in}$ is transformed by the lens to an beam described by $q_{out}$ according to equation~\ref{eq:beam-waist} and \eqref{eq:ABCD-rule}
+\begin{equation}
+q_{in} = z + i \frac{\pi n \omega_{0,in}^2}{\lambda} \qquad \mathrm{and} \qquad
+q_{out} = \frac{q_{in}}{q_{in} \cdot \frac{-1}{f} + 1} =  z + i \frac{\pi n \omega_{0,out}^2}{\lambda}
+\end{equation}
+with $n\approx 1$ for air. Together with equation~\eqref{eq:beam-waist} to following relation can be deduced
+\begin{equation}
+\label{eq:w-o-out}
+\omega_{0,out}^2 = \frac{\omega_{0,in}^2}{\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2}
+\end{equation}
+The radii of curvature have to match, for given mirrors ($R_{mirror}$) and lens ($f$) the input beam waist has to be adjusted according to equation~\eqref{eq:radius-wavefronts} and \eqref{eq:beam-waist} 
+\begin{align}
+R_{mirror} \stackrel{!}{=} R_{gauss}(z= l/2)\\
+R_{mirror} \stackrel{!}{=} \frac{l}{2} \left(1+\left(\frac{2z_{0,out}}{l}\right)^2\right) \\
+R_{mirror} \stackrel{!}{=} \frac{l}{2} \left(1+\left(\frac{2\omega_{0,out}^2 \pi}{l \lambda}\right)^2\right)
+\end{align}
+inserting equation~\eqref{eq:w-o-out}
+\begin{equation}
+R_{mirror} = \frac{l}{2} \left(1+\left(\frac{2 \omega_{0,in}^2 \pi}{\left(\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2\right)l \lambda}\right)^2\right)
+\end{equation}
+\todo{Plots und ein paar Werte}
+
+One way to further suppress higher modes is \textit{spatial filtering}. It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective area of a mode increases with its order $(m, n)$. Figure~\ref{fig:spatial-filtering-of-gauss-modes} shows one way to suppress higher modes consisting of a focusing lens and a pin hole which diameter TEM$_{00}$ mode.
 
 \begin{figure}[H]
 	\centering
@@ -346,16 +398,6 @@ It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective a
 	\end{figure}
 
 
-
-\subsection{Gaussian Beam Focusing}
-\label{subsec:gaussian-beam-focusing}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/fabry-perot/gaussian-beam-focusing}
-	\caption{}
-	\label{fig:gaussian-beam-focusing}
-\end{figure}
 
 \subsection{Confocal Setups}
 
