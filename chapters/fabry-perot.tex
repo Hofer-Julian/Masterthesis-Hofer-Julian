@@ -1,7 +1,7 @@
 % !TEX root = ../masterthesis.tex
 \chapter{Scanning Fabry-Pérot Interferometer}
-
-\section{Introduction and Motivation}
+\label{chapter:scanning-fabry-perot}
+\section{Introduction and motivation}
 
 
 The Fabry-Pérot interferometer is an optical resonator developed by Charles Fabry and Alfred Pérot.
@@ -156,6 +156,7 @@ Therefore, with equation~\eqref{eq:phase-shift-R} and \eqref{eq:phase-shift-nu} 
 
 The finesse of the Airy distribution of a Fabry-Pérot interferometer is defined as
 \begin{equation}
+\label{eq:f-airy}
 F_{Airy} := \frac{\Delta \nu_{FSR}}{\Delta \nu_{Airy}} = \frac{\pi}{2}\left[\arcsin\left(\frac{1-\sqrt{R_1R_2}}{2\sqrt[4]{R_1R_2}}\right)\right]^{-1}
 \end{equation}
 and is therefore only dependent on the mirror reflectivities $R_1$ and $R_2$.
@@ -176,7 +177,7 @@ Hence, the Airy finesse describes the spectral resolution in a way that is consi
 
 
 
-\subsection{Gaussian Beam}
+\subsection{Gaussian beam}
 \label{subsec:gaussian-beam}
 
 In this subsection, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
@@ -263,7 +264,7 @@ q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 \end{equation}
 with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
 
-\subsection{Higher Gauss Modes}
+\subsection{Higher Gauss modes}
 The wave equation~\eqref{eq:wave-equation} can be simplified, by only allowing monochromatic waves with harmonic time dependence
 \begin{equation}
 \mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i\omega t}\right).
@@ -300,7 +301,7 @@ The fundamental solution is the TEM$_{00}$ mode in equation~\eqref{eq:fundamenta
 	\label{fig:gauss-modes-higher-order}
 \end{figure}
 
-\subsection{Mode Matching and Spatial Filtering}
+\subsection{Mode matching and spatial filtering}
 
 One fundamental challenge of Fabry Pérot interferometry is how to efficiently couple an incident beam of light into a given mode of the resonator.
 The following discussion is based on the work of \textcite{yariv_photonics:_2007} and \textcite{meschede_optik_2008}.
@@ -403,20 +404,46 @@ One way to further suppress higher modes is \textit{spatial filtering}. It can b
 
 
 
-\subsection{Confocal Setups}
+\subsection{Confocal setup}
+\label{subsec:confocal-setup}
 
-If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and mode matching with spatial filtering is tedious and error prone. Arranging the mirrors of a Fabry Pérot interferometry into a confocal arrangement eliminates the need for these measures. By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerate, i.e the frequency of certain axial and transverse cavity modes are the same. This discussion is based on \textcite{hercher_spherical_1968}.
+If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and mode matching plus spatial filtering is tedious and error prone. Arranging the mirrors of a Fabry Pérot interferometry into a confocal arrangement reduces the need for these measures.
+By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerate, i.e the frequency of certain axial and transverse cavity modes are the same.
+The following discussion is based on \textcite{hercher_spherical_1968}.
 
-A multimode beam TEM$_{\textrm{mn}}$ inciding upon the resonator resonates for its modes which satisfy mirror separations $l$ according to
+A quasi-monochromatic beam of wavelength $\lambda_0$ is composed of transverse modes TEM$_{\textrm{mnq}}$, where the subscripts $m$ and $n$ denote the amplitude distribution of the normal mode on a surface of constant phase and $q$ the number of axial modes inside the resonator.
+Each of these modes resonates for mirror separations satisfying
 \begin{equation}
 l = \frac{\lambda_0}{2}\{q + \left(1 + m + n\right) \cos^{-1}\left[(1-l/b_1)(1-l/b_2)\right]^{1/2}\}
 \end{equation}
 where the parameters $b_1$ and $b_2$ describe the radii of the two mirrors as can be seen in figure~\ref{fig:gaussian-beam-focusing}.
 
-\todo{Weitermachen mit Hercher auf Seite 8}
-
-
+For the confocal setup $l=b_1=b_2$ which justifies the approximation
+\begin{equation}
+l \approx \frac{\lambda_0}{2} \left[q + \left(1+m+n\right)\right].
+\end{equation}
+The modes resonate at mirror separations of either
+\begin{align}
+l = \frac{\lambda_0}{2}(p+1) \qquad p&\in\mathbb{N} \textrm{ and } (m+n) \textrm{ even,} \\
+l = \frac{\lambda_0}{2}(p) \qquad p&\in\mathbb{N} \textrm{ and } (m+n) \textrm{ odd.}
+\end{align}
+If mode matching is not executed, it can be assumed that the incoming beam consists of an approximately equal number of even and odd transverse modes.
+The resonance cavity length $l$ does not depend on $n$,$m$ and $q$ anymore but only on one integer $p$. The transversal modes are degenerate and fulfil
+\begin{equation}
+\label{eq:confocal-degenerate}
+l = \frac{\lambda_0 p}{2}.	
+\end{equation}
+It can be additionally concluded from equation~\eqref{eq:confocal-degenerate}, that a change of $\lambda_0/2$ in the mirror separation scans through one free spectral range.
 \section{Simulation}
+
+The goal in building up a scanning Fabry Pérot interferometry is to resolve features of the emission spectra of GaAs quantum dots described in chapter~\ref{chapter:quantum-dot}. More specifically, it is intended to resolve the shape of the zero-phonon line and the phonon side band.
+Equation~\ref{eq:f-airy} shows that the finesse is constant for a given pair of mirrors.
+When the spectrum to be resolved is broad a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
+When the spectrum contains fine details which need to be resolved a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
+Hence, the thin zero-phonon line and the broad phonon side band can not be resolved with the same setup.
+Instead, the mirror distances have to be adjusted and in the confocal setup discussed in subsection~\ref{subsec:confocal-setup} the mirrors have to be exchanged as well.
+
+
 
 \section{Setup}
 
@@ -448,5 +475,5 @@ where the parameters $b_1$ and $b_2$ describe the radii of the two mirrors as ca
 
 
 
-\section{Measurements and Results}
+\section{Measurements and results}
 

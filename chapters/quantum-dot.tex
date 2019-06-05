@@ -1,9 +1,8 @@
 % !TEX root = ../masterthesis.tex
-\chapter{Quantum Dot}
+\chapter{Gallium Arsenide Quantum Dots}
+\label{chapter:quantum-dot}
 
-\section{Processing}
-
-\section{Properties of our dots}
+\section{General properties and manufacturing}
 
 \begin{figure}[H]
 	\centering
@@ -16,6 +15,19 @@
 	\label{fig:qdplotafm}
 \end{figure}
 
+\section{Adiabatic rapid passage}
+
+\section{Fine structure splitting}
+
+
+\section{Exciton emission spectrum}
+
+The discussion of the emission of GaAs quantum dots in the following chapters will be limited to excitonic emission. 
+This section will provide the basis for chapter~\ref{chapter:scanning-fabry-perot}.
+
+\subsection{Zero-phonon line and phonon sideband}
+
+\todo{\url{https://en.wikipedia.org/wiki/Zero-phonon_line_and_phonon_sideband}}
 
 \subsection{Calculate spectral range of zero-phonon line}
 A typical lifetime of a GaAs quantum dot is $\Delta t = 250~ps$.
@@ -43,27 +55,42 @@ $\Delta \lambda$ can be expressed as
 With equation~\eqref{eq:planck-einstein} this gives
 \begin{align}
 \Rightarrow \Delta \lambda &= \frac{c}{\nu_0^2} \cdot \Delta \nu = \frac{\lambda_0^2}{c}\cdot\Delta \nu\\
+\label{eq:zero-phonon-theoretical-limit}
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
+\subsection{Simulation}
+
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
-	Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{???}) up to broader lines which are still valued enough to be measured.
+	Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}) up to broader lines which are still valued enough to be measured.
 	The phonon sideband resembles data taken from \textcite{scholl_resonance_2019}.}
 	\label{tab:quantum-dot-emission}
 	\begin{tabular}{@{}llll@{}}
 		\toprule
 		Quantum dot emission & Center wavelength $\lambda_0$           & Spectral range $\Delta \lambda$ & Waveform                  \\ \midrule
 		Zero-phonon line               & \SIrange{700}{800}{\nano \metre} & \SIrange{1.0}{1.4}{\pico \metre} & Cauchy\\
-		Phonon sideband       & ~\SI{0.25}{\nano \metre} higher than zero-phonon line  & ~\SI{500}{\pico \metre} & Gauss  \\ \bottomrule
+		Phonon sideband       & \SI{\sim 0.25}{\nano \metre} higher than zero-phonon line  & ~\SI{500}{\pico \metre} & Gauss  \\ \bottomrule
 	\end{tabular}
 \end{table}
+
+The zero-phonon line is described with a Cauchy distribution
+\begin{equation}
+\Phi_{dot,zero}(\lambda) = \frac{1}{\pi \cdot \Delta\lambda_{zero} \cdot 0.5 \left[1+\left(\frac{\lambda - \lambda_{0, zero}}{\Delta\lambda_{zero} \cdot 0.5}\right)^2\right]}
+\end{equation}
+with $\lambda_{0, zero}$ as the center wavelength and $\Delta\lambda_{zero}$ as the spectral range of the zero-phonon line.
+
+The phonon side band is described with a Gauss distribution
+\begin{equation}
+\Phi_{dot,side}(\lambda) = \frac{1}{\sqrt{2\cdot\pi\cdot \Delta\lambda_{side}^2}}\cdot exp\left(-\frac{(\lambda - \lambda_{0, side})^2}{2\cdot \Delta\lambda_{side}^2}\right)
+\end{equation}
+with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as the spectral range of the phonon side band.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{figures/fabry-perot/plots/quantum_dot_emission_wavelength_energy}
 	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on the wavelength $\lambda$ and the Energy $E$.
-	The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
+		The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
 	\label{fig:quantumdotemissionwavelengthenergy}
 \end{figure}
 
@@ -71,5 +98,4 @@ With equation~\eqref{eq:planck-einstein} this gives
 Dot-Spectra in far field is (TEM$_{00}$).
 
 
-\section{Adiabatic Rapid Passage}
 
