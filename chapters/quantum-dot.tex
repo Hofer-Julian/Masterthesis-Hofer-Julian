@@ -39,15 +39,36 @@ The intensity distribution between the two components depends is strongly depend
 	\label{fig:line-shape}
 \end{figure}
 To determine the frequency gap $\Delta$ the Franc-Condon principles are used. It states that electronic transition between ground and excited state is much faster than the motion in the lattice.
-Hence, there is not motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
-The transitions can be displayed as vertical arrows with the shorter arrow describing the zero-phonon line and the longer one describing the phonon sideband. 
+Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
+The transitions can be displayed as vertical arrows with the shorter arrow describing the zero-phonon line and the longer one describing the phonon sideband.
+According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
+In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $\hbar \Omega_i$.
+The emission follows the same principle.
+
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{figures/quantum-dot/Phonon-energy-diagram}
-	\caption{\cite{noauthor_zero-phonon_nodate}}
-	\label{fig:phonon-energy-diagram}
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/quantum-dot/Phonon-energy-diagram}
+		\caption{Energy spectrum of a two-level electronic system with phonon coupling.
+			The arrows describe emission/absorption with and without phonons respectively.~\cite{noauthor_zero-phonon_nodate}}
+		\label{fig:phonon-energy-diagram}
+	\end{subfigure}%
+	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
+	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/quantum-dot/Lattice-modes}
+		\caption{Three lattice normal modes $(i, j, k)$ and the resulting emission/absorption spectrum.~\cite{noauthor_zero-phonon_nodate}\\}
+		\label{fig:lattice-modes}
+	\end{subfigure}
+	\caption{Zero-phonon line and phonon sideband.}
+	\label{fig:zero-phonon-line-phonon-side-band}
 \end{figure}
-
+Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
+The lattice vibrational mode has to be well described by a quantum harmonic oscillator as can be seen in the parabolic shape of the potential wells in figure~\ref{fig:phonon-energy-diagram}.
+Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
 
 \subsection{Calculate spectral range of zero-phonon line}
 A typical lifetime of a GaAs quantum dot is $\Delta t = 250~ps$.
@@ -60,7 +81,7 @@ The frequency uncertainty can be obtained through
 \begin{equation}
 \Delta \nu = \frac{\Delta E}{h}
 \end{equation}
-By developing $\lambda$into a taylor series
+By developing $\lambda$ into a taylor series
 \begin{align}
 \label{eq:planck-einstein}
 \lambda &= \frac{c}{\nu}\\
