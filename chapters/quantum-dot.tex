@@ -7,25 +7,21 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{figures/quantum-dot/QD_plot_AFM}
-	\caption{Height profile (red) of a droplet-etched nanohole in an AlGaAs layer is shown in the left image.
+	\caption[Height profile and AFM picture of a droplet-etched nanohole in an AlGaAs layer]{Height profile (red) of a droplet-etched nanohole in an AlGaAs layer is shown in the left image.
 	The orange line represents the wavefunction of the exciton which resembles the ground state of an hydrogen atom.
-	Because of that the bohr radius $r_{\textrm{Bohr}}$ is denoted.
+	Because of that the Bohr radius $r_{\textrm{Bohr}}$ is denoted.
 	The right image shows the atomic force microscopy picture of the nanohole.
 	An GaAs quantum dot is obtained after filling the hole with GaAs and avergrowth with AlGaAs~\cite{reindl_highly_2019}}
 	\label{fig:qdplotafm}
 \end{figure}
 
+\section{Single photon source}
+
 \section{Adiabatic rapid passage}
 
 \section{Fine structure splitting}
 
-
-\section{Exciton emission spectrum}
-
-The discussion of the emission of GaAs quantum dots in the following chapters will be limited to excitonic emission. 
-This section will provide the basis for chapter~\ref{chapter:scanning-fabry-perot}.
-
-\subsection{Zero-phonon line and phonon sideband}
+\section{Zero-phonon line and phonon sideband}
 The excitonic emission of GaAs quantum dots exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
 The discussion of the phonon sidebands is based on \textcite{friedrich_photochemical_1984} and \textcite{peter_phonon_2004}.
 
@@ -44,8 +40,6 @@ The transitions can be displayed as vertical arrows with the shorter arrow descr
 According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
 In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $\hbar \Omega_i$.
 The emission follows the same principle.
-
-
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
@@ -67,40 +61,42 @@ The emission follows the same principle.
 	\label{fig:zero-phonon-line-phonon-side-band}
 \end{figure}
 Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
-The lattice vibrational mode has to be well described by a quantum harmonic oscillator as can be seen in the parabolic shape of the potential wells in figure~\ref{fig:phonon-energy-diagram}.
+The lattice vibrational mode has to be well described by a quantum harmonic oscillator.
 Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
+These preconditions are visible in the equally parabolic shaped potential wells and equally spaced phonon energy levels in figure~\ref{fig:phonon-energy-diagram}.
 
-\subsection{Calculate spectral range of zero-phonon line}
-A typical lifetime of a GaAs quantum dot is $\Delta t = 250~ps$.
-According to the time-energy uncertainty relation
-\begin{align}
-\Delta E \cdot \Delta t = \frac{h}{2 \pi}\\
-\Rightarrow \Delta E = \SI{2.64}{\micro \electronvolt}
-\end{align}
+The zero-phonon line is stronger than the phonon side band because of the superpositon of the lattice modes. Each lattice mode $m$ lead to a different energy difference $\hbar \Omega_m$ between phonons.
+That is why the transitions with phonons result in a energy distribution and the zero-phonon transition add at the electronic origin $E_1 - E_0$.
+
+The theoretical limit of the spectral range of the zero-phonon line for a GaAs quantum dot can be calculated with the time-energy uncertainty relation
+\begin{equation}
+\Delta E \cdot \Delta t = \frac{h}{2 \pi}
+\end{equation}
+This gives for typical lifetime of a GaAs quantum dot of $\Delta t = \SI{250}{\pico \second}$
+\begin{equation}
+\Delta E = \SI{2.64}{\micro \electronvolt}.
+\end{equation}
 The frequency uncertainty can be obtained through
 \begin{equation}
-\Delta \nu = \frac{\Delta E}{h}
-\end{equation}
-By developing $\lambda$ into a taylor series
-\begin{align}
 \label{eq:planck-einstein}
-\lambda &= \frac{c}{\nu}\\
-\Rightarrow \lambda(\nu) &\approx \lambda(\nu_0) + \lambda'(\nu_0) \cdot (\nu - \nu_0)
-\end{align}
-$\Delta \lambda$ can be expressed as
+\Delta \nu = \frac{\Delta E}{h}.
+\end{equation}
+The wavelength $\lambda$ relates to $\nu$ with the Planck-Einstein relation 
+\begin{equation}
+\lambda(\nu) = \frac{c}{\nu}
+\end{equation}
+and the wavelength uncertainty $\Delta \lambda$ can be approximated with a Taylor series around $\nu_0$
 \begin{align}
-\Delta \lambda &= \lambda(\nu_0 - \Delta \nu) - \lambda(\nu_0)\\
- &= \lambda(\nu_0) - \lambda'(\nu_0)\cdot\Delta \nu - \lambda(\nu_0)\\
- &= - \lambda'(\nu_0)\cdot \Delta \nu.
+\Delta \lambda = - \lambda'(\nu_0)\cdot \Delta \nu.
 \end{align}
-With equation~\eqref{eq:planck-einstein} this gives
+With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-phonon line $\lambda_{0}$ in table~\ref{tab:quantum-dot-emission} this gives
 \begin{align}
-\Rightarrow \Delta \lambda &= \frac{c}{\nu_0^2} \cdot \Delta \nu = \frac{\lambda_0^2}{c}\cdot\Delta \nu\\
+\Delta \lambda &= \frac{c}{\nu_0^2} \cdot \Delta \nu = \frac{\lambda_0^2}{c}\cdot\Delta \nu\\
 \label{eq:zero-phonon-theoretical-limit}
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
-\subsection{Simulation}
+\section{Simulation of energy spectrum}
 
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.

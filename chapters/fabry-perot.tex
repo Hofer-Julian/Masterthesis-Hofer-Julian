@@ -129,7 +129,7 @@ A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
-	\caption{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}}
+	\caption[Airy distribution $A'_{trans}$]{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}}
 	\label{fig:airydistributionofafabry-perotinterferometer}
 \end{figure}
 
@@ -350,7 +350,10 @@ Usually the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupli
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gaussian-beam-focusing}
-	\caption{Incoming Gaussian beam described by $q_{in}$ transformed by a lens into a Gaussian beam described by $q_{out}$. The parameters $b_1$ and $b_2$ describe the radii of the two mirrors.}
+	\caption[Mode matching of an Gaussian beam into a Fabry Pérot interferometer.]
+	{Mode matching of an Gaussian beam into a Fabry Pérot interferometer.
+		Incoming Gaussian beam described by $q_{in}$ transformed by a lens into a Gaussian beam described by $q_{out}$.
+		The parameters $b_1$ and $b_2$ describe the radii of the two mirrors.}
 	\label{fig:gaussian-beam-focusing}
 \end{figure}
 
@@ -454,22 +457,24 @@ Instead, the mirror distances have to be adjusted and in the confocal setup disc
 
 \subsection{Confocal setup}
 
+
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}{.5\textwidth}
+	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-1}
+		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-1}
 		\caption{}
 		\label{fig:confocal-setup-higher-modes-1}
 	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
+	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
+	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
+	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=0.9\linewidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-2}
+		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-2}
 		\caption{}
 		\label{fig:confocal-setup-higher-modes-2}
 	\end{subfigure}
-	\caption{Higher TEM modes}
-	\label{fig:rsm-maps}
+	\caption{Fabry Pérot interferometer}
 \end{figure}
 
 
