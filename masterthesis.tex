@@ -167,6 +167,7 @@
 \usepackage{float}			          	% Allows strict positioning
 \usepackage{amsmath,amssymb,amstext}	% Math
 \usepackage{subcaption}                 % Subfigure
+\usepackage[printonlyused,withpage]{acronym}
 
 
 %% ========================================================================
@@ -176,6 +177,9 @@
 %% ... it's OK to put here your own newcommand/newenvironment-definitions ...
 
 \sisetup{range-units=brackets}
+
+
+
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
 %% here (Ver-\"of-fent-li-chung), you have to check for
@@ -248,12 +252,34 @@
 \include{chapters/quantum-dot}
 \include{chapters/chirp}
 \include{chapters/fabry-perot}
+\include{chapters/summary-conclusion}
+\include{chapters/outlook}
 
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
 
+\chapter{Acronyms}
+\begin{acronym}[TDMA]
+	\acro{QD}{quantum dot}
+	\acro{X}{exciton}
+	\acro{XX}{biexciton}
+	\acro{FSS}{fine structure splitting}
+	\acro{ZPL}{zero phonon line}
+	\acro{PSB}{phonon side band}
+	\acro{GaAs}{gallium arsenide}
+	\acro{Al}{aluminium}
+	\acro{MBE}{molecular beam epitaxy}
+	\acro{AFM}{atomic force microscopy}
+	\acro{FPI}{Fabry Pérot interferometer}
+	\acro{FWHM}{full width at half maximum}
+\end{acronym}
+
+
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
+
+
+
 
 
 %%%% end{document}

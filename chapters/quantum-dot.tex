@@ -1,8 +1,32 @@
 % !TEX root = ../masterthesis.tex
-\chapter{Gallium Arsenide Quantum Dots}
+\chapter{Droplet etched gallium arsenide quantum dots}
 \label{chapter:quantum-dot}
 
-\section{General properties and manufacturing}
+\section{Fabrication and optical properties}
+
+Quantum dots (\acs{QD}) are nanostructures which confine the motion of electrons and holes in all three-dimensional spatial dimensions.
+Confinement results in discrete energy levels, which is why \acp{QD} are sometimes referred to as \textit{artificial atoms}.
+Additionally, they provide potentially suitable implementations of qbits, the basic unit of quantum information.
+The discussion in this section is based on the PHD thesis of \textcite{huber_gaas_2019}.
+
+Gallium arsenide quantum dots investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
+As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the \ac{Al} forms droplets on AlGaAs after evaporation.
+The \ac{Al} reacts with AlGaAs, which result in the nanoholes.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/quantum-dot/droplet-etched-gaas-qds}
+	\caption[Droplet etched GaAs quantum dots.]{(a) The growth process of a GaAs quantum dot by \ac{MBE}.\\
+	(b) Atomic force microscopy \acs{AFM} image of the nanohole before it is filled with GaAs.\\
+    (c) Conduction band (CB) and valence band (VB) of an optically active \ac{QD}.~\cite{huber_gaas_2019}}
+	\label{fig:droplet-etched-gaas-qds}
+\end{figure}
+
+
+
+\todo{Dot-Spectra in far field is (TEM$_{00}$).}
+
 
 \begin{figure}[H]
 	\centering
@@ -15,28 +39,28 @@
 	\label{fig:qdplotafm}
 \end{figure}
 
-\section{Single photon source}
-
-\section{Adiabatic rapid passage}
-
 \section{Fine structure splitting}
 
-\section{Zero-phonon line and phonon sideband}
-The excitonic emission of GaAs quantum dots exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
-The discussion of the phonon sidebands is based on \textcite{friedrich_photochemical_1984} and \textcite{peter_phonon_2004}.
 
-Figure~\ref{fig:line-shape} displays a schematic representation of the zero-phonon line and phonon side band absorption spectrum.
-The intensity distribution between the two components depends is strongly dependent on temperature.
+
+
+\section{Zero-phonon line and phonon sideband}
+The excitonic emission of \ac{GaAs} \acp{QD} exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
+The discussion of \acp{PSB} is based on \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
+
+Figure~\ref{fig:line-shape} displays a schematic representation of the \ac{ZPL} and \ac{PSB} absorption spectrum.
+The intensity distribution between the two components depends strongly on temperature.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{figures/quantum-dot/Line-shape}
 	\caption[Absorption line shape of an electronic excitation.]{Absorption line shape of an electronic excitation.
-	The emission is mirrored at $\omega'$.}
+		The emission is mirrored at $\omega'$.}
 	\label{fig:line-shape}
 \end{figure}
-To determine the frequency gap $\Delta$ the Franc-Condon principles are used. It states that electronic transition between ground and excited state is much faster than the motion in the lattice.
+To determine the frequency gap $\Delta$ the Franc-Condon principles are used.
+They state that electronic transition between ground and excited state is much faster than the motion in the lattice.
 Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
-The transitions can be displayed as vertical arrows with the shorter arrow describing the zero-phonon line and the longer one describing the phonon sideband.
+The transitions can be displayed as vertical arrows with the shorter arrow describing the \ac{ZPL} and the longer one describing the \ac{PSB}.
 According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
 In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $\hbar \Omega_i$.
 The emission follows the same principle.
@@ -96,12 +120,12 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
-\section{Simulation of energy spectrum}
+\todo{Reorganize}
 
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
-	Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}) up to broader lines which are still valued enough to be measured.
-	The phonon sideband resembles data taken from \textcite{scholl_resonance_2019}.}
+		Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}) up to broader lines which are still valued enough to be measured.
+		The phonon sideband resembles data taken from \textcite{scholl_resonance_2019}.}
 	\label{tab:quantum-dot-emission}
 	\begin{tabular}{@{}llll@{}}
 		\toprule
@@ -132,7 +156,14 @@ with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as 
 \end{figure}
 
 
-Dot-Spectra in far field is (TEM$_{00}$).
+\section{Optical excitation of a quantum dot}
+
+\section{Resonant two-photon excitation}
+
+\section{Single photon emission}
+
+
+
 
 
 
