@@ -7,25 +7,37 @@
 Quantum dots (\acs{QD}) are nanostructures which confine the motion of electrons and holes in all three-dimensional spatial dimensions.
 Confinement results in discrete energy levels, which is why \acp{QD} are sometimes referred to as \textit{artificial atoms}.
 Additionally, they provide potentially suitable implementations of qbits, the basic unit of quantum information.
-The discussion in this section is based on the PHD thesis of \textcite{huber_gaas_2019}.
+The discussion in this section is based on the PhD thesis of \textcite{huber_gaas_2019}.
 
 Gallium arsenide quantum dots investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
-As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the \ac{Al} forms droplets on AlGaAs after evaporation.
-The \ac{Al} reacts with AlGaAs, which result in the nanoholes.
+As displayed in figure~\ref{fig:droplet-etched-gaas-qds}(a) the \ac{Al} forms droplets on AlGaAs after evaporation.
+The \ac{Al} reacts with AlGaAs, which leads into nanoholes etched into te surface.
+Under optimal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}(b). 
+This results into \ac{QD} with high in-plane symmetry.
+The next step is the annealing process in which \ac{GaAs} is deposited to fill the nanoholes.
+The \ac{QD} is finalized by capping the layer with AlGaAs acting as top barrier.
 
+Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, \ac{GaAs}, has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
+This energy difference between the band gaps and nanosized dimensions of the \ac{QD} are responsible for the 3D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}(c).
+This thesis focuses on optical transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell.
+The carriers are electrons $e^-$ and the holes left behind $h^+$.
+These are fermions and can therefore only up to two of them can, in accordance with Pauli's exclusion principle, occupy a single energy state.
+Electrons and holes are strongly localized inside the \ac{QD} and interact with each other by Coulomb interaction.
+This leads to multi-particle complexes with the most fundamental being the \acf{X}, a bound state of an electron and a hole.
+A fully occupied s-shell, can be described by the quasiparticle called \acf{XX}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/quantum-dot/droplet-etched-gaas-qds}
 	\caption[Droplet etched GaAs quantum dots.]{(a) The growth process of a GaAs quantum dot by \ac{MBE}.\\
-	(b) Atomic force microscopy \acs{AFM} image of the nanohole before it is filled with GaAs.\\
+	(b) Atomic force microscopy (\acs{AFM}) image of the nanohole before it is filled with GaAs.\\
     (c) Conduction band (CB) and valence band (VB) of an optically active \ac{QD}.~\cite{huber_gaas_2019}}
 	\label{fig:droplet-etched-gaas-qds}
 \end{figure}
 
 
+Figure~\ref{fig:qdplotafm} displays another perspective of \ac{GaAs} \acp{QD} with a comparison of the order of magnitude of its height profile and wavefunction of the exciton.
 
-\todo{Dot-Spectra in far field is (TEM$_{00}$).}
 
 
 \begin{figure}[H]
@@ -41,6 +53,26 @@ The \ac{Al} reacts with AlGaAs, which result in the nanoholes.
 
 \section{Fine structure splitting}
 
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/QD_EnergyLevels_FSS.pdf}
+		\caption{XX decay cascade without X degeneracy because of fine structure splitting.\\}
+		\label{fig:qd-energy-levels-fss}
+	\end{subfigure}%
+	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
+	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.05\textwidth]{figures/quantum-dot/FSS_Pol.png}
+		\caption{Photoluminescence spectra of X emission of a GaAs Qd plotted for different polarizer angles.
+		In the image the effect of the linear polarization of the fine structure components is visible.}
+		\label{fig:fss-pol}
+	\end{subfigure}
+	\caption{FSS~\cite{schimpf_towards_2017}}
+	\label{fig:fss}
+\end{figure}
 
 
 
@@ -70,7 +102,7 @@ The emission follows the same principle.
 		\centering
 		\includegraphics[width=\textwidth]{figures/quantum-dot/Phonon-energy-diagram}
 		\caption{Energy spectrum of a two-level electronic system with phonon coupling.
-			The arrows describe emission/absorption with and without phonons respectively.~\cite{noauthor_zero-phonon_nodate}}
+			The arrows describe emission/absorption with and without phonons respectively.}
 		\label{fig:phonon-energy-diagram}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
@@ -78,10 +110,10 @@ The emission follows the same principle.
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/quantum-dot/Lattice-modes}
-		\caption{Three lattice normal modes $(i, j, k)$ and the resulting emission/absorption spectrum.~\cite{noauthor_zero-phonon_nodate}\\}
+		\caption{Three lattice normal modes $(i, j, k)$ and the resulting emission/absorption spectrum.\\}
 		\label{fig:lattice-modes}
 	\end{subfigure}
-	\caption{Zero-phonon line and phonon sideband.}
+	\caption{Zero-phonon line and phonon sideband.~\cite{noauthor_zero-phonon_nodate}}
 	\label{fig:zero-phonon-line-phonon-side-band}
 \end{figure}
 Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
@@ -157,6 +189,8 @@ with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as 
 
 
 \section{Optical excitation of a quantum dot}
+
+\todo{Dot-Spectra in far field is (TEM$_{00}$).}
 
 \section{Resonant two-photon excitation}
 
