@@ -25,7 +25,6 @@ These are fermions and can therefore only up to two of them can, in accordance w
 Electrons and holes are strongly localized inside the \ac{QD} and interact with each other by Coulomb interaction.
 This leads to multi-particle complexes with the most fundamental being the \acf{X}, a bound state of an electron and a hole.
 A fully occupied s-shell, can be described by the quasiparticle called \acf{XX}.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/quantum-dot/droplet-etched-gaas-qds}
@@ -34,31 +33,49 @@ A fully occupied s-shell, can be described by the quasiparticle called \acf{XX}.
     (c) Conduction band (CB) and valence band (VB) of an optically active \ac{QD}.~\cite{huber_gaas_2019}}
 	\label{fig:droplet-etched-gaas-qds}
 \end{figure}
-
+In a \ac{QD} polarization-entangled photon pairs can be generated via a biexciton-exciton cascade~\cite{stevenson_semiconductor_2006}, illustrated in figure~\ref{fig:biexciton-exciton-cascade}.
+$\ket{XX}$ forms a full shell, which means that the total angular momentum projection along the quantization axis of the \ac{XX} complex sums up to $M=0$.
+After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
+The two-dipole allowed radiative transitions lead to only two possible $\ket{X}$ states:
+\begin{itemize}
+	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{r}$ 
+	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{l}$ 
+\end{itemize}
+$\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstate $\ket{G}$ under emission of $\ket{l}$ and $\ket{r}$, respectively.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{figures/quantum-dot/biexciton-exciton-cascade}
+	\caption{Biexciton-esciton cascade in a \ac{QD}.~\cite{huber_gaas_2019}}
+	\label{fig:biexciton-exciton-cascade}
+\end{figure}
 
 Figure~\ref{fig:qdplotafm} displays another perspective of \ac{GaAs} \acp{QD} with a comparison of the order of magnitude of its height profile and wavefunction of the exciton.
-
-
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth]{figures/quantum-dot/QD_plot_AFM}
 	\caption[Height profile and AFM picture of a droplet-etched nanohole in an AlGaAs layer]{Height profile (red) of a droplet-etched nanohole in an AlGaAs layer is shown in the left image.
-	The orange line represents the wavefunction of the exciton which resembles the ground state of an hydrogen atom.
-	Because of that the Bohr radius $r_{\textrm{Bohr}}$ is denoted.
-	The right image shows the atomic force microscopy picture of the nanohole.
-	An GaAs quantum dot is obtained after filling the hole with GaAs and avergrowth with AlGaAs~\cite{reindl_highly_2019}}
+		The orange line represents the wavefunction of the exciton which resembles the ground state of an hydrogen atom.
+		Because of that the Bohr radius $r_{\textrm{Bohr}}$ is denoted.
+		The right image shows the atomic force microscopy picture of the nanohole.
+		An GaAs quantum dot is obtained after filling the hole with GaAs and avergrowth with AlGaAs~\cite{reindl_highly_2019}}
 	\label{fig:qdplotafm}
 \end{figure}
 
-\section{Fine structure splitting}
 
+\newpage
+\section{Fine structure splitting}
+Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
+In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
+
+In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
+In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear polarizer are shown.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/QD_EnergyLevels_FSS.pdf}
-		\caption{XX decay cascade without X degeneracy because of fine structure splitting.\\}
+		\caption{XX decay cascade without X degeneracy because of fine structure splitting.~\cite{huber_gaas_2019}\\}
 		\label{fig:qd-energy-levels-fss}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
@@ -67,15 +84,15 @@ Figure~\ref{fig:qdplotafm} displays another perspective of \ac{GaAs} \acp{QD} wi
 		\centering
 		\includegraphics[width=1.05\textwidth]{figures/quantum-dot/FSS_Pol.png}
 		\caption{Photoluminescence spectra of X emission of a GaAs Qd plotted for different polarizer angles.
-		In the image the effect of the linear polarization of the fine structure components is visible.}
+		In the image the effect of the linear polarization of the fine structure components is visible.~\cite{schimpf_towards_2017}}
 		\label{fig:fss-pol}
 	\end{subfigure}
-	\caption{FSS~\cite{schimpf_towards_2017}}
+	\caption{Fine structure splitting in a GaAs quantum dot.}
 	\label{fig:fss}
 \end{figure}
 
 
-
+\newpage
 \section{Zero-phonon line and phonon sideband}
 The excitonic emission of \ac{GaAs} \acp{QD} exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
 The discussion of \acp{PSB} is based on \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
