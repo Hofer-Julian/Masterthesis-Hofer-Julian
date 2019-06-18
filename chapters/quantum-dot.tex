@@ -206,11 +206,60 @@ with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as 
 
 
 \section{Optical excitation of a quantum dot}
+In this section, the different ways of optically exciting \acp{QD} are discussed. It is based on the PhD thesis of \textcite{huber_gaas_2019} and the master's thesis of \textcite{schimpf_towards_2017}.
+The excited state of a \ac{QD} can be populated in various ways.
+A common way is the above-band excitation, depicted in figure~\ref{fig:optical-pumping-quantum-dot}(a).
+Electrons are optically excited by a laser with energies above the band gap of the \acp{QD} host material Al$_{0.4}$Ga$_{0.6}$As with $E_g = \SI{1.92}{\electronvolt}$ at room temperature.
+Subsequently, the electrons are captured by the \acp{QD} and relax via phonon-scattering to the lowest energy level, the s-shell.
+However, above-band excitation is not favourable for entangled photon generation, because of pronounced recapture processes~\cite{kuroda_symmetric_2013} and spin scattering processes~\cite{michler_single_2009}.
+Additionally, indistinguishability of the emitted photons is reduced  because of carrier-relaxation-induced time-jitter and fluctuating electric fields.
+As this team is interested in extracting entangled X/XX photon pairs, above-band is more than often not the best exciting technique of \ac{GaAs} \acp{QD}.
+Resonant excitation of electron-hole pairs provides an alternative without the disadvantages of above-band excitation.
+As shown in figure~\ref{fig:optical-pumping-quantum-dot}(b) this technique creates electron-hole-pairs directly in the s-shell.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/quantum-dot/optical-pumping-quantum-dot}
+	\caption{Optical pumping of a QD by	(a) above-band excitation and (b) resonant excitation~\cite{huber_gaas_2019}}
+	\label{fig:optical-pumping-quantum-dot}
+\end{figure}
+Due to dipole-selection rules, resonant population of the $\ket{XX}$ state requires a two-photon-absorption process.
+Hereby, the energy of a femtosecond-pulse laser $E_p$ is tuned to exactly the half of the \ac{XX} energy with respect to the ground energy $E_{XX}$, as sketched in figure~\ref{fig:qd-resonant}.
+Because of coulomb interaction two times the \ac{X} energy with respect to the ground energy $2 \cdot E_X$ is not equals $E_{XX}$ but differs by the binding energy $E_B$.
+The laser is therefore tuned to 
+\begin{equation}
+E_P = E_X - E_B / 2
+\end{equation}
+Empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for \ac{GaAs} \acp{QD}.
+Resonant two-photon absorption is a third-order non-linear effect which involves two photons and electrons at once.
+It depends on the third-order-susceptibility $\chi^{(3)}$ of \ac{GaAs} and therefore requires relatively high laser power.
 
+As this two-level system is driven in resonance its population exhibits Rabi oscillations.
+The final population of the \ac{XX} can be described by
+\begin{equation}
+N_{XX} = \sin^2\left(\frac{\theta}{2}\right)
+\end{equation}
+with $\theta$ as the pulse area in relation to the Rabi oscillations.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/QD_Resonant.pdf}
+		\caption{Resonant two photon excitation of \ac{XX}.
+			The laser is tuned to $E_P = E_{XX} / 2$.}
+		\label{fig:qd-resonant}
+	\end{subfigure}%
+	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
+	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/quantum-dot/Rabi_Oscillations_rel.png}
+		\caption{Rabi oscillations of \ac{X} and \ac{XX} as a function of the pulse area $\theta$.\newline}
+		\label{fig:rabi-oscillations}
+	\end{subfigure}
+	\caption{Resonant two photon excitation~\cite{schimpf_towards_2017}}
+	\label{fig:resonant-two-photon-excitation}
+\end{figure}
 \todo{Dot-Spectra in far field is (TEM$_{00}$).}
-
-\section{Resonant two-photon excitation}
-
 \section{Single photon emission}
 
 
