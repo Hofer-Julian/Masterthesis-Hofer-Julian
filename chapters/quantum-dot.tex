@@ -29,8 +29,8 @@ A fully occupied s-shell, can be described by the quasiparticle called \acf{XX}.
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/quantum-dot/droplet-etched-gaas-qds}
 	\caption[Droplet etched GaAs quantum dots.]{(a) The growth process of a GaAs quantum dot by \ac{MBE}.\\
-	(b) Atomic force microscopy (\acs{AFM}) image of the nanohole before it is filled with GaAs.\\
-    (c) Conduction band (CB) and valence band (VB) of an optically active \ac{QD}.~\cite{huber_gaas_2019}}
+	(b) Atomic force microscopy (AFM) image of the nanohole before it is filled with GaAs.\\
+    (c) Conduction band (CB) and valence band (VB) of an optically active QD.~\cite{huber_gaas_2019}}
 	\label{fig:droplet-etched-gaas-qds}
 \end{figure}
 In a \ac{QD} polarization-entangled photon pairs can be generated via a biexciton-exciton cascade~\cite{stevenson_semiconductor_2006}, illustrated in figure~\ref{fig:biexciton-exciton-cascade}.
@@ -45,7 +45,7 @@ $\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstat
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/quantum-dot/biexciton-exciton-cascade}
-	\caption{Biexciton-esciton cascade in a \ac{QD}.~\cite{huber_gaas_2019}}
+	\caption{Biexciton-esciton cascade in a QD.~\cite{huber_gaas_2019}}
 	\label{fig:biexciton-exciton-cascade}
 \end{figure}
 
@@ -238,7 +238,10 @@ The final population of the \ac{XX} can be described by
 \begin{equation}
 N_{XX} = \sin^2\left(\frac{\theta}{2}\right)
 \end{equation}
-with $\theta$ as the pulse area in relation to the Rabi oscillations.
+with $\theta$ as the pulse area in relation to the Rabi oscillations. $\theta$ is not the area of the excitation pulse, but depends on it in a non-trivial way~\cite{stufler_two-photon_2006}.
+Measured Rabi oscillations of \ac{X} and \ac{XX} are shown in figure~\ref{fig:rabi-oscillations}~\cite{reindl_phonon-assisted_2017}.
+Theoretically, the curve should oscillate between occupancies $N/N_0$ of 0 and 1.
+However, as a consequence of phonon damping the occupancy converges to a purely probabilistic value of $0.5$~\cite{forstner_phonon-assisted_2003}.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
@@ -253,17 +256,50 @@ with $\theta$ as the pulse area in relation to the Rabi oscillations.
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/quantum-dot/Rabi_Oscillations_rel.png}
-		\caption{Rabi oscillations of \ac{X} and \ac{XX} as a function of the pulse area $\theta$.\newline}
+		\caption{Rabi oscillations of \ac{X} and \ac{XX} as a function of the pulse area $\theta$.
+				$N/N_0$ is the occupancy and $N_0$ the maximum population.}
 		\label{fig:rabi-oscillations}
 	\end{subfigure}
 	\caption{Resonant two photon excitation~\cite{schimpf_towards_2017}}
 	\label{fig:resonant-two-photon-excitation}
 \end{figure}
-\todo{Dot-Spectra in far field is (TEM$_{00}$).}
 \section{Single photon emission}
+The XX-X cascade shown in figure~\ref{fig:qd-resonant} results in a single photon pair per emission cycle.
+Single photons are necessary for quantum cryptography and quantum optics in general which motivates the following discussion of this topic based on the thesis of \textcite{huber_gaas_2019}.
+The single photon purity of the $\ket{XX}$ to $\ket{X}$ and the $\ket{X}$ to $\ket{G}$ signals, respectively, can be determined by performing a \acf{HBT} experiment.
+A \ac{HBT} setup is shown in figure~\ref{fig:hbt-fiber} and it allows to measure the second-order correlation function, which is defined as
+\begin{equation}
+g^{(2)} = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t) \rangle \langle I(t+\tau)\rangle}
+\end{equation}
+with $I(t)$ as the light intensity and $\tau$ as the time delay. When a single photon enters the input of the \ac{BS} it can only be measured at one output, but never at both simultaneously.
+Assuming a perfect single photon emitter, a coincidence measurement between APD1 and APD2 will result in $g^{(2)}(\tau) = 0$ at zero time delay.
+Subsequently, side peaks are expected correlated to the repetition rate $R$ of the laser by $\tau_s=z/R$ with $z\in \mathbb{Z}\backslash \{0\}$.
+The single photon purity can then be defined as
+\begin{equation}
+\kappa(b) = \frac{A_0(b)}{A_s(b)}
+\end{equation}
+with $A_0$ as the area under $g^{(2)}(\tau)$ around $\tau=0$ and $A_s$ as the average area under the side peaks at $\tau_s$.
+The time bin $b$ has to be chosen so that it includes a full side peak.
+If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen too high it includes unnecessary much noise.
 
-
-
-
-
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/HBT_Fiber.pdf}
+		\caption{Setup to measure to measure the Hanbury-Brown-Twiss effect.}
+		\label{fig:hbt-fiber}
+	\end{subfigure}%
+	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
+	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/quantum-dot/G2_X_XX.png}
+		\caption{Second-order auto-correlation function $g^{(2)}$ of \ac{X} and \ac{XX}.}
+		\label{fig:gs2-x-xx}
+	\end{subfigure}
+	\caption{Hanbury-Brown-Twiss \acs{HBT} experiment~\cite{schimpf_towards_2017}}
+	\label{fig:hbt}
+\end{figure}
+  
 
