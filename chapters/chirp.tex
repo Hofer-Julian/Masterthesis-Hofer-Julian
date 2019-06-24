@@ -1,10 +1,10 @@
 % !TEX root = ../masterthesis.tex
-\chapter{Single photon generation using adiabatic rapid passage with frequency-chirped pulses}
+\chapter{Entangled photon generation using adiabatic rapid passage with frequency-chirped pulses}
 
 \section{Introduction and motivation}
 
-\section{Fundamentals of chirp and adiabatic rapid passage}
-
+\section{Chirp}
+\label{sec:chirp}
 A chirped signal is a signal which frequency changes over time.
 For example, in a linear-frequency chirp the frequency $f(t)$ would change over time as
 \begin{equation}
@@ -19,8 +19,56 @@ where $f_0$ is the starting frequency at $t=0$ and $c$ is the chirpyness. A line
 	\label{fig:chirped-sin}
 \end{figure}
 
-\todo{Adiabatic rapid passage}
- 
+As this chapter is concentrated on exciting \acp{QD} with frequency-chirped pulses, the mathematical description of chirped laser pulses will now be discussed. The electric field of a laser $E(t)$ has the shape
+\begin{equation}
+E(t) \sim \mathrm{Re}\left(f^{1/2}(t) \cdot \exp\left(-i \omega t - i \phi(t)\right)\right)
+\end{equation}
+with the central frequency $\omega$ and the linear chirp $\phi(t)$.
+
+Depending on the laser either a Gaussian or a hyperbolic secant describes the pulse shape more accurately~\cite{glassl_biexciton_2013, hirayama_real-time_2002}
+
+\begin{itemize}
+	\item Gaussian pulse:
+	\begin{itemize}
+		\item Pulse shape of
+		$$f_{gauss}(t) = \left(\frac{A_{gauss}}{\sqrt{2 \cdot \pi \cdot \tau_0 \cdot \tau}} \exp\left(-\frac{t^2}{2 \cdot \tau^2}\right)\right)^2$$
+		with the normalization constant $A_{gauss}$, the pulse duration $\tau_0$, the central frequency $\omega$ and the chirp coefficient $\alpha$.
+		\item Linear chirp of
+		$$\phi_{gauss}(t) = \frac{a_{gauss} t^2}{2}$$
+	\end{itemize}
+	\item Secant pulse:
+	\begin{itemize}
+		\item Pulse shape of
+		$$f_{secant}(t) = A_{secant} \cdot sech^2\left(\frac{t}{\tau_0}\right) = A_{secant} \cdot \left(\frac{2}{exp(\frac{t}{\tau_0}) + exp(-\frac{t}{\tau_0})}\right)^2$$
+		with the normalization constant $A_{secant}$, the pulse duration $\tau_0$, the central frequency $\omega$ and the chirp coefficient $\alpha$.
+		\item Linear chirp of
+		$$\phi_{secant}(t) = a_{secant}\left(\frac{t}{\tau_0}\right)^2$$
+	\end{itemize}
+\end{itemize}
+	where $\tau = \sqrt{\alpha^2 / \tau_0^2 + \tau_0^2}$ characterizes the chirped pulse length and $a = \alpha / (\alpha ^ 2 + \tau _0 ^ 4)$ is the frequency chirp rate.
+
+\section{Adiabatic rapid passage}
+One way to inverse the \ac{QD} from the ground state to the biexciton state is by exciting it with a transform-limited laser pulse of constant center frequency, which is equals to half of the ground state biexciton transition frequency.
+However, in order to ensure the inversion precise control of the field intensity is required~\cite{glassl_biexciton_2013}.
+Adiabatic rapid passage \acused{ARP} (\acs{ARP}) with frequency chirped is an alternative to this Rabi-flopping scheme.
+Basically, the goal is to adiabatic state from ground state to biexciton state without energy-level crossing~\cite{hui_proposal_2008}.
+Schemes which provide that, are also stable with respect to intensity changes of the laser field.
+
+In order to calculate the final biexciton occupation, \textcite{glassl_biexciton_2013} assumed linearly-chirped Gaussian laser pulse as discussed in section~\ref{sec:chirp}.
+The simulation results are visible in figure~\ref{fig:biexciton-occupation}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/biexciton-occupation}
+	\caption{Final biexciton occupation after chirped Gaussian pulse of pulse duration $\tau_0 = \SI{2}{\pico \second}$.
+	It is plotted vertically as a function of the original pulse area $A$ and vertically as a function of the chirp $\alpha$ for biexciton binding energies of (a) $\Delta=0$, (b) 1, and (c) \SI{3}{\milli \electronvolt}~\cite{glassl_biexciton_2013}.}
+	\label{fig:biexciton-occupation}
+\end{figure}
+The central frequency is chosen so that for $\alpha=0$ it resonates to ground state biexction transition, which is sketched in figure~\ref{fig:biexciton-occupation}.
+For $\alpha=0$ Rabi oscillations are visible and its period depends strongly on the biexciton binding energy $\Delta$.
+However, for $\alpha \gg 0$ biexciton preparation becomes insensitive to small variations to the pulse area $A$ as long it exceeds a certain threshold.
+For $\alpha < 0$ this fails for moderate values of $\Delta$ as can be seen in figure~\ref{fig:biexciton-occupation}(b).
+
+
 \section{Interferometric autocorrelation}
 
 \section{Modified-spectrum autointerferometric correlation}
