@@ -51,7 +51,7 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 The following discussion in this chapter will assume laser pulses with a Gaussian shape. 
 
 
-\section{Interferometric autocorrelation}
+\section{Measuring the chirp with interferometric autocorrelation}
 
 In order to estimate the pulse width $\tau_0$ \ac{IAC} is used,.
 Basically, a nonlinear crystal is added to a Michelson interferometer in order to generate a signal governed by
@@ -78,6 +78,19 @@ This spectral modification results in the \ac{MOSAIC} signal
 \begin{equation}
 I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) cos(2\omega \tau + 2\Delta \phi) dt
 \end{equation}
+
+\section{Deterministically adjusting the chirp with a pulse expander}
+
+\textcite{martinez_3000_1987}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
+	\caption{}
+	\label{fig:pulse-expander}
+\end{figure}
+
+
 
 \section{Adiabatic rapid passage}
 One way to inverse the \ac{QD} from the ground state to the biexciton state is by exciting it with a transform-limited laser pulse of constant center frequency, which is equals to half of the ground state biexciton transition frequency.
@@ -112,23 +125,48 @@ In the case of $\alpha < 0$ this fails for moderate values of $\Delta$ as can be
 
 \begin{figure}[H]
 	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
+	\label{fig:imgausschirpwithoutslitwithoutmosaic}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse}
-	\caption{Intensity of Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
 	\label{fig:mosaicchirpedlaserpulse}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_find_envelope}
-	\caption{Intensity of Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
 	The orange dots are results of a numerical peak finder algorithm, executed in order to find local minima.}
 	\label{fig:mosaicchirpedlaserpulsefindenvelope}
 \end{figure}
 
+See \textcite{hirayama_real-time_2002}
+
+The lower bound (minima envelope) of the MOSAIC trace is therefore given by
+
+\begin{equation}
+S^{min}_{MOSAIC}(\tau)= 1 + 2 \cdot g(\tau) - 2 \cdot [g_s^2(\tau)+g_c^2(\tau)]^{1/2}
+\end{equation}
+
+with 
+
+\begin{align}
+g(\tau)&=\int f(t)f(t+\tau)dt\\
+g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
+g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt
+\end{align}
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_fit_envelope}
-	\caption{Intensity of Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
 	The orange line is a fit for the lower envelope of the MOSAIC signal in order to obtain $\alpha$.}
 	\label{fig:mosaicchirpedlaserpulsefitenvelope}
 \end{figure}
@@ -136,6 +174,20 @@ In the case of $\alpha < 0$ this fails for moderate values of $\Delta$ as can be
 
 
 
-
-
 \section{Measurements and discussion}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/measured_chirped_laser_pulse_before_MOSAIC}
+	\caption{Measured IAC of Ti:Sa Laser without (a) and with (b) pulse expander before the autocorrelator.}
+	\label{fig:measuredchirpedlaserpulsebeforemosaic}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/measured_chirped_laser_pulse_after_MOSAIC}
+	\caption{Measured IAC of Ti:Sa Laser with applied MOSAIC filter without (a) and with (b) pulse expander before the autocorrelator.}
+	\label{fig:measuredchirpedlaserpulseaftermosaic}
+\end{figure}
+
+
