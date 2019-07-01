@@ -3,14 +3,13 @@
 \label{chapter:scanning-fabry-perot}
 \section{Introduction and motivation}
 
-
 The \ac{FPI} is an optical resonator developed by Charles Fabry and Alfred Pérot.
-An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}
-
-\todo{Goal:Resolve QD emission line.}
+An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}.
+The resonance frequencies can be changed by adjusting the mirror distance.
+By measuring the intensity at the output of the \ac{FPI}, this can be used to resolve fine features of an electromagnetic spectrum, like e.g. the one of the exciton described in section~\ref{sec:zero-phonon-side-band}.
+The following chapter introduces basics of electromagnetic radiation, describes simulations performed to size the parts of the \ac{FPI} and displays measurement techniques used to obtain the resolved exciton spectrum.
 
 \section{Transverse modes of electromagnetic radiation}
-
 
 
 \subsection{Gaussian beam}
@@ -246,11 +245,13 @@ by using
 \end{align*}
 and additionally $R_i = r_i^2$ and $\cos(2\phi) = 1 -2\sin^2(\phi)$.
 
-Commonly, light is sent through the \ac{FPI}. Therefore the following sections will use the Airy distribution $A'_{trans}$.
+Commonly, light is sent through the \ac{FPI}. Therefore the following sections will use the Airy distribution $A'_{trans}$ described by
 \begin{equation}
 \label{eq:A-trans}
 A'_{trans} = \frac{I_{trans}}{I_{inc}} = \frac{I_{circ} \cdot (1 - R_2)}{I_{laun} / (1 - R_1)} = (1-R_1)(1-R_2)A_{circ} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2+4\sqrt{R_1R_2}\sin^2(\phi)}
 \end{equation}
+with $\phi=\frac{\pi\nu}{\Delta \nu_{FSR}}$.
+
 $A'_{trans}$ is displayed in figure~\ref{fig:airydistributionofafabry-perotinterferometer} for $R_1=R_2$. The peak value at one of its resonance frequencies calculates as follows
 \begin{equation}
 A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1. 
@@ -450,29 +451,80 @@ Equation~\ref{eq:f-airy} shows that the finesse is constant for a given pair of 
 When the spectrum to be resolved is broad a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
 When the spectrum contains fine details which need to be resolved a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
 Hence, the thin \ac{ZPL} and the broad \ac{PSB} can not be resolved with the same setup.
-Instead, the mirror distances have to be adjusted and in the confocal setup discussed in subsection~\ref{subsec:confocal-setup} the mirrors have to be exchanged as well.
+Instead, the mirror distances have to be adjusted and in the confocal setup discussed in subsection~\ref{subsec:confocal-setup} the mirrors have to be changed as well.
 
+The zero-phonon line is described with a Cauchy distribution
+\begin{equation}
+\Phi_{dot,zero}(\lambda) = \frac{1}{\pi \cdot \Delta\lambda_{zero} \cdot 0.5 \left[1+\left(\frac{\lambda - \lambda_{0, zero}}{\Delta\lambda_{zero} \cdot 0.5}\right)^2\right]}
+\end{equation}
+with $\lambda_{0, zero}$ as the center wavelength and $\Delta\lambda_{zero}$ as the spectral range of the zero-phonon line which can be found in table~\ref{tab:quantum-dot-emission}.
+
+The phonon side band is described with a Gauss distribution
+\begin{equation}
+\Phi_{dot,side}(\lambda) = \frac{1}{\sqrt{2\cdot\pi\cdot \Delta\lambda_{side}^2}}\cdot exp\left(-\frac{(\lambda - \lambda_{0, side})^2}{2\cdot \Delta\lambda_{side}^2}\right)
+\end{equation}
+with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as the spectral range of the phonon side band which can be found in table~\ref{tab:quantum-dot-emission} as well.
+
+Together they describe the excitonic emission of the \ac{QD}
+\begin{equation}
+\Phi_{dot}(\lambda) = \Phi_{dot,zero}(\lambda) + \Phi_{dot,phonon}(\lambda)
+\end{equation}
+depicted in figure~\ref{fig:quantumdotemissionwavelengthenergy}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{figures/fabry-perot/plots/quantum_dot_emission_wavelength_energy}
+	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on the wavelength $\lambda$ and the Energy $E$.
+		The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
+	\label{fig:quantumdotemissionwavelengthenergy}
+\end{figure}
+
+$\Phi_{dot}(E)$ is transmitted through the \ac{FPI}.
+As discussed the mirror distance $l$ is adjusted to a value which depends if a resolved \ac{ZPL} or a resolved \ac{PSB} is desired.
+A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~\ref{eq:A-trans} and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-modes}
-	\caption{}
+	\caption{Transmission of the FPI modes $A'_{trans}$ compared to the exciton emission $\Phi_{dot}(E)$}
 	\label{fig:simulation-comparison-dot-fabry-perot-modes}
 \end{figure}
+
+The output-photon-flux of the scanning \ac{FPI} is described with the convolution of $\Phi_{dot}(E)$ and $A'_{trans}(E)$
+\begin{equation}
+\Phi_{fabry,perot, unnormalized}(\nu) = \int^{\nu_0 + \Delta \nu_{FSR} \cdot n_{peaks} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot n_{peaks}\cdot 0.5}  \Phi_{dot}(\nu')A'_{trans}(\nu - \nu') d\nu'
+\end{equation}
+with $\nu_0$ as the central frequency of the exciton emission line and $n_{peaks}=4$ as the number of airy peaks considered for the numerical convolution.
+
+$\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral of $A'_{trans}(\nu)$ over the same range
+\begin{equation}
+\Phi_{fabry,perot}(\nu) =\frac{\Phi_{fabry,perot, unnormalized}(\nu)}{\int^{\nu_0 + \Delta \nu_{FSR}  \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR}  \cdot 0.5} A'_{trans}(\nu) d\nu}
+\end{equation}
+A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output}
-	\caption{}
+	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$}
 	\label{fig:simulation-comparison-dot-fabry-perot-output}
 \end{figure}
 
+From now only the zero-phonon-path is shown as no new information is gained by examining both.
+In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
+Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{fabry,perot}(E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
+Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
+\begin{equation}
+\epsilon_{fabry,perot} = \frac{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right| d \nu }{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \Phi_{\text{dot}}(\nu) d \nu}
+\end{equation}
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output-shifted}
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output-error}
 	\caption{}
-	\label{fig:simulation-comparison-dot-fabry-perot-output-shifted}
+	\label{fig:simulation-comparison-dot-fabry-perot-output-error}
 \end{figure}
+
+
 
 \begin{figure}[H]
 	\centering

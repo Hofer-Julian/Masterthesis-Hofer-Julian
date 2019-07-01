@@ -94,6 +94,7 @@ In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear pol
 
 \newpage
 \section{Zero-phonon line and phonon sideband}
+\label{sec:zero-phonon-side-band}
 The excitonic emission of \ac{GaAs} \acp{QD} exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
 The discussion of \acp{PSB} is based on \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
 
@@ -169,8 +170,6 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
-\todo{Reorganize}
-
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
 		Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}) up to broader lines which are still valued enough to be measured.
@@ -184,25 +183,6 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 	\end{tabular}
 \end{table}
 
-The zero-phonon line is described with a Cauchy distribution
-\begin{equation}
-\Phi_{dot,zero}(\lambda) = \frac{1}{\pi \cdot \Delta\lambda_{zero} \cdot 0.5 \left[1+\left(\frac{\lambda - \lambda_{0, zero}}{\Delta\lambda_{zero} \cdot 0.5}\right)^2\right]}
-\end{equation}
-with $\lambda_{0, zero}$ as the center wavelength and $\Delta\lambda_{zero}$ as the spectral range of the zero-phonon line.
-
-The phonon side band is described with a Gauss distribution
-\begin{equation}
-\Phi_{dot,side}(\lambda) = \frac{1}{\sqrt{2\cdot\pi\cdot \Delta\lambda_{side}^2}}\cdot exp\left(-\frac{(\lambda - \lambda_{0, side})^2}{2\cdot \Delta\lambda_{side}^2}\right)
-\end{equation}
-with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as the spectral range of the phonon side band.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics{figures/fabry-perot/plots/quantum_dot_emission_wavelength_energy}
-	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on the wavelength $\lambda$ and the Energy $E$.
-		The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
-	\label{fig:quantumdotemissionwavelengthenergy}
-\end{figure}
 
 
 \section{Optical excitation of a quantum dot}
