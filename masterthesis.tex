@@ -168,6 +168,7 @@
 \usepackage{subcaption}                 % Subfigure
 \usepackage[printonlyused,withpage]{acronym}
 \usepackage{braket}
+\usepackage{scalerel,stackengine}       % Equal sign
 
 
 %% ========================================================================
@@ -178,7 +179,8 @@
 
 \sisetup{range-units=brackets}
 
-
+\newcommand\equalhat{\mathrel{\stackon[1.5pt]{=}{\stretchto{%
+				\scalerel*[\widthof{=}]{\wedge}{\rule{1ex}{3ex}}}{0.5ex}}}}
 
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
@@ -278,6 +280,8 @@
 	\acro{ARP}{adiabatic rapid passage}
 	\acro{IAC}{interferometric autocorrelation}
 	\acro{MOSAIC}{modified-spectrum autointerferometric correlation}
+	\acro{APD}{avalanche photodiode}
+	\acro{CCD}{charge-coupled device}
 \end{acronym}
 
 

@@ -38,10 +38,15 @@ $\ket{XX}$ forms a full shell, which means that the total angular momentum proje
 After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
 The two-dipole allowed radiative transitions lead to only two possible $\ket{X}$ states:
 \begin{itemize}
-	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{r}$ 
-	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{l}$ 
+	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{R_{XX}}$ 
+	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{L_{XX}}$ 
 \end{itemize}
-$\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstate $\ket{G}$ under emission of $\ket{l}$ and $\ket{r}$, respectively.
+$\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstate $\ket{G}$ under emission of $\ket{L_X}$ and $\ket{R_X}$, respectively.
+The resulting state is then described by
+\begin{equation}
+\ket{\psi^+}=\frac{1}{\sqrt{2}}\left(\ket{L_{XX}}\ket{R_X}+\ket{R_{XX}\ket{L_X}}\right)
+\end{equation}
+which is one of the Bell states, representing the maximal entangled states.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/quantum-dot/biexciton-exciton-cascade}
@@ -51,19 +56,7 @@ $\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstat
 
 Figure~\ref{fig:qdplotafm} displays another perspective of \ac{GaAs} \acp{QD} with a comparison of the order of magnitude of its height profile and wavefunction of the exciton.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/quantum-dot/QD_plot_AFM}
-	\caption[Height profile and AFM picture of a droplet-etched nanohole in an AlGaAs layer]{Height profile (red) of a droplet-etched nanohole in an AlGaAs layer is shown in the left image.
-		The orange line represents the wavefunction of the exciton which resembles the ground state of an hydrogen atom.
-		Because of that the Bohr radius $r_{\textrm{Bohr}}$ is denoted.
-		The right image shows the atomic force microscopy picture of the nanohole.
-		An GaAs quantum dot is obtained after filling the hole with GaAs and avergrowth with AlGaAs~\cite{reindl_highly_2019}}
-	\label{fig:qdplotafm}
-\end{figure}
 
-
-\newpage
 \section{Fine structure splitting}
 Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
 In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
@@ -91,8 +84,6 @@ In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear pol
 	\label{fig:fss}
 \end{figure}
 
-
-\newpage
 \section{Zero-phonon line and phonon sideband}
 \label{sec:zero-phonon-side-band}
 The excitonic emission of \ac{GaAs} \acp{QD} exhibit non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.

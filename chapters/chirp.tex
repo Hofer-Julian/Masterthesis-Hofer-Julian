@@ -4,6 +4,12 @@
 
 \section{Introduction and motivation}
 
+In order to efficiently use the biexciton decay cascade the \acl{XX} state has to be prepared beforehand in a robust way.
+This chapter deals with the efficient inversion of the \ac{QD} from the ground state to the biexciton level by \ac{ARP}.
+\acs{ARP} uses chirped pulses, which need to be measured and deterministically adjusted in order to effectively use them.
+Therefore, the majority of this chapter will focus on the chirp and how to determine and change it, with the help of simulations and later with measurements.
+ 
+
 \section{Chirp}
 \label{sec:chirp}
 A chirped signal is a signal which frequency changes over time.
@@ -82,16 +88,21 @@ I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau)
 
 \section{Deterministically adjusting the chirp with a pulse expander}
 
-\textcite{martinez_3000_1987}
+Grating compressors as discussed by \textcite{martinez_3000_1987} were originally used to compensate the broading of fibers.
+However together with a telescope they have the inverse effect.
+A setup as sketched in figure~\ref{fig:pulse-expander} can be used to broaden a pulse and will therefore in future references in this work be called \textit{pulse expander}.
+The accumulated group velocity dispersion, linked to the chirp, is described by
+\begin{equation}
+\frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 z
+\end{equation}
+where $z$ is the position of the grating relative to the focal plane of the lens and $\beta$ depends on the parameters of the grating and the lens.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
-	\caption{}
+	\caption{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}}
 	\label{fig:pulse-expander}
 \end{figure}
-
-
 
 \section{Adiabatic rapid passage}
 One way to inverse the \ac{QD} from the ground state to the biexciton state is by exciting it with a transform-limited laser pulse of constant center frequency, which is equals to half of the ground state biexciton transition frequency.

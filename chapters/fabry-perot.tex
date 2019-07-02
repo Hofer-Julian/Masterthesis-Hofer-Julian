@@ -309,7 +309,7 @@ Hence, the Airy finesse describes the spectral resolution in a way that is consi
 
 
 \subsection{Mode matching and spatial filtering}
-
+\label{subsec:mode-matching-spatial-filtering}
 One fundamental challenge of Fabry Pérot interferometry is how to efficiently couple an incident beam of light into a given mode of the resonator.
 The following discussion is based on the work of \textcite{yariv_photonics:_2007} and \textcite{meschede_optik_2008}.
 \begin{figure}[H]
@@ -481,16 +481,27 @@ depicted in figure~\ref{fig:quantumdotemissionwavelengthenergy}.
 
 $\Phi_{dot}(E)$ is transmitted through the \ac{FPI}.
 As discussed the mirror distance $l$ is adjusted to a value which depends if a resolved \ac{ZPL} or a resolved \ac{PSB} is desired.
-A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~\ref{eq:A-trans} and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}.
+A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~\ref{eq:A-trans} with $R_1=R_2=\SI{98}{\percent}$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-modes}
-	\caption{Transmission of the FPI modes $A'_{trans}$ compared to the exciton emission $\Phi_{dot}(E)$}
+	\caption{Transmission of the FPI modes $A'_{trans}$ compared to the exciton emission $\Phi_{dot}(E)$ for (a) ZPL and (b) PSB.}
 	\label{fig:simulation-comparison-dot-fabry-perot-modes}
 \end{figure}
 
-The output-photon-flux of the scanning \ac{FPI} is described with the convolution of $\Phi_{dot}(E)$ and $A'_{trans}(E)$
+The \ac{FPI} scans by continuously varying the mirror distance $l$ with a certain stepsize $\Delta l$ and measure the output-photon-flux every time.
+This process is sketched in figure~\ref{fig:simulation-comparison-dot-fabry-perot-sweep}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-sweep}
+	\caption{Transmissions of the FPI modes $A'_{trans}$ for different mirror distances $l - m \cdot \Delta l$ with $m \in \mathbb{N}$ compared to the exciton emission $\Phi_{dot}(E)$.}
+	\label{fig:simulation-comparison-dot-fabry-perot-sweep}
+\end{figure}
+
+
+The output-photon-flux of the scanning \ac{FPI} is then described with the convolution of $\Phi_{dot}(E)$ and $A'_{trans}(E)$
 \begin{equation}
 \Phi_{fabry,perot, unnormalized}(\nu) = \int^{\nu_0 + \Delta \nu_{FSR} \cdot n_{peaks} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot n_{peaks}\cdot 0.5}  \Phi_{dot}(\nu')A'_{trans}(\nu - \nu') d\nu'
 \end{equation}
@@ -505,7 +516,7 @@ A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output}
-	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$}
+	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$ for (a) ZPl and (b) PSB.}
 	\label{fig:simulation-comparison-dot-fabry-perot-output}
 \end{figure}
 
@@ -516,22 +527,20 @@ Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and
 \begin{equation}
 \epsilon_{fabry,perot} = \frac{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right| d \nu }{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \Phi_{\text{dot}}(\nu) d \nu}
 \end{equation}
+For the parameters in the \ac{ZPL} path this gives $\epsilon_{fabry,perot,ZPL}=\SI{10.57}{\percent}$.
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output-error}
-	\caption{}
+	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$.
+	In (a) $\Phi_{fabry,perot}(E)$ is $\Phi_{dot}(E)$, then in (b) the absolute difference $\left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right|$ is displayed $\left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right|$.}
 	\label{fig:simulation-comparison-dot-fabry-perot-output-error}
 \end{figure}
 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-sweep}
-	\caption{}
-	\label{fig:simulation-comparison-dot-fabry-perot-sweep}
-\end{figure}
+
 
 \section{Setup}
 
@@ -544,13 +553,28 @@ The measurements discussed in section~\ref{sec:fabry-measurements} are obtained 
 As will be noted in this section as well, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
 That is why the confocal setup will be used in the future, even though the freedom to adjust the free-spectral range is lost.
 
+In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
+Here one of the mirrors is attached to a piecoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. The complete setup is visible in figure~\ref{fig:setupflat}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{figures/fabry-perot/setup/setup}
+	\caption{Scanning Fabry Pérot interferometer}
+	\label{fig:setup}
+\end{figure}
+
+
 \subsection{Live avalanche photodiode mode}
+
+Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
+As every sweep with the \acp{CCD} takes time in the order of minutes, \acp{APD} were used.
+A function generator is used to drive the pieco actuator and the Hydra Harp correlates the measurements of the \ac{APD} with the TTL-output o the function generator. The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/live-apd-setup}
-	\caption{}
+	\caption{Live avalanche photodiode setup}
 	\label{fig:live-apd-setup}
 \end{figure}
 
@@ -558,31 +582,8 @@ That is why the confocal setup will be used in the future, even though the freed
 \section{Measurements and discussion}
 \label{sec:fabry-measurements}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-HeNe}
-	\caption{Transmission measurement of FPI with ground mirror distance $l = \SI{2}{\milli \meter}$ and HeNe laser. (a) was aligned without spatial filtering with a pinhole and (b) involved a pinhole.}
-	\label{fig:measurement-fabry-perot-hene}
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-exciton-pol-map}
-	\caption{Polarization map of exciton of QD in sample AS208.}
-	\label{fig:measurement-fabry-perot-dot-exciton-pol-map}
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-biexciton-FSS}
-	\caption{Finestructure measurement of biexcition of QD in sample AS208 by passing thorugh FPI and sweeping the mirror distance.
-	Ground mirror distance was  $l = \SI{2}{\milli \meter}$.}
-	\label{fig:measurement-fabry-perot-dot-biexciton-fss}
-\end{figure}
-
-
+In the following measurements the \ac{FPI} was set up in the non-confocal mode and HeNe laser signals were used in order to align it.
+This involves (i) setting the mirrors coming before the \ac{FPI} so that the laser beam goes straight and centred through the \ac{FPI} mirrors and (ii) setting the \ac{FPI} mirrors so that they are parallel and a single laser beam emerges as is shown in figure~\ref{fig:align-fpi}.
 
 
 \begin{figure}[H]
@@ -601,7 +602,46 @@ That is why the confocal setup will be used in the future, even though the freed
 		\caption{}
 		\label{fig:confocal-setup-higher-modes-2}
 	\end{subfigure}
-	\caption{Fabry Pérot interferometer}
+	\caption{Aligning the Fabry Pérot interferometer}
+	\label{fig:align-fpi}
 \end{figure}
+
+Without spatial restriction strong TEM-modes of higher order are visible in figure~\ref{fig:measurement-fabry-perot-hene}(a).
+To counteract, a pinhole is inserted and adjusted which results in the measurement visible in figure~\ref{fig:measurement-fabry-perot-hene}(b).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-HeNe}
+	\caption{Transmission measurement of FPI with ground mirror distance $l \approx \SI{2}{\milli \meter}$ and HeNe laser. (a) was aligned without spatial filtering with a pinhole and (b) involved a pinhole.}
+	\label{fig:measurement-fabry-perot-hene}
+\end{figure}
+
+Set up like this, \ac{GaAs} \ac{QD} sample AS208 was measured.
+First a polarization map of the exciton was recorded in order to determine the \ac{FSS} $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$ with the data shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-exciton-pol-map}
+	\caption{Polarization map of exciton of QD in sample AS208.}
+	\label{fig:measurement-fabry-perot-dot-exciton-pol-map}
+\end{figure}
+
+Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwise changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
+The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} could be calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-biexciton-FSS}
+	\caption{Finestructure measurement of biexcition of QD in sample AS208 by passing thorugh FPI and sweeping the mirror distance.
+	Ground mirror distance was  $l \approx \SI{2}{\milli \meter}$.}
+	\label{fig:measurement-fabry-perot-dot-biexciton-fss}
+\end{figure}
+
+
+
+
 
 
