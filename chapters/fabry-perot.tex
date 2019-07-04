@@ -7,7 +7,7 @@ The \ac{FPI} is an optical resonator developed by Charles Fabry and Alfred Péro
 An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}.
 The resonance frequencies can be changed by adjusting the mirror distance.
 By measuring the intensity at the output of the \ac{FPI}, this can be used to resolve fine features of an electromagnetic spectrum, like e.g. the one of the exciton described in section~\ref{sec:zero-phonon-side-band}.
-The following chapter introduces basics of electromagnetic radiation, describes simulations performed to size the parts of the \ac{FPI} and displays measurement techniques used to obtain the resolved exciton spectrum.
+The following chapter introduces basics of electromagnetic radiation, describes simulations performed to size the components of the \ac{FPI} and displays measurement techniques used to obtain the resolved exciton spectrum.
 
 \section{Transverse modes of electromagnetic radiation}
 
@@ -15,7 +15,7 @@ The following chapter introduces basics of electromagnetic radiation, describes 
 \subsection{Gaussian beam}
 \label{subsec:gaussian-beam}
 
-In this subsection, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
+In this chapter, light beams are described by the wave picture according to \textcite{meschede_optik_2008}.
 They fulfil the Maxwell equations and therefore their electric field $\mathbf{E}(\mathbf{r},t)$  fulfils the wave equation
 \begin{equation}
 \label{eq:wave-equation}
@@ -31,7 +31,7 @@ However, far from its source light is expected to behave like a spherical wave
 E(\mathbf{r},t)=A_0\frac{e^{-i(\omega t -\mathbf{kr})}}{|\mathbf{kr}|}.
 \end{equation}
 To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered.
-Additionally, the wave is split into its longitudinal (z-axis) part and it transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$.
+Additionally, the wave is split into its longitudinal (z-axis) part and its transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$.
 Under these circumstances $\mathbf{kr}$ can be replaced with $kr$ and because of $\rho<<r,z$ the Fresnel approximation can be applied:
 \begin{equation}
 \label{eq:e-field-after-fresnel-approximation}
@@ -51,17 +51,7 @@ E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 \end{equation}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gaussian-mode-near-beam-waist}
-	\caption[A Gaussian beam near its beam waist.]
-	{A Gaussian beam near its beam waist.
-		Near the center they resemble plan wave fronts, while outside they converge towards spherical wave fronts.
-		They Rayleighzone is shaded at the lower part of the figure.\cite{meschede_optik_2008}}
-	\label{fig:gaussian-mode-near-beam-waist}
-\end{figure}
-
-The electrical and magnetical fields of gauss modes are transversal to its propagation direction.
+The electrical and magnetical fields of Gauss modes are transversal to its propagation direction.
 These waveforms are called transversal elctrical and magnetic modes with indices $(m,n)$.
 Its fundamental solution is the TEM$_{00}$-Mode, which is the most important one and will therefore be examined in more detail in the rest of this subsection.
 
@@ -75,6 +65,15 @@ Therefore, the exponential in equation~\eqref{eq:fundamental-gaussian-mode} beco
 \begin{equation}
 \exp\left(i\frac{k\rho^2}{2q(z)}\right) \rightarrow \exp\left(i\frac{k\rho^2}{2R(z)}\right)\exp\left(-\left(\frac{\rho}{\omega(z)}\right)^2\right)
 \end{equation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/gaussian-mode-near-beam-waist}
+	\caption[A Gaussian beam near its beam waist.]
+	{A Gaussian beam near its beam waist.
+		Near the center they resemble plan wave fronts, while outside they converge towards spherical wave fronts.
+		They Rayleighzone is shaded at the lower part of the figure.\cite{meschede_optik_2008}}
+	\label{fig:gaussian-mode-near-beam-waist}
+\end{figure}
 For the following description of gauss modes the following  parameters have to be introduced
 \begin{itemize}
 	\item \textbf{Evolving radius of curvature} $R(z)$:
@@ -205,11 +204,12 @@ The normalized spectral line shape per unit frequency is then given by
 &=\frac{1}{\pi}\frac{1/(4\pi\tau_c)}{1/(4\pi\tau_c)^2+(\nu-\nu_q)^2}
 \end{align}
 with $\int \tilde{\gamma_q}(\nu)d\nu=1$.
-By defining the full-width-at-half-maximum linewidth (FWHM) $\Delta\nu_c$ we get
+
+By defining the full-width-at-half-maximum linewidth (FWHM) $\Delta\nu_c$, $\tilde{\gamma_q}(\nu)$ can be obtained
 \begin{equation}
 \Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}
 \end{equation}
-By normalizing the Lorentzian lines so that the peak is at unity we finally obtain
+Afterwards the Lorentzian lines are normalized so that the peak is at unity
 \begin{equation}
 \label{eq:lorentzian}
 \gamma_{q,L}(\nu)=\frac{\pi}{2}\Delta\nu_c\tilde{\gamma_q}(\nu)=\frac{(\Delta\nu_c)^2}{\left(\Delta \nu_c\right)^2+4\left(\nu-\nu_q\right)^2}
@@ -234,7 +234,7 @@ E_{circ} = E_{laun} + E_{RT} = E_{laun} + r_1 r_2 e^{-i 2 \phi} E_{circ} \Righta
 \end{equation}
 where $r_1$ and $r_2$ are the electric-field reflectivities of mirror 1 and 2.
 
-The generic Airy distribution considers only light inside the mirrors and is defined as
+The generic Airy distribution only considers light inside the mirrors and is defined as
 \begin{equation}
 A_{circ} = \frac{I_{circ}}{I_{laun}} = \frac{|E_{circ}|^2}{|E_{laun}|^2} = \frac{1}{\left|1 - r_1 r_2 e^{-i2\phi}\right|^2} = \frac{1}{\left(1-\sqrt{R_1 R_2}\right)^2 + 4\sqrt{R_1 R_2} \sin^2(\phi)}
 \end{equation}
@@ -260,7 +260,7 @@ A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
-	\caption[Airy distribution $A'_{trans}$]{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}}
+	\caption[Airy distribution $A'_{trans}$]{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}~\cite{noauthor_fabryperot_nodate}.}
 	\label{fig:airydistributionofafabry-perotinterferometer}
 \end{figure}
 
@@ -292,20 +292,22 @@ F_{Airy} := \frac{\Delta \nu_{FSR}}{\Delta \nu_{Airy}} = \frac{\pi}{2}\left[\arc
 \end{equation}
 and is therefore only dependent on the mirror reflectivities $R_1$ and $R_2$.
 
-The Airy finesse is the determining property when it comes to the spectral resolution of the \ac{FPI}. This can be made visible by comparing its message with the Taylor criterion for the resolution of two adjacent peaks.
-The Taylor criterion proposes that two spectral lines are resolvable when the separation of the maxima is greater than the \ac{FWHM}.
-As displayed in figure~\ref{fig:airyfinesseofafabry-perotinterferometer}, the Airy finesse is equal to the number of Airy distributions originating from light at certain frequencies $\nu_m$ which do not overlap at a point higher than half of their maxima.
-Hence, the Airy finesse describes the spectral resolution in a way that is consistent with the Taylor criterion.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_finesse_of_a_Fabry-Perot_interferometer}
 	\caption[Demonstration of the physical meaning of the Airy finesse $F_{Airy}$]{Demonstration of the physical meaning of the Airy finesse $F_{Airy}$.
 		The coloured lines are Airy distributions created by light at distinct frequencies $\nu_m$, while scanning the resonator length. When the light occurs at frequencies $\nu_m = \nu_q+m\Delta \nu_{Airy}$, the adjacent Airy distributions are separated from each other by $\nu_{Airy}$, therefore fulfilling the Taylor criterion.
 		Since in this example $F_{airy}=6$  exactly six peaks fit inside the free spectral range.
-		As can be seen in the figure the Airy finesse $F_{Airy}$ quantifies the maximum number of peaks that can be resolved. ~\cite{noauthor_fabryperot_nodate}}
+		As can be seen in the figure the Airy finesse $F_{Airy}$ quantifies the maximum number of peaks that can be resolved ~\cite{noauthor_fabryperot_nodate}.}
 	\label{fig:airyfinesseofafabry-perotinterferometer}
 \end{figure}
+
+
+The Airy finesse is the determining property when it comes to the spectral resolution of the \ac{FPI}. This can be made visible by comparing its message with the Taylor criterion for the resolution of two adjacent peaks.
+The Taylor criterion proposes that two spectral lines are resolvable when the separation of the maxima is greater than the \ac{FWHM}.
+As displayed in figure~\ref{fig:airyfinesseofafabry-perotinterferometer}, the Airy finesse is equal to the number of Airy distributions originating from light at certain frequencies $\nu_m$ which do not overlap at a point higher than half of their maxima.
+Hence, the Airy finesse describes the spectral resolution in a way that is consistent with the Taylor criterion.
+
 
 
 \subsection{Mode matching and spatial filtering}
@@ -385,7 +387,7 @@ q_{out} = \frac{q_{in}}{q_{in} \cdot \frac{-1}{f} + 1} =  z + i \frac{\pi n \ome
 with $n\approx 1$ for air. Together with equation~\eqref{eq:beam-waist} to following relation can be deduced
 \begin{equation}
 \label{eq:w-o-out}
-\omega_{0,out}^2 = \frac{\omega_{0,in}^2}{\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2}
+\omega_{0,out}^2 = \frac{\omega_{0,in}^2}{\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2}.
 \end{equation}
 The radii of curvature have to match.
 For given mirrors (described by $R_{mirror}$) and lens (described by $f$) the input beam waist has to be adjusted according to equation~\eqref{eq:radius-wavefronts} and \eqref{eq:beam-waist} 
@@ -408,7 +410,7 @@ One way to further suppress higher modes is \textit{spatial filtering}. It can b
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/spatial-filtering-of-gauss-modes}
 	\caption[Spatial filtering of Gauss modes.]{Spatial filtering of Gauss modes.
 		In front of the aperture, the beam consists of a superposition of multiple Gauss modes.
-		In the example of TEM$_{01}$ is displayed, how higher modes are suppressed by the aperture.~\cite{meschede_optik_2008}}
+		In the example of TEM$_{01}$ is displayed how higher modes are suppressed by the aperture.~\cite{meschede_optik_2008}}
 		\label{fig:spatial-filtering-of-gauss-modes}
 	\end{figure}
 
@@ -417,7 +419,8 @@ One way to further suppress higher modes is \textit{spatial filtering}. It can b
 \subsection{Confocal setup}
 \label{subsec:confocal-setup}
 
-If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and mode matching plus spatial filtering is tedious and error prone. Arranging the mirrors of a \ac{FPI} into a confocal arrangement reduces the need for these measures.
+If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and counteractions like mode matching plus spatial filtering discussed in subsecion~\ref{subsec:mode-matching-spatial-filtering} are tedious and error prone.
+Arranging the mirrors of a \ac{FPI} into a confocal arrangement reduces the need for these measures.
 By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerate, i.e the frequency of certain axial and transverse cavity modes are the same.
 The following discussion is based on \textcite{hercher_spherical_1968}.
 
@@ -428,7 +431,7 @@ l = \frac{\lambda_0}{2}\{q + \left(1 + m + n\right) \cos^{-1}\left[(1-l/b_1)(1-l
 \end{equation}
 where the parameters $b_1$ and $b_2$ describe the radii of the two mirrors as can be seen in figure~\ref{fig:gaussian-beam-focusing}.
 
-For the confocal setup $l=b_1=b_2$ which justifies the approximation
+For the confocal setup $l=b_1=b_2$ justifies the approximation
 \begin{equation}
 l \approx \frac{\lambda_0}{2} \left[q + \left(1+m+n\right)\right].
 \end{equation}
@@ -448,8 +451,8 @@ It can be additionally concluded from equation~\eqref{eq:confocal-degenerate}, t
 
 The goal in building up a scanning \acl{FPI} is to resolve features of the emission spectra of \ac{GaAs} \aclp{QD} described in chapter~\ref{chapter:quantum-dot}. More precisely, it is intended to resolve the shape of the \ac{ZPL} and the \ac{PSB}.
 Equation~\ref{eq:f-airy} shows that the finesse is constant for a given pair of mirrors.
-When the spectrum to be resolved is broad a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
-When the spectrum contains fine details which need to be resolved a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
+If the spectrum to be resolved is broad, a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
+If the spectrum contains fine details which need to be resolved, a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
 Hence, the thin \ac{ZPL} and the broad \ac{PSB} can not be resolved with the same setup.
 Instead, the mirror distances have to be adjusted and in the confocal setup discussed in subsection~\ref{subsec:confocal-setup} the mirrors have to be changed as well.
 
@@ -507,18 +510,19 @@ The output-photon-flux of the scanning \ac{FPI} is then described with the convo
 \end{equation}
 with $\nu_0$ as the central frequency of the exciton emission line and $n_{peaks}=4$ as the number of airy peaks considered for the numerical convolution.
 
-$\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral of $A'_{trans}(\nu)$ over the same range
-\begin{equation}
-\Phi_{fabry,perot}(\nu) =\frac{\Phi_{fabry,perot, unnormalized}(\nu)}{\int^{\nu_0 + \Delta \nu_{FSR}  \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR}  \cdot 0.5} A'_{trans}(\nu) d\nu}
-\end{equation}
-A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output}
 	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$ for (a) ZPl and (b) PSB.}
 	\label{fig:simulation-comparison-dot-fabry-perot-output}
 \end{figure}
+
+$\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral of $A'_{trans}(\nu)$ over the same range
+\begin{equation}
+\Phi_{fabry,perot}(\nu) =\frac{\Phi_{fabry,perot, unnormalized}(\nu)}{\int^{\nu_0 + \Delta \nu_{FSR}  \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR}  \cdot 0.5} A'_{trans}(\nu) d\nu}
+\end{equation}
+A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
+
 
 From now only the zero-phonon-path is shown as no new information is gained by examining both.
 In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
@@ -539,7 +543,7 @@ For the parameters in the \ac{ZPL} path this gives $\epsilon_{fabry,perot,ZPL}=\
 \end{figure}
 
 
-
+\newpage
 
 
 \section{Setup}
@@ -563,6 +567,7 @@ Here one of the mirrors is attached to a piecoelectric actuator which moves the 
 	\label{fig:setup}
 \end{figure}
 
+\newpage
 
 \subsection{Live avalanche photodiode mode}
 
@@ -616,7 +621,7 @@ To counteract, a pinhole is inserted and adjusted which results in the measureme
 	\label{fig:measurement-fabry-perot-hene}
 \end{figure}
 
-Set up like this, \ac{GaAs} \ac{QD} sample AS208 was measured.
+Set up like this, the \ac{GaAs} \ac{QD} sample AS208 was measured.
 First a polarization map of the exciton was recorded in order to determine the \ac{FSS} $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$ with the data shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 
 \begin{figure}[H]
@@ -626,8 +631,8 @@ First a polarization map of the exciton was recorded in order to determine the \
 	\label{fig:measurement-fabry-perot-dot-exciton-pol-map}
 \end{figure}
 
-Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwise changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
-The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} could be calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwisely changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
+The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} was be calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
 
 
@@ -639,8 +644,6 @@ For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\na
 	Ground mirror distance was  $l \approx \SI{2}{\milli \meter}$.}
 	\label{fig:measurement-fabry-perot-dot-biexciton-fss}
 \end{figure}
-
-
 
 
 

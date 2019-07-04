@@ -5,15 +5,15 @@
 \section{Introduction and motivation}
 
 In order to efficiently use the biexciton decay cascade the \acl{XX} state has to be prepared beforehand in a robust way.
-This chapter deals with the efficient inversion of the \ac{QD} from the ground state to the biexciton level by \ac{ARP}.
+This chapter deals with the efficient inversion of the \ac{QD} from the ground state to the biexciton level via \ac{ARP}.
 \acs{ARP} uses chirped pulses, which need to be measured and deterministically adjusted in order to effectively use them.
-Therefore, the majority of this chapter will focus on the chirp and how to determine and change it, with the help of simulations and later with measurements.
+Therefore, the majority of this chapter will focus on the chirp and how to determine and adjust it, with the help of simulations and later with measurements.
  
 
 \section{Chirp}
 \label{sec:chirp}
-A chirped signal is a signal which frequency changes over time.
-For example, in a linear-frequency chirp the frequency $f(t)$ would change over time as
+A chirped signal is a signal of which the frequency changes over time.
+For example, the frequency of a linearly chirped signal $f(t)$ would be described by
 \begin{equation}
 f(t) = ct+f_0
 \end{equation}
@@ -70,7 +70,7 @@ The following discussion in this chapter will assume laser pulses with a Gaussia
 
 \section{Measuring the chirp with interferometric autocorrelation}
 
-In order to estimate the pulse width $\tau_0$ \ac{IAC} is used,.
+In order to estimate the pulse width $\tau_0$ \ac{IAC} is used.
 Basically, a nonlinear crystal is added to a Michelson interferometer in order to generate a signal governed by
 \begin{equation}
 \label{eq:i-m-integral}
@@ -89,10 +89,9 @@ where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 	\caption[Schematics of an interferometric autocorrelator]{Schematics of an interferometric autocorrelator, where \textbf{L} is a converging lens, \textbf{SHG} a second-harmonic generation crystal, \textbf{BS} a beam splitter and \textbf{F} a spectral filter to block the fundamental wavelength~\cite{noauthor_optical_nodate}.}
 	\label{fig:optical-field-autocorrelation-setup}
 \end{figure}
-Unfortunately, the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
-A modification to \ac{IAC} introduced by \textcite{hirayama_real-time_2002} makes it much more sensitive to temporal chirp.
-It is called \ac{MOSAIC} and performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
-This spectral modification results in the \ac{MOSAIC} signal
+As will be shown in section~\ref{sec:fabry-simulation} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal. However, certain modifications to the \ac{IAC} signal introduced by \textcite{hirayama_real-time_2002} makes it much more sensitive to the temporal chirp.
+It is called \ac{MOSAIC} and it performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
+The \ac{MOSAIC} signal is then described by the following equation
 \begin{equation}
 \label{eq:i-m-filtered}
 I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) cos(2\omega \tau + 2\Delta \phi) dt
@@ -100,9 +99,10 @@ I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau)
 
 \section{Deterministically adjusting the chirp with a pulse expander}
 \label{sec:pulse-expander}
+In the optimal case the chirp of the pulse can be deterministically adjusted in order to most efficiently excite the \ac{QD} via adiabatic rapid passage described in section~\ref{sec:arp}.
 Grating compressors as discussed by \textcite{martinez_3000_1987} were originally used to compensate the broadening of fibers.
-However together with a telescope they have the inverse effect.
-A setup as sketched in figure~\ref{fig:pulse-expander} can be used to broaden a pulse and will therefore in future references in this work be called \textit{pulse expander}.
+However, together with a telescope they have the inverse effect and can be used to induce a positive chirp. 
+A setup like this sketched in figure~\ref{fig:pulse-expander} can be used to will in future references in this work be called \textit{pulse expander}.
 The accumulated group velocity dispersion, linked to the chirp, is described by
 \begin{equation}
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 z
@@ -117,10 +117,11 @@ where $z$ is the (adjustable) distance between the grating and focal plane of th
 \end{figure}
 
 \section{Adiabatic rapid passage}
+\label{sec:arp}
 One way to inverse the \ac{QD} from the ground state to the biexciton state is by exciting it with a transform-limited laser pulse of constant center frequency, which is equals to half of the ground state biexciton transition frequency.
 However, in order to ensure the inversion precise control of the field intensity is required~\cite{glassl_biexciton_2013}.
 Adiabatic rapid passage \acused{ARP} (\acs{ARP}) with frequency chirped is an alternative to this Rabi-flopping scheme.
-Basically, the goal is to adiabatic state from ground state to biexciton state without energy-level crossing~\cite{hui_proposal_2008}.
+Basically, the goal is to adiabatically excitee from ground state to biexciton state without energy-level crossing~\cite{hui_proposal_2008}.
 Schemes which provide that, are also stable with respect to intensity changes of the laser field.
 
 In order to calculate the final biexciton occupation, \textcite{glassl_biexciton_2013} assumed linearly-chirped Gaussian laser pulse as discussed in section~\ref{sec:chirp}.
@@ -135,15 +136,16 @@ The simulation results are visible in figure~\ref{fig:biexciton-occupation}.
 The central frequency is chosen so that for $\alpha=0$ it resonates to ground state biexction transition, which is sketched in figure~\ref{fig:biexciton-occupation}.
 For $\alpha=0$ Rabi oscillations are visible and its period depends strongly on the biexciton binding energy $\Delta$.
 However, for $\alpha \gg 0$ biexciton preparation becomes insensitive to small variations to the pulse area $A$ as long it exceeds a certain threshold.
+This is therefore the regime which would be the most suitable to work in.
 In the case of $\alpha < 0$ this fails for moderate values of $\Delta$ as can be seen in figure~\ref{fig:biexciton-occupation}(b).
 
 
 \section{Simulation}
-
+\label{sec:fabry-simulation}
 The electric field $E$ of a chirped laser pulse is described by equation~\eqref{eq:electric-field-laser}.
 The following discussion will assume a Gaussian laser shape as described by equation~\eqref{eq:f_gauss} and \eqref{eq:phi-gauss}.
 A simulation for $E$ is plotted for different chirp parameters $\alpha$  in figure~\ref{fig:chirpedlaserpulse}.
-The chirp parameter strongly influences the shape of the electric field and could be estimated if it could be measured directly which is unfortunately not the case.
+The chirp parameter strongly influences the shape of the electric field and could be estimated if $E$ could be measured directly which is unfortunately not the case.
 
 \begin{figure}[H]
 	\centering
@@ -153,7 +155,7 @@ The chirp parameter strongly influences the shape of the electric field and coul
 \end{figure}
 
 However, the laser signal can be sent into an \ac{IAC} which outputs a signal as shown in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} and described by equation~\eqref{eq:i-m-integral}.
-Here the chirp only marginally influences the resulting signal.
+However, the chirp only marginally influences the resulting signal.
 
 \begin{figure}[H]
 	\centering
@@ -162,7 +164,7 @@ Here the chirp only marginally influences the resulting signal.
 	\label{fig:imgausschirpwithoutslitwithoutmosaic}
 \end{figure}
 
-Therefore, the MOSAIC filter is applied which results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse} and described by equation~\eqref{eq:i-m-filtered}.
+That is why the MOSAIC filter is applied which results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse} and described by equation~\eqref{eq:i-m-filtered}.
 Now the influence of the chirp is clearly visible in the lower envelope.
 
 \begin{figure}[H]
@@ -192,7 +194,7 @@ g(\tau)&=\int f(t)f(t+\tau)dt\\
 g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
 g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt
 \end{align}
-The points of the lower envelope determined before can now be fitted in order to determine the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
+The points of the lower envelope determined before can now be fitted in order to obtain the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
 It is visible that the fitted values of $\alpha$ correspond to the expected values.
 \begin{figure}[H]
 	\centering
@@ -219,8 +221,8 @@ Possible reasons could be that the chirp is too high for the model used in the s
 
 The same signals after applying the \ac{MOSAIC} filter are shown in figure~\ref{fig:measuredchirpedlaserpulseaftermosaic}.
 It is visible that the lower envelopes in figure~\ref{fig:measuredchirpedlaserpulseaftermosaic}(a) and (b) do not resemble the expected ones in figure~\ref{fig:mosaicchirpedlaserpulse}.
-As laser signal without the pulse expander was assumed to be relatively unchirped it is already unexpected that the lower envelope differs that much from a constant line at zero intensity.
-One explanatory approach could be that the laser was already chirped to begin with, however this would explain why the shape of the lower envelope differs from the characteristic one of the simulation.
+As laser signals without pulse expander were assumed to be relatively unchirped it is already unexpected that the lower envelope differs that much from a constant line at zero intensity.
+One explanatory approach could be that the laser was already chirped to begin with, however this would not explain why the shape of the lower envelope differs from the characteristic one of the simulation.
 
 \begin{figure}[H]
 	\centering
