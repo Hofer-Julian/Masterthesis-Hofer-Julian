@@ -86,10 +86,11 @@ For a proper description of a Gaussian beam as shown in figure~\ref{fig:gaussian
 	\label{eq:beam-waist}
 	\omega_0^2=\lambda z_0/\pi
 	\end{equation}
-	The beam waist $2\omega_0$ or beam radius $\omega_0$ describe the smallest  beam cross section at $z=0$.
-	If the wave propagates inside a medium with the refractive index $n$, $\lambda$ has to be replaced with $\lambda/n$.
-	The cross section of the beam waist  is then $\omega_0^2=\lambda z_0/(\pi n)$.
 \end{itemize}
+The beam waist $2\omega_0$ or beam radius $\omega_0$ describes the smallest  beam cross section at $z=0$.
+If the wave propagates inside a medium with the refractive index $n$, $\lambda$ has to be replaced with $\lambda/n$.
+The cross section of the beam waist  is then $\omega_0^2=\lambda z_0/(\pi n)$.
+
 A Gaussian beam can be completely characterized at every point $z$ on the beam axis either with the parameter couple $(\omega_0, z_0)$ or alternatively with the real and imaginary part of $q(z)$.
 The parameters of the Gaussian beam are transformed by linear operations, which coefficients are identical to those from geometrical optics
 \begin{equation}
@@ -99,7 +100,7 @@ q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
 
 \subsection{Higher Gauss modes}
-The wave equation~\eqref{eq:wave-equation} can be simplified, by only allowing monochromatic waves with harmonic time dependence
+The wave equation~\eqref{eq:wave-equation} can be simplified by only allowing monochromatic waves with harmonic time dependence
 \begin{equation}
 \mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i\omega t}\right).
 \end{equation}
@@ -107,14 +108,14 @@ With $\omega^2=c^2\mathbf{k}^2$, the \textit{Helmholtz equation} can be deduced,
 \begin{equation}
 \left(\nabla^2+\mathbf{k}^2\right)\mathbf{E}(\mathbf{r})=0.
 \end{equation}
-In favour of a formal treatment of the Gaussian modes, the Helmholtz equation is splitted into its transversal and longitudinal contribution,
+In favor of a formal treatment of the Gaussian modes, the Helmholtz equation is split into its transversal and longitudinal contributions,
 \begin{equation}
 \nabla^2+k^2=\frac{\partial^2}{\partial z^2} + \nabla_T^2+k^2
 \quad\mathrm{with}\quad
-\nabla_T^2=\frac{\partial}{\partial x^2}+\frac{\partial}{\partial y^2} \ ,
+\nabla_T^2=\frac{\partial}{\partial x^2}+\frac{\partial}{\partial y^2} \ .
 \end{equation}
-and apply it on the electric field of equation~\eqref{eq:e-field-after-fresnel-approximation}.
-It is assumed that the amplitude $A$ only changes slowly in the order of the wavelength,
+Additionally, the electric field $E$ of equation~\eqref{eq:e-field-after-fresnel-approximation} is inserted into the Helmholtz equation.
+It is also assumed that the amplitude $A$ only changes slowly in the order of the wavelength,
 \begin{equation}
 \frac{\partial}{\partial z} A = A' \ll kA \ ,
 \end{equation}
@@ -184,7 +185,8 @@ Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference betw
 \Rightarrow \Delta\nu_{FSR} = \frac{c}{2l}
 \end{align}
 
-According to equation~\eqref{eq:photon-decay} the number of photons decay with the photon-decay time $\tau_c$. With $E_{q,s}$ representing the initial amplitude, the electric field at $\nu_q$ is given by
+According to equation~\eqref{eq:photon-decay} the number of photons decays with the photon-decay time $\tau_c$.
+With $E_{q,s}$ representing the initial amplitude, the electric field at $\nu_q$ is given by
 \begin{equation}
 E_q(t) =
 \begin{cases}
@@ -207,7 +209,7 @@ with $\int \tilde{\gamma_q}(\nu)d\nu=1$.
 
 By defining the full-width-at-half-maximum linewidth (FWHM) $\Delta\nu_c$, $\tilde{\gamma_q}(\nu)$ can be obtained
 \begin{equation}
-\Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}
+\Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}.
 \end{equation}
 Afterwards the Lorentzian lines are normalized so that the peak is at unity
 \begin{equation}
@@ -349,12 +351,13 @@ By inserting equation~\eqref{eq:a-mn} into equation~\eqref{eq:coupling-efficienc
 \label{eq:coupling-efficiency-second}
 \eta_{mn}= \frac{\left|\iint E_{in}(x,y)E^*_{mn}(x,y) dx dy\right|^2}{\iint \left|E_{in}(x,y)\right|^2 dx dy \cdot \iint \left|E_{mn}(x,y)\right|^2 dx dy}.
 \end{equation}
-From equation~\eqref{eq:coupling-efficiency-second} can be deduced, that for an input beam with the \textit{same} spatial dependency as the mode to be excited
+From equation~\eqref{eq:coupling-efficiency-second} can be deduced that for an input beam with the \textit{same} spatial dependency as the mode to be excited
 \begin{equation}
 E_{in}(x,y) \sim E_{mn}(x,y)
 \end{equation}
 all of the incident power goes into $E_{mn}$, i.e. $\eta_{mn}=1$ and all other $\eta_{m'n'}$ are zero.
-Usually the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupling-efficiency-second} implies that a pure Gaussian beam excites only the fundamental mode and the interferometer will then irradiate a pure Gaussian beam as well. In practise, additional measures are necessary such as matching the radius of curvature by Gaussian beam focusing.
+Usually, the fundamental TEM$_{00}$ mode is desired and equation~\eqref{eq:coupling-efficiency-second} implies that a pure Gaussian beam excites only the fundamental mode and the interferometer will then irradiate a pure Gaussian beam as well.
+In practise, additional measures are necessary such as matching the radius of curvature by Gaussian beam focusing.
 
 \begin{figure}[h]
 	\centering
@@ -419,10 +422,11 @@ One way to further suppress higher modes is \textit{spatial filtering}. It can b
 \subsection{Confocal setup}
 \label{subsec:confocal-setup}
 
-If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and counteractions like mode matching and spatial filtering discussed in subsection~\ref{subsec:mode-matching-spatial-filtering} are tedious and error prone.
-Arranging the mirrors of a \ac{FPI} into a confocal arrangement reduces the need for these measures.
-By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerate, i.e the frequency of certain axial and transverse cavity modes are the same.
-The following discussion is based on \textcite{hercher_spherical_1968}.
+If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching would not have to be done as precise.
+Unfortunately, this can not always be guaranteed and counteractions like mode matching and spatial filtering discussed in subsection~\ref{subsec:mode-matching-spatial-filtering} are tedious and error prone.
+Arranging the mirrors of an \ac{FPI} into a confocal arrangement reduces the need for these measures.
+By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerated, i.e. the frequency of certain axial and transverse cavity modes are the same.
+The following discussion is based on the work of \textcite{hercher_spherical_1968}.
 
 A quasi-monochromatic beam of wavelength $\lambda_0$ is composed of transverse modes TEM$_{\textrm{mnq}}$, where the subscripts $m$ and $n$ denote the amplitude distribution of the normal mode on a surface of constant phase and $q$ the number of axial modes inside the resonator.
 Each of these modes resonates for mirror separations satisfying
@@ -446,10 +450,11 @@ The resonance cavity length $l$ does not depend on $n$,$m$ and $q$ anymore but o
 \label{eq:confocal-degenerate}
 l = \frac{\lambda_0 p}{2}.
 \end{equation}
-It can be additionally concluded from equation~\eqref{eq:confocal-degenerate}, that a change of $\lambda_0/2$ in the mirror separation scans through one free spectral range.
+It can be additionally concluded from equation~\eqref{eq:confocal-degenerate} that a change of $\lambda_0/2$ in the mirror separation scans through one free spectral range.
 \section{Simulation}
 
-The goal in building up a scanning \ac{FPI} is to resolve features of the emission spectra of GaAs \aclp{QD} described in chapter~\ref{chapter:quantum-dot}. More precisely, it is intended to resolve the shape of the \ac{ZPL} and the \ac{PSB}.
+The goal in building up a scanning \ac{FPI} is to resolve features of the emission spectra of GaAs \aclp{QD} described in chapter~\ref{chapter:quantum-dot}.
+More precisely, it is intended to resolve the shape of the \ac{ZPL} and the \ac{PSB}.
 Equation~\ref{eq:f-airy} shows that the finesse is constant for a given pair of mirrors.
 If the spectrum to be resolved is broad, a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
 If the spectrum contains fine details which need to be resolved, a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
@@ -524,7 +529,7 @@ $\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral 
 A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
 
 
-From now on only the \ac{ZPL}-path is shown as no new information is gained by examining both.
+From now on, only the \ac{ZPL}-path is shown as no new information is gained by examining both.
 In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
 Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{fabry,perot}(E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
 Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
