@@ -9,17 +9,18 @@ Confinement results in discrete energy levels, which is why \acp{QD} are sometim
 The discussion in this section is based on the PhD thesis of \textcite{huber_gaas_2019}.
 
 Gallium arsenide \acp{QD} investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
-As displayed in figure~\ref{fig:droplet-etched-gaas-qds}(a) the \ac{Al} forms droplets on AlGaAs after evaporation.
-The \ac{Al} reacts with AlGaAs, which leads into nanoholes etched into te surface.
-Under optimal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}(b). 
-This results into \ac{QD} with high in-plane symmetry.
-The next step is the annealing process in which \ac{GaAs} is deposited to fill the nanoholes.
+As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the Al forms droplets on AlGaAs after evaporation.
+The Al reacts with AlGaAs, which leads into nanoholes etched into te surface.
+Under optimal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
+This results into \acp{QD} with high in-plane symmetry.
+The next step is the annealing process in which GaAs is deposited to fill the nanoholes.
 The \ac{QD} is finalized by capping the layer with AlGaAs acting as top barrier.
 
-Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, \ac{GaAs}, has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
-This energy difference between the band gaps and nanosized dimensions of the \ac{QD} are responsible for the 3D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}(c).
-This thesis focuses on optical transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell.
-The carriers are the electrons $e^-$ and the holes left behind $h^+$.
+Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, GaAs has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
+This energy difference between the band gaps and the nanosized dimensions of the \ac{QD} are responsible for the $3$D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c.
+Inside of the \ac{QD}, optical transitions are possible.
+Transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell, are here of especially great interest.
+The carriers involvedpip3 i are the electrons $e^-$ and the holes left behind $h^+$.
 These are fermions and therefore only up to two of them can, in accordance with Pauli's exclusion principle, occupy a single energy state.
 Electrons and holes are strongly localized inside the \ac{QD} and interact with each other by Coulomb interaction.
 This leads to multi-particle complexes with the most fundamental being the \acf{X}, a bound state of an electron and a hole.
@@ -37,8 +38,8 @@ $\ket{XX}$ forms a full shell, which means that the total angular momentum proje
 After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
 The two-dipole allowed radiative transitions lead to only two possible $\ket{X}$ states:
 \begin{itemize}
-	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{R_{XX}}$ 
-	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{L_{XX}}$ 
+	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{R_{XX}}$
+	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{L_{XX}}$
 \end{itemize}
 $\ket{-1}$ and $\ket{+1}$ are degenerate in energy and decay into the groundstate $\ket{G}$ under emission of $\ket{L_X}$ and $\ket{R_X}$, respectively.
 The resulting state is then described by
@@ -53,14 +54,6 @@ which is one of the Bell states, representing the maximal entangled states.
 	\label{fig:biexciton-exciton-cascade}
 \end{figure}
 
-
-
-\section{Fine structure splitting}
-Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
-In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
-
-In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
-In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear polarizer are shown.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
@@ -75,16 +68,25 @@ In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear pol
 		\centering
 		\includegraphics[width=1.05\textwidth]{figures/quantum-dot/FSS_Pol.png}
 		\caption{Photoluminescence spectra of X emission of a GaAs Qd plotted for different polarizer angles.
-		In the image the effect of the linear polarization of the fine structure components is visible.~\cite{schimpf_towards_2017}}
+			In the image the effect of the linear polarization of the fine structure components is visible.~\cite{schimpf_towards_2017}}
 		\label{fig:fss-pol}
 	\end{subfigure}
 	\caption{Fine structure splitting in a GaAs quantum dot.}
 	\label{fig:fss}
 \end{figure}
 
+\section{Fine structure splitting}
+
+
+Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
+In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
+
+In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
+In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear polarizer are shown.
+
 \section{Zero-phonon line and phonon sideband}
 \label{sec:zero-phonon-side-band}
-The excitonic emission of \ac{GaAs} \acp{QD} exhibits non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
+The excitonic emission of GaAs \acp{QD} exhibits non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} this side bands can be traced back to a coupling to acoustic phonons.
 The discussion of \acp{PSB} is based on \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
 
 Figure~\ref{fig:line-shape} displays a schematic representation of the \ac{ZPL} and \ac{PSB} absorption spectrum.
@@ -101,7 +103,7 @@ They state that electronic transition between ground and excited state is much f
 Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
 The transitions can be displayed as vertical arrows with the shorter arrow describing the \ac{ZPL} and the longer one describing the \ac{PSB}.
 According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
-In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $\hbar \Omega_i$.
+In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $E_{pi} = \hbar \Omega_i$.
 The emission follows the same principle.
 \begin{figure}[H]
 	\centering
@@ -126,11 +128,11 @@ The emission follows the same principle.
 Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
 The lattice vibrational mode has to be well described by a quantum harmonic oscillator.
 Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
-These preconditions are visible in the equally parabolic shaped potential wells and equally spaced phonon energy levels in figure~\ref{fig:phonon-energy-diagram}.
+These preconditions are visible in the parabolic shaped potential wells and equally spaced phonon energy levels in figure~\ref{fig:phonon-energy-diagram}.
 
-The zero-phonon line is stronger than the phonon side band because of the superpositon of the lattice modes.
+The reason why zero-phonon line is stronger than the phonon side band can be found by examining the superpositon of the lattice modes.
 Each lattice mode $m$ leads to a different energy difference $\hbar \Omega_m$ between phonons.
-That is why the transitions with phonons result in a energy distribution and the zero-phonon transition add at the electronic origin $E_1 - E_0$ as can be seen in figure~\ref{fig:lattice-modes}b.
+That is why the transitions with phonons result in a energy distribution and the zero-phonon transition add up at the electronic origin $E_1 - E_0$ as can be seen in figure~\ref{fig:lattice-modes}b.
 
 The theoretical limit of the spectral range of the zero-phonon line for a GaAs quantum dot can be calculated with the time-energy uncertainty relation
 \begin{equation}
@@ -145,7 +147,7 @@ The frequency uncertainty can be obtained through
 \label{eq:planck-einstein}
 \Delta \nu = \frac{\Delta E}{h}.
 \end{equation}
-The wavelength $\lambda$ relates to $\nu$ with the Planck-Einstein relation 
+The wavelength $\lambda$ relates to $\nu$ with the Planck-Einstein relation
 \begin{equation}
 \lambda(\nu) = \frac{c}{\nu}
 \end{equation}
@@ -160,7 +162,7 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
-This leads together with data from \textcite{scholl_resonance_2019} and empirical values measured by this group to the parameters listed in table~\ref{tab:quantum-dot-emission}.
+Together with data from \textcite{scholl_resonance_2019} and empirical values measured by this group, this leads to the parameters listed in table~\ref{tab:quantum-dot-emission}.
 
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
@@ -183,9 +185,9 @@ The excited state of a \ac{QD} can be populated in various ways.
 A common way is the above-band excitation, depicted in figure~\ref{fig:optical-pumping-quantum-dot}a.
 Electrons are optically excited by a laser with energies above the band gap of the \acp{QD} host material Al$_{0.4}$Ga$_{0.6}$As with $E_L = \SI{1.92}{\electronvolt}$ at room temperature.
 Subsequently, the electrons are captured by the \acp{QD} and relax via phonon-scattering to the lowest energy level, the s-shell.
-However, above-band excitation is not favourable for entangled photon generation, because of pronounced recapture processes~\cite{kuroda_symmetric_2013} and spin scattering processes~\cite{michler_single_2009}.
+However, because of pronounced recapture processes~\cite{kuroda_symmetric_2013} and spin scattering processes~\cite{michler_single_2009} above-band excitation is not favourable for entangled photon generation.
 Additionally, indistinguishability of the emitted photons is reduced  because of carrier-relaxation-induced time-jitter and fluctuating electric fields.
-As this team is interested in extracting entangled X/XX photon pairs, above-band is often not the best exciting technique for \ac{GaAs} \acp{QD}.
+As this team is interested in extracting entangled X/XX photon pairs, above-band is often not the best exciting technique for GaAs \acp{QD}.
 Resonant excitation of electron-hole pairs provides an alternative which does not suffer from the mentioned problems with above-band excitation.
 As shown in figure~\ref{fig:optical-pumping-quantum-dot}b this technique creates electron-hole-pairs directly in the s-shell.
 \begin{figure}[H]
@@ -195,15 +197,15 @@ As shown in figure~\ref{fig:optical-pumping-quantum-dot}b this technique creates
 	\label{fig:optical-pumping-quantum-dot}
 \end{figure}
 Due to dipole-selection rules, resonant population of the $\ket{XX}$ state requires a two-photon-absorption process.
-Hereby, the energy of a femtosecond-pulse laser $E_p$ is tuned to exactly the half of the \ac{XX} energy with respect to the ground energy $E_{P}$, as sketched in figure~\ref{fig:qd-resonant}.
-Because of coulomb interaction two times the \ac{X} energy with respect to the ground energy $2 \cdot E_X$ is not equals $E_{XX}$ but differs by the binding energy $E_B$.
-The laser is therefore tuned to 
+Hereby, the energy of a femtosecond-pulse laser $E_p$ is tuned to exactly the half of the \ac{XX} energy with respect to the ground energy, as sketched in figure~\ref{fig:qd-resonant}.
+Because of coulomb interaction, two times the \ac{X} energy with respect to the ground energy $2 \cdot E_X$ is not equals $E_{XX}$ but differs by the binding energy $E_B$.
+The laser is therefore tuned to
 \begin{equation}
 E_P = E_X - E_B / 2
 \end{equation}
-Empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for \ac{GaAs} \acp{QD}.
+Empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for GaAs \acp{QD}.
 Resonant two-photon absorption is a third-order non-linear effect which involves two photons and electrons at once.
-It depends on the third-order-susceptibility $\chi^{(3)}$ of \ac{GaAs} and therefore requires relatively high laser power.
+It depends on the third-order-susceptibility $\chi^{(3)}$ of GaAs and therefore requires relatively high laser power.
 
 As this two-level system is driven in resonance its population exhibits Rabi oscillations.
 The final population of the \ac{XX} can be described by
@@ -273,5 +275,5 @@ If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen t
 	\caption{Hanbury-Brown-Twiss \acs{HBT} experiment~\cite{schimpf_towards_2017}}
 	\label{fig:hbt}
 \end{figure}
-  
+
 

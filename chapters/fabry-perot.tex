@@ -51,11 +51,11 @@ E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 \end{equation}
 
 
-The electrical and magnetical fields of Gauss modes are transversal to its propagation direction.
-These waveforms are called transversal elctrical and magnetic modes with indices $(m,n)$.
+The electric and magnetic fields of Gauss modes are transversal to its propagation direction.
+These waveforms are called transversal electric and magnetic modes with indices $(m,n)$.
 Its fundamental solution is the TEM$_{00}$-Mode, which is the most important one and will therefore be examined in more detail in the rest of this subsection.
 
-By executing the replacement $q(z)\rightarrow z-iz_0$ explicitly the equation~\eqref{eq:fundamental-gaussian-mode} can be expressed as 
+By executing the replacement $q(z)\rightarrow z-iz_0$ explicitly the equation~\eqref{eq:fundamental-gaussian-mode} can be expressed as
 \begin{equation}
 \frac{1}{q(z)}=\frac{z+iz_0}{z^2+z_0^2}=\frac{1}{R(z)}+i\frac{2}{k\omega^2(z)},
 \end{equation}
@@ -74,7 +74,7 @@ Therefore, the exponential in equation~\eqref{eq:fundamental-gaussian-mode} beco
 		They Rayleighzone is shaded at the lower part of the figure.\cite{meschede_optik_2008}}
 	\label{fig:gaussian-mode-near-beam-waist}
 \end{figure}
-For the following description of gauss modes the following  parameters have to be introduced
+For a proper description of a Gaussian beam as shown in figure~\ref{fig:gaussian-mode-near-beam-waist} the following  parameters have to be introduced
 \begin{itemize}
 	\item \textbf{Evolving radius of curvature} $R(z)$:
 	\begin{equation}
@@ -110,7 +110,7 @@ With $\omega^2=c^2\mathbf{k}^2$, the \textit{Helmholtz equation} can be deduced,
 In favour of a formal treatment of the Gaussian modes, the Helmholtz equation is splitted into its transversal and longitudinal contribution,
 \begin{equation}
 \nabla^2+k^2=\frac{\partial^2}{\partial z^2} + \nabla_T^2+k^2
-\quad\mathrm{with}\quad 
+\quad\mathrm{with}\quad
 \nabla_T^2=\frac{\partial}{\partial x^2}+\frac{\partial}{\partial y^2} \ ,
 \end{equation}
 and apply it on the electric field of equation~\eqref{eq:e-field-after-fresnel-approximation}.
@@ -148,7 +148,7 @@ The time the light needs for one roundtrip is given by
 \begin{equation}
 t_{RT} = \frac{2l}{c}
 \end{equation}
-where $l$ is the geometrical length of the resonator and $c$ is the speed of light in air. 
+where $l$ is the geometrical length of the resonator and $c$ is the speed of light in air.
 
 The photon-decay time $\tau_c$ of the interferometer is then given by
 \begin{equation}
@@ -167,7 +167,7 @@ With a number $\varphi_s$ of photons at $t=0$ the integration gives
 \end{equation}
 
 \subsection{Resonance frequencies, free spectral range and spectral line shapes}
-The round-trip phase shift at frequency $\nu$ is given by 
+The round-trip phase shift at frequency $\nu$ is given by
 \begin{equation}
 \label{eq:round-trip-phase-shift-phi}
 2 \phi(\nu) = 2 \pi \nu t_{RT} = 2 \pi \nu \frac{2l}{c}
@@ -176,7 +176,7 @@ where $\phi(\nu)$ is the single-pass phase shift between the mirrors.
 
 Resonances are visible for frequencies $\nu$ at which the light interferes constructively after one round trip.
 Two adjacent resonance frequencies differ in their round trip phase shift by $2 \pi$.
-Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference between two adjacent resonance frequencies, can be calculated from equation~\eqref{eq:round-trip-phase-shift}
+Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference between two adjacent resonance frequencies, can be calculated from equation~\eqref{eq:round-trip-phase-shift-phi}
 \begin{align}
 2\Delta\phi_{FSR} = 2\pi \\
 \Rightarrow 2\pi\Delta\nu_{FSR}\frac{2l}{c} = 2\pi\\
@@ -184,9 +184,9 @@ Hence, the free spectral range $\Delta \nu_{FSR}$, the frequency difference betw
 \Rightarrow \Delta\nu_{FSR} = \frac{c}{2l}
 \end{align}
 
-According to equation~\eqref{eq:photon-decay} the number of photons decay with the photon-decay time $\tau_c$. With $E_{q,s}$ representing the initial amplitude, the electric field at $\nu_q$ can is given by
+According to equation~\eqref{eq:photon-decay} the number of photons decay with the photon-decay time $\tau_c$. With $E_{q,s}$ representing the initial amplitude, the electric field at $\nu_q$ is given by
 \begin{equation}
-E_q(t) = 
+E_q(t) =
 \begin{cases}
 E_{q,s} \cdot e^{i2\pi\nu_qt} \cdot e^{-t/(2\tau_c)} &  t \geq 0 \\
 0 &  t < 0
@@ -254,7 +254,7 @@ with $\phi=\frac{\pi\nu}{\Delta \nu_{FSR}}$.
 
 $A'_{trans}$ is displayed in figure~\ref{fig:airydistributionofafabry-perotinterferometer} for $R_1=R_2$. The peak value at one of its resonance frequencies calculates as follows
 \begin{equation}
-A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1. 
+A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1.
 \end{equation}
 
 \begin{figure}[h]
@@ -321,7 +321,7 @@ The following discussion is based on the work of \textcite{yariv_photonics:_2007
 	\label{fig:excitation-of-transverse-mode}
 \end{figure}
 
-In accordance with figure~\ref{fig:excitation-of-transverse-mode}, an input beam $E_{in}$ propagates into the resonator and potentially excite its modes $E_{mn}(x,y)$, where $m$, $n$ are the transverse mode integers of the Gaussian beam of the optical resonator.
+In sketched with figure~\ref{fig:excitation-of-transverse-mode}, an input beam $E_{in}$ propagates into the resonator and potentially excite its modes $E_{mn}(x,y)$, where $m$, $n$ are the transverse mode integers of the Gaussian beam of the optical resonator.
 Since $E_{mn}(x,y)$ describes a complete orthogonal set of wavefunctions they satisfy
 \begin{equation}
 \label{eq:complete-set-mn-modes}
@@ -390,7 +390,7 @@ with $n\approx 1$ for air. Together with equation~\eqref{eq:beam-waist} to follo
 \omega_{0,out}^2 = \frac{\omega_{0,in}^2}{\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2}.
 \end{equation}
 The radii of curvature have to match.
-For given mirrors (described by $R_{mirror}$) and lens (described by $f$) the input beam waist has to be adjusted according to equation~\eqref{eq:radius-wavefronts} and \eqref{eq:beam-waist} 
+For given mirrors (described by $R_{mirror}$) and lens (described by $f$) the input beam waist has to be adjusted according to equation~\eqref{eq:radius-wavefronts} and \eqref{eq:beam-waist}
 \begin{align}
 R_{mirror} \stackrel{!}{=} R_{gauss}(z= l/2)\\
 R_{mirror} \stackrel{!}{=} \frac{l}{2} \left(1+\left(\frac{2z_{0,out}}{l}\right)^2\right) \\
@@ -403,7 +403,7 @@ Inserting equation~\eqref{eq:R-mirror-1} into equation~\eqref{eq:w-o-out} result
 R_{mirror} = \frac{l}{2} \left(1+\left(\frac{2 \omega_{0,in}^2 \pi}{\left(\left(1-\frac{z}{f}\right)^2+\left(\frac{\pi \omega_{0,in}}{\lambda f}\right)^2\right)l \lambda}\right)^2\right).
 \end{equation}
 
-One way to further suppress higher modes is \textit{spatial filtering}. It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective area of a mode increases with its order $(m, n)$. Figure~\ref{fig:spatial-filtering-of-gauss-modes} shows one way to suppress higher modes consisting of a focusing lens and a pin hole which diameter TEM$_{00}$ mode.
+One way to further suppress higher modes is \textit{spatial filtering}. It can be seen in figure~\ref{fig:gauss-modes-higher-order} that the effective area of a mode increases with its order $(m, n)$. Figure~\ref{fig:spatial-filtering-of-gauss-modes} shows one way to suppress higher modes consisting of a focusing lens and a pin hole which diameter matches the one of the TEM$_{00}$ mode.
 
 \begin{figure}[H]
 	\centering
@@ -419,7 +419,7 @@ One way to further suppress higher modes is \textit{spatial filtering}. It can b
 \subsection{Confocal setup}
 \label{subsec:confocal-setup}
 
-If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and counteractions like mode matching plus spatial filtering discussed in subsecion~\ref{subsec:mode-matching-spatial-filtering} are tedious and error prone.
+If the incoming beam would represent a perfect TEM$_{00}$ mode, spatial filtering would not be necessary and mode matching wouldn't have to be done as precise. Unfortunately, this can not always be guaranteed and counteractions like mode matching and spatial filtering discussed in subsection~\ref{subsec:mode-matching-spatial-filtering} are tedious and error prone.
 Arranging the mirrors of a \ac{FPI} into a confocal arrangement reduces the need for these measures.
 By giving up the ability to choose different free spectral ranges with a given pair of mirrors, the confocal setup liberates from mode matching considerations as the cavity is mode degenerate, i.e the frequency of certain axial and transverse cavity modes are the same.
 The following discussion is based on \textcite{hercher_spherical_1968}.
@@ -444,12 +444,12 @@ If mode matching is not executed, it can be assumed that the incoming beam consi
 The resonance cavity length $l$ does not depend on $n$,$m$ and $q$ anymore but only on one integer $p$. The transversal modes are degenerate and fulfil
 \begin{equation}
 \label{eq:confocal-degenerate}
-l = \frac{\lambda_0 p}{2}.	
+l = \frac{\lambda_0 p}{2}.
 \end{equation}
 It can be additionally concluded from equation~\eqref{eq:confocal-degenerate}, that a change of $\lambda_0/2$ in the mirror separation scans through one free spectral range.
 \section{Simulation}
 
-The goal in building up a scanning \acl{FPI} is to resolve features of the emission spectra of \ac{GaAs} \aclp{QD} described in chapter~\ref{chapter:quantum-dot}. More precisely, it is intended to resolve the shape of the \ac{ZPL} and the \ac{PSB}.
+The goal in building up a scanning \ac{FPI} is to resolve features of the emission spectra of GaAs \aclp{QD} described in chapter~\ref{chapter:quantum-dot}. More precisely, it is intended to resolve the shape of the \ac{ZPL} and the \ac{PSB}.
 Equation~\ref{eq:f-airy} shows that the finesse is constant for a given pair of mirrors.
 If the spectrum to be resolved is broad, a higher free spectral range $\Delta \nu_{FSR}$ has to be chosen, under the loss of resolution.
 If the spectrum contains fine details which need to be resolved, a lower $\nu_{Airy}$ has to be chosen, which results in a lower free spectral range $\Delta \nu_{FSR}$.
@@ -493,7 +493,7 @@ A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~
 	\label{fig:simulation-comparison-dot-fabry-perot-modes}
 \end{figure}
 
-The \ac{FPI} scans by continuously varying the mirror distance $l$ with a certain stepsize $\Delta l$ and measure the output-photon-flux every time.
+The \ac{FPI} scans by continuously varying the mirror distance $l$ with a certain stepsize $\Delta l$ and measuring the output-photon-flux every time.
 This process is sketched in figure~\ref{fig:simulation-comparison-dot-fabry-perot-sweep}.
 
 \begin{figure}[H]
@@ -524,7 +524,7 @@ $\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral 
 A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
 
 
-From now only the zero-phonon-path is shown as no new information is gained by examining both.
+From now on only the \ac{ZPL}-path is shown as no new information is gained by examining both.
 In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
 Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{fabry,perot}(E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
 Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
@@ -549,16 +549,16 @@ For the parameters in the \ac{ZPL} path this gives $\epsilon_{fabry,perot,ZPL}=\
 \section{Setup}
 
 Multiple \ac{FPI} setups were built up in order to test their suitability to resolve \ac{QD} emission.
-The first version featured planar mirrors, while their distance was coarse tunable with an adjustable platform and fine tunable with a piezo actuator.
+The first version featured planar mirrors, while their distance was coarsely tunable with an adjustable platform and finely tunable with a piezoelectrical actuator.
 However this setup with planar mirrors proved to be highly unstable and was therefore discarded.
-The second version used smaller, planar-convex mirrors and a molybdenum ground plate.
+The second version used smaller, planar-convex mirrors and a ground plate made of molybdenum.
 This resulted in a stable \ac{FPI} which was also adjustable for various free-spectral ranges.
 The measurements discussed in section~\ref{sec:fabry-measurements} are obtained with this setup.
-As will be noted in this section as well, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
+However, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
 That is why the confocal setup will be used in the future, even though the freedom to adjust the free-spectral range is lost.
 
 In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
-Here one of the mirrors is attached to a piecoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. The complete setup is visible in figure~\ref{fig:setupflat}.
+Here one of the mirrors is attached to a piezoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. A minimal sketch of the setup is visible in figure~\ref{fig:setupflat}.
 
 \begin{figure}[H]
 	\centering
@@ -573,7 +573,7 @@ Here one of the mirrors is attached to a piecoelectric actuator which moves the 
 
 Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
 As every sweep with the \acp{CCD} takes time in the order of minutes, \acp{APD} were used.
-A function generator is used to drive the pieco actuator and the Hydra Harp correlates the measurements of the \ac{APD} with the TTL-output o the function generator. The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
+A function generator is used to drive the piezoelectrical actuator and the Hydra Harp correlates the measurements of the \ac{APD} with the TTL-output o the function generator. The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
 
 
 \begin{figure}[H]
@@ -588,7 +588,7 @@ A function generator is used to drive the pieco actuator and the Hydra Harp corr
 \label{sec:fabry-measurements}
 
 In the following measurements the \ac{FPI} was set up in the non-confocal mode and HeNe laser signals were used in order to align it.
-This involves (i) setting the mirrors coming before the \ac{FPI} so that the laser beam goes straight and centred through the \ac{FPI} mirrors and (ii) setting the \ac{FPI} mirrors so that they are parallel and a single laser beam emerges as is shown in figure~\ref{fig:align-fpi}.
+This involves for one setting the mirrors coming before the \ac{FPI} so that the laser beam goes straight and centred through the \ac{FPI} mirrors and then setting the \ac{FPI} mirrors so that they are parallel and a single laser beam emerges as is shown in figure~\ref{fig:align-fpi}.
 
 
 \begin{figure}[H]
@@ -621,7 +621,7 @@ To counteract, a pinhole is inserted and adjusted which results in the measureme
 	\label{fig:measurement-fabry-perot-hene}
 \end{figure}
 
-Set up like this, the \ac{GaAs} \ac{QD} sample AS208 was measured.
+Set up like this, the GaAs \ac{QD} sample AS208 was measured.
 First a polarization map of the exciton was recorded in order to determine the \ac{FSS} $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$ with the data shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 
 \begin{figure}[H]
@@ -632,7 +632,7 @@ First a polarization map of the exciton was recorded in order to determine the \
 \end{figure}
 
 Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwisely changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
-The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} was be calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} was calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
 
 
