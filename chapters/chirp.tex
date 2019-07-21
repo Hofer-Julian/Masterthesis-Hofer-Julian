@@ -106,9 +106,21 @@ However, together with a telescope they have the inverse effect and can be used 
 A setup like this is sketched in figure~\ref{fig:pulse-expander} and it will in future references in this work be called \textit{pulse expander}.
 The accumulated group velocity dispersion introduced by the pulse expander is described by
 \begin{equation}
-\frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 z
+\frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
-where $z$ is the (adjustable) distance between the grating and focal plane of the lens and $\beta$ depends on the parameters of the grating and the lens.
+where $d$ is the (adjustable) distance between the grating and focal plane of the lens and $\beta$ depends on the parameters of the grating and the lens.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/chirp/group-velocity-dispersion}
+	\caption{Influence of a positive group velocity dispersion on a Gaussian pulse~\cite{orfanidis_electromagnetic_2002}}
+	\label{fig:group-velocity-dispersion}
+\end{figure}
+
+As can be seen in figure~\ref{fig:group-velocity-dispersion}, a positive group velocity dispersion has a very similar effect on a Gaussian pulse as a positive chirp.
+In fact, the frequency chirp rate $a_{gauss}$ introduced in equation~\eqref{eq:phi-gauss} can be put into relation with it by:~\cite{orfanidis_electromagnetic_2002}
+\begin{equation}
+a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{d \omega^2}\right)^2}
+\end{equation}
 
 \begin{figure}[H]
 	\centering
