@@ -10,8 +10,8 @@ The discussion in this section is based on the PhD thesis of \textcite{huber_gaa
 
 Gallium arsenide \acp{QD} investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
 As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the Al forms droplets on Al$_{0.4}$Ga$_{0.6}$As after evaporation.
-The Al reacts with Al$_{0.4}$Ga$_{0.6}$As, which leads into nanoholes etched into the surface.
-Under optimal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
+The Al reacts with Al$_{0.4}$Ga$_{0.6}$As, which produces nanoholes etched into the surface.
+Under ideal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
 This results into \acp{QD} with high in-plane symmetry.
 The next step is the annealing process in which GaAs is deposited to fill the nanoholes.
 The \ac{QD} is finalized by capping the layer with Al$_{0.4}$Ga$_{0.6}$As acting as top barrier.
@@ -19,12 +19,13 @@ The \ac{QD} is finalized by capping the layer with Al$_{0.4}$Ga$_{0.6}$As acting
 Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, GaAs has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
 The energy difference between the Al$_{0.4}$Ga$_{0.6}$As bandgap and the discrete energy levels forming in the \ac{QD} are responsible for the $3$D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c.
 Inside of the \ac{QD}, optical transitions are possible.
-Transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell, are here of especially great interest.
+Transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell, are here of special interest.
 The carriers involved are the electrons ($e^-$) and the holes ($h^+$) left behind.
 These are fermions and therefore only up to two of them can, in accordance with Pauli's exclusion principle, occupy a single energy state.
-Electrons and holes are strongly localized inside the \ac{QD} and interact with each other by Coulomb interaction.
+Electrons and holes are strongly localized inside the \ac{QD} by the confinment potential and influence each other by Coulomb attraction and exchange interaction~\cite{bimberg_quantum_1999}.
 This leads to multi-particle complexes with the most fundamental being the \acf{X}, a state of an electron and a hole, bound by Coulomb interaction.
 Fully occupied s-shells form the \acf{XX}, consisting of two electrons and two holes of opposite spins.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/quantum-dot/droplet-etched-gaas-qds}
@@ -35,26 +36,35 @@ Fully occupied s-shells form the \acf{XX}, consisting of two electrons and two h
 \end{figure}
 In a \ac{QD}, polarization-entangled photon pairs can be generated via a biexciton-exciton decay cascade~\cite{stevenson_semiconductor_2006}, illustrated in figure~\ref{fig:biexciton-exciton-cascade}.
 The $\ket{XX}$ state forms a full shell, which means that the total angular momentum projection along the quantization axis of the \ac{XX} complex sums up to $M=0$.
-After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
-
-The two dipole-allowed radiative transitions lead to only two possible $\ket{X}$ states:
+The \ac{QD} is radially symmetric, therefore $M$ is preserved and $\ket{M}$ are eigenstates of the system.
+After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.\todo{Fermi's golden rulse}
+The two dipole-allowed radiative transitions lead to only two possible angular momentum states of the exciton:
 \begin{itemize}
 	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{R_{XX}}$
 	\item $\ket{+1}$ under emission of a left-circularly-polarized photon $\ket{L_{XX}}$
 \end{itemize}
 $\ket{-1}$ and $\ket{+1}$ are degenerated in energy and decay into the groundstate $\ket{G}$ under emission of $\ket{L_X}$ and $\ket{R_X}$, respectively.
-The resulting state is then described by
+The resulting two-photon state is then described by
 \begin{equation}
 \ket{\psi^+}=\frac{1}{\sqrt{2}}\left(\ket{L_{XX}}\ket{R_X}+\ket{R_{XX}\ket{L_X}}\right)
 \end{equation}
-which is one of the Bell states, representing the maximal entangled states.
+which is one of the four Bell states, representing the maximal entangled two-particle states.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/quantum-dot/biexciton-exciton-cascade}
-	\caption{Biexciton-exciton cascade in a QD.~\cite{huber_gaas_2019}}
+	\caption{Biexciton-exciton cascade in a QD.
+			The $\ket{XX}$ state can decay via two paths under the emission of a right (left) polarized photon into one of two energetically degenerated $\ket{X}$ states.
+			The $\ket{X}$ state then decays into the ground state $\ket{G}$ under the emission of a left (right) polarized photon.~\cite{huber_gaas_2019}}
 	\label{fig:biexciton-exciton-cascade}
 \end{figure}
 
+\section{Fine structur splitting}
+
+Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
+In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
+
+In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
+In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear polariser are shown.\todo{Describe it better (with some math)}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
@@ -76,18 +86,12 @@ which is one of the Bell states, representing the maximal entangled states.
 	\label{fig:fss}
 \end{figure}
 
-\section{Fine structure splitting}
 
-
-Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
-In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
-
-In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
-In figure~\ref{fig:fss-pol} photoluminescence spectra recorded with a linear polarizer are shown.
 
 \section{Zero-phonon line and phonon sideband}
 \label{sec:zero-phonon-side-band}
-The excitonic emission of GaAs \acp{QD} exhibits non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004} these side bands can be traced back to a coupling to acoustic phonons.
+The excitonic emission of GaAs \acp{QD} exhibits non-Lorentzian asymmetric broadening. As shown by \textcite{peter_phonon_2004}\todo{General comment:
+	It's good to include seminal papers from earlier decades, as you do. But please give state-of-the-art paper references in addition (I can help you with that). Imaging beeing a future reader and you have to work yourself through the chain of citations, it's very painful.} these side bands can be traced back to a coupling to acoustic phonons.
 The discussion of \acp{PSB} is based on the works of \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
 
 Figure~\ref{fig:line-shape} displays a schematic representation of the \ac{ZPL} and \ac{PSB} absorption spectrum.
@@ -99,8 +103,8 @@ The intensity distribution between the two components depends strongly on temper
 		The emission shape can be determined by mirroring the absorption shape at $\omega'$.}
 	\label{fig:line-shape}
 \end{figure}
-To determine the frequency gap $\Delta$ in figure~\ref{fig:line-shape}, the Franc-Condon principles are used.
-They state that electronic transition between ground and excited state is much faster than the motion in the lattice.
+To determine the frequency gap $\Delta$ in figure~\ref{fig:line-shape}, the Franc-Condon principles~\cite{franck_elementary_1926} are used.
+It states that electronic transition between ground and excited state is much faster than the motion in the lattice.\todo{Is it equivalent to say that the photons carry nearly no momentum? \textbf{Answer: Yes}}
 Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
 The transitions can be displayed as vertical arrows with the shorter arrow describing the \ac{ZPL} and the longer one describing the \ac{PSB}.
 According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
@@ -126,6 +130,7 @@ The emission follows the same principle.
 	\caption{Zero-phonon line and phonon sideband.~\cite{noauthor_zero-phonon_nodate}}
 	\label{fig:zero-phonon-line-phonon-side-band}
 \end{figure}
+\todo{Here again: Summarize in the caption what we see. This is too little.}
 Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
 The lattice vibrational mode has to be well described by a quantum harmonic oscillator.
 Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
@@ -163,7 +168,7 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
-Together with data from \textcite{scholl_resonance_2019} and empirical values measured by this group, this leads to the parameters listed in table~\ref{tab:quantum-dot-emission}.
+Together with data from \textcite{scholl_resonance_2019} and empirical values measured by our group, this leads to the parameters listed in table~\ref{tab:quantum-dot-emission}.
 
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
@@ -181,14 +186,14 @@ Together with data from \textcite{scholl_resonance_2019} and empirical values me
 
 
 \section{Optical excitation of a quantum dot}
-In this section, the different ways of optically exciting \acp{QD} are discussed. It is based on the PhD thesis of \textcite{huber_gaas_2019} and the master's thesis of \textcite{schimpf_towards_2017}.
+In this section, the different ways of optically exciting \acp{QD} are discussed.
+It is based on the PhD thesis of \textcite{huber_gaas_2019} and the master's thesis of \textcite{schimpf_towards_2017}.
 The excited states of a \ac{QD} can be populated in various ways.
 A common way is above-band excitation, depicted in figure~\ref{fig:optical-pumping-quantum-dot}a.
 Electrons are optically excited by a laser with energies above the band gap of the \acp{QD} host material Al$_{0.4}$Ga$_{0.6}$As with $E_L = \SI{1.92}{\electronvolt}$ at room temperature.
 Subsequently, electrons and holes are captured by the \acp{QD} and relax via phonon-scattering to the lowest energy level, the s-shell.
 However, because of pronounced recapture processes~\cite{kuroda_symmetric_2013} and spin scattering processes~\cite{michler_single_2009}, above-band excitation is not favourable for entangled photon generation.
-Additionally, indistinguishability of the emitted photons is reduced  because of fluctuating electric fields.
-As our team is interested in extracting entangled and indistinguishable X/XX photon pairs, above-band is often not the best exciting technique for GaAs \acp{QD}.
+Additionally, indistinguishability of the emitted photons is reduced because of fluctuating electric fields.
 Resonant excitation of electron-hole pairs provides an alternative which is less affected by fluctuating electric fields.
 As shown in figure~\ref{fig:optical-pumping-quantum-dot}b this technique creates electron-hole-pairs directly in the s-shell.
 \begin{figure}[H]
@@ -197,7 +202,8 @@ As shown in figure~\ref{fig:optical-pumping-quantum-dot}b this technique creates
 	\caption{Optical pumping of a QD by	(a) above-band excitation and (b) resonant excitation~\cite{huber_gaas_2019}}
 	\label{fig:optical-pumping-quantum-dot}
 \end{figure}
-Due to dipole-selection rules, resonant population of the $\ket{XX}$ state requires a two-photon-absorption process.
+Resonant excitation can be used in order to populate the $\ket{XX}$ state with near unity population probability~\cite{reindl_phonon-assisted_2017}.
+Due to dipole-selection rules, this requires a two-photon-absorption process.
 Hereby, the energy of a femtosecond-pulse laser $E_p$ is tuned to exactly the half of the \ac{XX} energy with respect to the ground energy, as sketched in figure~\ref{fig:qd-resonant}.
 Because of Coulomb interaction, two times the \ac{X} energy with respect to the ground energy $2 \cdot E_X$ is not equal to $E_{XX}$ but differs by the binding energy $E_B$.
 The laser is therefore tuned to
@@ -215,7 +221,7 @@ N_{XX} = \sin^2\left(\frac{\theta}{2}\right)
 \end{equation}
 with $\theta$ as the pulse area in relation to the Rabi oscillations. $\theta$ is not the area of the excitation pulse, but depends on it in a non-trivial way~\cite{stufler_two-photon_2006}.
 Measured Rabi oscillations of \ac{X} and \ac{XX} are shown in figure~\ref{fig:rabi-oscillations}~\cite{reindl_phonon-assisted_2017}.
-Theoretically, the curve should oscillate between occupancies $N/N_0$ of $0$ and $1$.
+Theoretically, the curve should oscillate between occupancies $N/N_0$, with $N_0$ as the maximum population, of $0$ and $1$.
 However, as a consequence of phonon damping the occupancy converges to a purely probabilistic value of $0.5$~\cite{forstner_phonon-assisted_2003}.
 \begin{figure}[H]
 	\centering
@@ -242,13 +248,14 @@ However, as a consequence of phonon damping the occupancy converges to a purely 
 The XX-X cascade shown in figure~\ref{fig:qd-resonant} results in a single photon pair per emission cycle.
 Single photons are necessary for quantum cryptography and quantum optics in general which motivates the following discussion of this topic based on the thesis of \textcite{huber_gaas_2019}.
 The single photon purity of the $\ket{XX}$ to $\ket{X}$ and the $\ket{X}$ to $\ket{G}$ signals, respectively, can be determined by performing a \acf{HBT} experiment.
-A \ac{HBT} setup is shown in figure~\ref{fig:hbt-fiber} and it allows to measure the second-order correlation function, which is defined as
+An example of an \ac{HBT} setup is shown in figure~\ref{fig:hbt-fiber} and consists of two \acp{APD} used as single photon detectors and a beam splitter.
+The measurements at the two detectors can be used in order to calculate the second-order correlation function, which is defined as
 \begin{equation}
 g^{(2)} = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t) \rangle \langle I(t+\tau)\rangle}
 \end{equation}
 with $I(t)$ as the light intensity and $\tau$ as the time delay. When a single photon enters the input of the \ac{BS} it can only be measured at one output, but never at both simultaneously.
-Assuming a perfect single photon emitter, a coincidence measurement between APD1 and APD2 will result in $g^{(2)}(\tau) = 0$ at zero time delay.
-Subsequently, side peaks are expected which are correlated to the repetition rate $R$ of the laser by $\tau_s=z/R$ with $z\in \mathbb{Z}\backslash \{0\}$.
+Assuming a perfect single photon emitter, a coincidence measurement between \ac{APD}$1$ and \ac{APD}$2$ will result in $g^{(2)}(\tau) = 0$ at zero time delay.
+Subsequently, side peaks are expected at $\tau_s=z/R$ with $R$ as the repetition rate of the laser and $z\in \mathbb{Z}\backslash \{0\}$.
 The single photon purity can then be defined as
 \begin{equation}
 \kappa(b) = \frac{A_0(b)}{A_s(b)}
