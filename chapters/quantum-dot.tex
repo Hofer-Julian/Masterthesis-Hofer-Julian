@@ -217,6 +217,7 @@ It depends on the third-order-susceptibility $\chi^{(3)}$ of GaAs and therefore 
 As this two-level system is driven in resonance its population exhibits Rabi oscillations.
 The final population of the \ac{XX} can be described by
 \begin{equation}
+\label{eq:n-xx}
 N_{XX} = \sin^2\left(\frac{\theta}{2}\right)
 \end{equation}
 with $\theta$ as the pulse area in relation to the Rabi oscillations. $\theta$ is not the area of the excitation pulse, but depends on it in a non-trivial way~\cite{stufler_two-photon_2006}.
@@ -269,7 +270,8 @@ If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen t
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/HBT_Fiber.pdf}
-		\caption{Setup to measure to measure the Hanbury-Brown-Twiss effect.}
+		\caption{Setup to measure to measure the Hanbury-Brown-Twiss effect.
+		Single photons can be measured only at one APDs, but not at both at the same time.}
 		\label{fig:hbt-fiber}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
@@ -277,7 +279,8 @@ If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen t
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/quantum-dot/G2_X_XX.png}
-		\caption{Second-order auto-correlation function $g^{(2)}$ of \ac{X} and \ac{XX}.}
+		\caption{Second-order auto-correlation function $g^{(2)}$ of \ac{X} and \ac{XX}.
+		The low height of the peak at zero time delay compared to the height of the side peaks suggest the suitability of the quantum do as a single photon emitter.}
 		\label{fig:gs2-x-xx}
 	\end{subfigure}
 	\caption{Hanbury-Brown-Twiss \acs{HBT} experiment~\cite{schimpf_towards_2017}}
