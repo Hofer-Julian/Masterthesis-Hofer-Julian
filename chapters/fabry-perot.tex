@@ -6,7 +6,7 @@
 The \ac{FPI} is an optical resonator developed by Charles Fabry and Alfred Pérot.
 An incoming light beam will only be transmitted through the resonator consisting of two semi-transparent mirrors if it fulfils the resonance condition.\cite{kaldewey_coherent_2017}.
 The resonance frequencies can be changed by adjusting the mirror distance.
-By measuring the intensity at the output of the \ac{FPI}, this can be used to resolve fine features of an electromagnetic spectrum, like e.g. the one of the exciton described in section~\ref{sec:zero-phonon-side-band}.
+By measuring the intensity at the output of the \ac{FPI}, this can be used to resolve fine features of an electromagnetic spectrum, like e.g. the emitted light from the exciton-groundstate radiative decay described in section~\ref{sec:zero-phonon-side-band}.
 The following chapter introduces basics of electromagnetic radiation, describes simulations performed to size the components of the \ac{FPI} and displays measurement techniques used to obtain the resolved exciton spectrum.
 
 \section{Transverse modes of electromagnetic radiation}
@@ -42,14 +42,14 @@ with $r = \sqrt{z^2+\rho^2} \simeq z+\rho^2/2z$.
 Equation~\eqref{eq:e-field-after-fresnel-approximation} resembles the plain wave in equation~\eqref{eq:plain-wave}, with the spacial phase transversal modulated by $\exp(ik\rho^2/2z)$.
 Another spherical wave solution can be obtained by applying the following replacement ($z_0$ is a real number)
 \begin{equation}
-z \rightarrow q(z)=z-iz_0.
+z \rightarrow q(z)=z-iz_0
 \end{equation}
+with $q(z)$ as the complex beam parameter.
 Thereby, the fundamental (or TEM$_{00}$) Gaussian mode has been constructed
 \begin{equation}
 \label{eq:fundamental-gaussian-mode}
 E(z,\rho)\simeq\frac{A_0}{kq(z)}\exp\left(i\frac{k\rho^2}{2q(z)}\right)e^{ikz}.
 \end{equation}
-
 
 The electric and magnetic fields of Gauss modes are transversal to its propagation direction.
 These waveforms are called transversal electric and magnetic modes with indices $(m,n)$.
@@ -92,12 +92,12 @@ If the wave propagates inside a medium with the refractive index $n$, $\lambda$ 
 The cross section of the beam waist  is then $\omega_0^2=\lambda z_0/(\pi n)$.
 
 A Gaussian beam can be completely characterized at every point $z$ on the beam axis either with the parameter couple $(\omega_0, z_0)$ or alternatively with the real and imaginary part of $q(z)$.
-The parameters of the Gaussian beam are transformed by linear operations, which coefficients are identical to those from geometrical optics
+The parameters of the Gaussian beam are transformed by the ray transfer matrix
 \begin{equation}
 \label{eq:ABCD-rule}
 q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 \end{equation}
-with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
+with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.\todo{where do this elements come from and which basis is used by this matrix formalism. Without these definitions, these letters mean nothing.}
 
 \subsection{Higher Gauss modes}
 The wave equation~\eqref{eq:wave-equation} can be simplified by only allowing monochromatic waves with harmonic time dependence
@@ -211,9 +211,9 @@ By defining the full-width-at-half-maximum linewidth (FWHM) $\Delta\nu_c$, $\til
 \begin{equation}
 \Delta \nu_c = \frac{1}{2\pi\tau_c} \Rightarrow \tilde{\gamma_q}(\nu) = \frac{1}{\pi}\frac{\Delta \nu_c/2}{\left(\Delta\nu_c/2\right)^2+\left(\nu-\nu_q\right)^2}.
 \end{equation}
-Afterwards the Lorentzian lines are normalized so that the peak is at unity
+Afterwards the Cauchy lines are normalized so that the peak is at unity
 \begin{equation}
-\label{eq:lorentzian}
+\label{eq:cauchy}
 \gamma_{q,L}(\nu)=\frac{\pi}{2}\Delta\nu_c\tilde{\gamma_q}(\nu)=\frac{(\Delta\nu_c)^2}{\left(\Delta \nu_c\right)^2+4\left(\nu-\nu_q\right)^2}
 \end{equation}
 with $\gamma_{q,L}(\nu_q)=1$.
@@ -236,7 +236,7 @@ E_{circ} = E_{laun} + E_{RT} = E_{laun} + r_1 r_2 e^{-i 2 \phi} E_{circ} \Righta
 \end{equation}
 where $r_1$ and $r_2$ are the electric-field reflectivities of mirror 1 and 2.
 
-The generic Airy distribution only considers light inside the mirrors and is defined as
+The generic Cauchy distribution only considers light inside the mirrors and is defined as
 \begin{equation}
 A_{circ} = \frac{I_{circ}}{I_{laun}} = \frac{|E_{circ}|^2}{|E_{laun}|^2} = \frac{1}{\left|1 - r_1 r_2 e^{-i2\phi}\right|^2} = \frac{1}{\left(1-\sqrt{R_1 R_2}\right)^2 + 4\sqrt{R_1 R_2} \sin^2(\phi)}
 \end{equation}
@@ -256,13 +256,13 @@ with $\phi=\frac{\pi\nu}{\Delta \nu_{FSR}}$.
 
 $A'_{trans}$ is displayed in figure~\ref{fig:airydistributionofafabry-perotinterferometer} for $R_1=R_2$. The peak value at one of its resonance frequencies calculates as follows
 \begin{equation}
-A'_{trans} = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1.
+max(A'_{trans}) = \frac{(1-R_1)(1-R_2)}{\left(1-\sqrt{R_1R_2}\right)^2} \stackrel{R_1=R_2}{=} 1.
 \end{equation}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/fabry-perot/Airy_distribution_of_a_Fabry-Perot_interferometer}
-	\caption[Airy distribution $A'_{trans}$]{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Lorentzian lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:lorentzian}~\cite{noauthor_fabryperot_nodate}.}
+	\caption[Airy distribution $A'_{trans}$]{Airy distribution $A'_{trans}$ as described in equation~\eqref{eq:A-trans} compared to the Cauchy lines  $\gamma_{q,L}$ as described in equation~\eqref{eq:cauchy}~\cite{noauthor_fabryperot_nodate}.}
 	\label{fig:airydistributionofafabry-perotinterferometer}
 \end{figure}
 
@@ -490,7 +490,8 @@ depicted in figure~\ref{fig:quantumdotemissionwavelengthenergy}.
 $\Phi_{dot}(E)$ is transmitted through the \ac{FPI}.
 As discussed the mirror distance $l$ is adjusted to a value which depends if a resolved \ac{ZPL} or a resolved \ac{PSB} is desired.
 A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~\ref{eq:A-trans} with $R_1=R_2=\SI{98}{\percent}$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}.
-
+\todo{Make also the left Y axis logarithmic.
+	Also: Can you normalize the intensities?}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-modes}
@@ -533,6 +534,7 @@ From now on, only the \ac{ZPL}-path is shown as no new information is gained by 
 In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
 Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{fabry,perot}(E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
 Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
+\todo{The indices are a mess.. try to get it a bit more astethic. phi-FABRI,PEROT, that's far too long...}
 \begin{equation}
 \epsilon_{fabry,perot} = \frac{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right| d \nu }{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \Phi_{\text{dot}}(\nu) d \nu}
 \end{equation}
@@ -551,7 +553,7 @@ For the parameters in the \ac{ZPL} path this gives $\epsilon_{fabry,perot,ZPL}=\
 \newpage
 
 
-\section{Setup}
+\section{Setup and measurement}
 
 Multiple \ac{FPI} setups were built up in order to test their suitability to resolve \ac{QD} emission.
 The first version featured planar mirrors, while their distance was coarsely tunable with an adjustable platform and finely tunable with a piezoelectrical actuator.
@@ -564,21 +566,28 @@ That is why the confocal setup will be used in the future, even though the freed
 
 In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
 Here one of the mirrors is attached to a piezoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. A minimal sketch of the setup is visible in figure~\ref{fig:setupflat}.
-
+\todo{I think this is not the scanning mode. The scanning mode is when the piezo moves fast back and forth, and not stepwise. Look it up in the literature please. (look at Firefox tab)}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\linewidth]{figures/fabry-perot/setup/setup}
 	\caption{Scanning Fabry Pérot interferometer}
 	\label{fig:setup}
 \end{figure}
-
 \newpage
-
-\subsection{Live avalanche photodiode mode}
-
+\todo{Better:
+	4.5 Setup and Measurement
+	General stuff
+	4.5.1 Scanning mode with fast photodiodes
+	4.5.2 Stepwise mode (find better name) with CCD}
 Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
 As every sweep with the \acp{CCD} takes time in the order of minutes, \acp{APD} were used.
-A function generator is used to drive the piezoelectrical actuator and the Hydra Harp correlates the measurements of the \ac{APD} with the TTL-output o the function generator. The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
+A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator.
+The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
+\todo{1) What APDs, which time resolution
+	2) What scanning frequency and why
+	3) Show pictures of the measurement itself and discribe features, errors etc.
+	5) What time range did you define, how did you configure the correlation hardware.
+	4) We did not connect the TTL-Output of the Funky-Generator directly to the Hydraharp, as it uses a different standard (NIM).}
 
 
 \begin{figure}[H]
@@ -628,6 +637,7 @@ To counteract, a pinhole is inserted and adjusted which results in the measureme
 
 Set up like this, the GaAs \ac{QD} sample AS208 was measured.
 First a polarization map of the exciton was recorded in order to determine the \ac{FSS} $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$ with the data shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+\todo{how does this work. Explain more details, this is not trivial}
 
 \begin{figure}[H]
 	\centering
@@ -639,7 +649,7 @@ First a polarization map of the exciton was recorded in order to determine the \
 Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwisely changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
 The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} was calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
-
+\todo{What does this comparison tell us? Did it fit the calculation? Where are the side peaks we saw in the HeNe measurement? What a about the stability? Are there calculations, expected temperature drifts, etc. Are there differences between the expected Finesse and the measured one, and why? Is this expected?}
 
 
 \begin{figure}[H]

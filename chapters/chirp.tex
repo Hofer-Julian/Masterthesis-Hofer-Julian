@@ -65,7 +65,19 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 	\end{itemize}
 \end{itemize}
 
-The following discussion in this chapter will assume laser pulses with a Gaussian shape.
+The following discussion will assume a Gaussian laser shape as described by equation~\eqref{eq:f_gauss} and \eqref{eq:phi-gauss}.
+A simulation for $E$ is plotted for different chirp parameters $\alpha$  in figure~\ref{fig:chirpedlaserpulse}.
+As can be seen there, the chirp parameter strongly influences the shape of the electric field.
+If $E$ could be measured directly, the chirp could be easily estimated.
+Unfortunately our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilliscopes are in the best case in the order of \SI{200}{\femto \second}.
+This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.\todo{Why did you choose those parameters?}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/chirped_laser_pulse}
+	\caption{Electric field $E$ of Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
+	\label{fig:chirpedlaserpulse}
+\end{figure}
 
 
 \section{Measuring the chirp with interferometric autocorrelation}
@@ -90,14 +102,60 @@ where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 	\label{fig:optical-field-autocorrelation-setup}
 \end{figure}
 \todo{Put citations also into the main text \textbf{Does it make sense here? The picture is the only thing I took from Wikipedia}}
-As will be shown in section~\ref{sec:fabry-simulation} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
+	\label{fig:imgausschirpwithoutslitwithoutmosaic}
+\end{figure}
+
+
+As can be seen in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
 However, certain modifications to the \ac{IAC} signal introduced by \textcite{hirayama_real-time_2002} make it much more sensitive to the temporal chirp.
 It is called \ac{MOSAIC} and it performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
-The \ac{MOSAIC} signal is then described by the following equation
+The \ac{MOSAIC} signal is then described by
 \begin{equation}
 \label{eq:i-m-filtered}
-I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) cos(2\omega \tau + 2\Delta \phi) dt
+I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) cos(2\omega \tau + 2\Delta \phi) dt.
 \end{equation}
+When the MOSAIC filter is applied on the data shown in is applied on figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse}.
+Here the influence of the chirp is clearly visible in the lower envelope.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse}
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
+	\label{fig:mosaicchirpedlaserpulse}
+\end{figure}
+The points of the lower envelope can be obtained by determining the local minima of the signal as shown in figure~\ref{fig:mosaicchirpedlaserpulsefindenvelope}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_find_envelope}
+	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
+		The orange dots are results of a numerical peak finder algorithm, executed in order to find local minima.}
+	\label{fig:mosaicchirpedlaserpulsefindenvelope}
+\end{figure}
+
+The lower bound (minima envelope) of the MOSAIC trace can be derived by use of the standard textbook procedure~\cite{klein_optics_1986}
+\begin{equation}
+S^{min}_{MOSAIC}(\tau)= 1 + 2 \cdot g(\tau) - 2 \cdot [g_s^2(\tau)+g_c^2(\tau)]^{1/2}
+\end{equation}
+with
+\begin{align}
+g(\tau)&=\int f(t)f(t+\tau)dt\\
+g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
+g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt
+\end{align}
+The points of the lower envelope determined before can now be fitted in order to obtain the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
+It is visible that the fitted values of $\alpha$ correspond to the expected values.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_fit_envelope}
+	\caption[Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter and fitted $\alpha$-values.]{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
+		The orange line is a fit for the lower envelope of the MOSAIC signal in order to obtain~$\alpha$.}
+	\label{fig:mosaicchirpedlaserpulsefitenvelope}
+\end{figure}
 
 \section{Deterministically adjusting the chirp with a pulse expander}
 \label{sec:pulse-expander}
@@ -149,8 +207,9 @@ The biexciton state can be populated with nearly perfect efficiency~\cite{glassl
 \Omega_0 \gg |d/dt \omega(t)|
 \end{equation}
 where $\Omega_0$ is the peak Rabi frequency and $\omega(t)$ is the center frequency of the laser pulse. 
-In order to calculate the final biexciton occupation, \textcite{glassl_biexciton_2013} assumed a linearly-chirped Gaussian laser pulse as discussed in section~\ref{sec:chirp}.
-The simulation results are visible in figure~\ref{fig:biexciton-occupation}.
+
+In figure~\ref{fig:biexciton-occupation} simulations in order to determine the final biexciton occupation for different biexciton binding energies $\Delta$ by \textcite{glassl_biexciton_2013} are presented.
+Here, a linearly-chirped Gaussian laser pulse as discussed in section~\ref{sec:chirp} was assumed.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/biexciton-occupation}
@@ -164,76 +223,8 @@ However, for $\alpha \gg 0$ biexciton preparation becomes insensitive to small v
 This is therefore the regime which would be the most suitable to work in.
 In the case of $\alpha < 0$ this insensitivity does not appear for moderate values of $\Delta$ as can be seen in figure~\ref{fig:biexciton-occupation}(b).
 
-
-\section{Simulation}
-\label{sec:fabry-simulation}
-The electric field $E$ of a chirped laser pulse is described by equation~\eqref{eq:electric-field-laser}.
-The following discussion will assume a Gaussian laser shape as described by equation~\eqref{eq:f_gauss} and \eqref{eq:phi-gauss}.
-A simulation for $E$ is plotted for different chirp parameters $\alpha$  in figure~\ref{fig:chirpedlaserpulse}.
-As can be seen there, the chirp parameter strongly influences the shape of the electric field.
-If $E$ could be measured directly, the chirp could be easily estimated.
-Unfortunately our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilliscopes are in the best case in the order of \SI{200}{\femto \second}.
-This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/chirp/plots/chirped_laser_pulse}
-	\caption{Electric field $E$ of Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
-	\label{fig:chirpedlaserpulse}
-\end{figure}
-
-What is possible is sending the laser into an \ac{IAC} which outputs a signal as shown in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} and described by equation~\eqref{eq:i-m-integral}.
-However, the chirp only marginally influences the resulting signal.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
-	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
-	\label{fig:imgausschirpwithoutslitwithoutmosaic}
-\end{figure}
-
-That is why the MOSAIC filter is applied which results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse} and described by equation~\eqref{eq:i-m-filtered}.
-Now the influence of the chirp is clearly visible in the lower envelope.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse}
-	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
-	\label{fig:mosaicchirpedlaserpulse}
-\end{figure}
-
-The points of the lower envelope can be obtained by determining the local minima of the signal as shown in figure~\ref{fig:mosaicchirpedlaserpulsefindenvelope}.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_find_envelope}
-	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
-	The orange dots are results of a numerical peak finder algorithm, executed in order to find local minima.}
-	\label{fig:mosaicchirpedlaserpulsefindenvelope}
-\end{figure}
-
-The lower bound (minima envelope) of the MOSAIC trace can be derived by use of the standard textbook procedure~\cite{klein_optics_1986}
-\begin{equation}
-S^{min}_{MOSAIC}(\tau)= 1 + 2 \cdot g(\tau) - 2 \cdot [g_s^2(\tau)+g_c^2(\tau)]^{1/2}
-\end{equation}
-with
-\begin{align}
-g(\tau)&=\int f(t)f(t+\tau)dt\\
-g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
-g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt
-\end{align}
-The points of the lower envelope determined before can now be fitted in order to obtain the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
-It is visible that the fitted values of $\alpha$ correspond to the expected values.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/chirp/plots/mosaic_chirped_laser_pulse_fit_envelope}
-	\caption[Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter and fitted $\alpha$-values.]{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$.
-	The orange line is a fit for the lower envelope of the MOSAIC signal in order to obtain~$\alpha$.}
-	\label{fig:mosaicchirpedlaserpulsefitenvelope}
-\end{figure}
-
 \section{Measurements and discussion}
-
+\todo{Here I miss details about the measurement strategy. Explain why we measured such a short pulse. The goal was expanding much longer pulses for the final ARP. Go deeper here.}
 In order to determine the chirp of a laser pulse which only passed the pulse shaper as shown in figure~\ref{fig:setupflat}, it was sent to the \ac{IAC}.
 Afterwards, a signal was measured where an additional pulse expander was inserted as discussed in section~\ref{sec:pulse-expander}.
 The comparison between these two is shown in figure~\ref{fig:measuredchirpedlaserpulsebeforemosaic}.
@@ -259,4 +250,4 @@ One explanatory approach could be that the laser was already chirped to begin wi
 	\label{fig:measuredchirpedlaserpulseaftermosaic}
 \end{figure}
 
-
+\todo{Conclusion? What can we do to overcome this in the future? }
