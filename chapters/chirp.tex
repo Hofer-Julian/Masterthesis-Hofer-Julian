@@ -66,11 +66,11 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 \end{itemize}
 
 The following discussion will assume a Gaussian laser shape as described by equation~\eqref{eq:f_gauss} and \eqref{eq:phi-gauss}.
-A simulation for $E$ is plotted for different chirp parameters $\alpha$  in figure~\ref{fig:chirpedlaserpulse}.
+A simulation for $E$ is plotted for different chirp parameters $\alpha$ suitable to display strong and weak chirps in figure~\ref{fig:chirpedlaserpulse}.
 As can be seen there, the chirp parameter strongly influences the shape of the electric field.
 If $E$ could be measured directly, the chirp could be easily estimated.
 Unfortunately our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilliscopes are in the best case in the order of \SI{200}{\femto \second}.
-This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.\todo{Why did you choose those parameters?}
+This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.
 
 \begin{figure}[H]
 	\centering
@@ -88,7 +88,7 @@ Basically, a nonlinear crystal is added to a Michelson interferometer in order t
 \label{eq:i-m-integral}
 I_M(\tau) = \int_{-\infty}^{+\infty}\langle|(E(t)+E(t-\tau))^2|^2\rangle dt.
 \end{equation}
-Here $\langle \rangle$ denotes averaging over fast oscillations of the electric field.\todo{ Doesn't the phase drop out by taking the magnitude? In the next formula, I see no averaging over a time or a probability distribution.\textbf{See page 460 in citation.}}
+Here $\langle \rangle$ denotes averaging over fast oscillations of the electric field.
 Under the use of equation~\ref{eq:electric-field-laser} it can be expanded to
 \begin{align}
 I_M(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) cos(2 \omega \tau + 2 \Delta \phi) dt \nonumber\\
@@ -101,8 +101,6 @@ where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 	\caption[Schematics of an interferometric autocorrelator]{Schematics of an interferometric autocorrelator, where \textbf{L} is a converging lens, \textbf{SHG} a second-harmonic generation crystal, \textbf{BS} a beam splitter, $\mathbf{\tau}$ the interval between two pulses, \textbf{D} the detector and \textbf{F} a spectral filter to block the fundamental wavelength~\cite{noauthor_optical_nodate}.}
 	\label{fig:optical-field-autocorrelation-setup}
 \end{figure}
-\todo{Put citations also into the main text \textbf{Does it make sense here? The picture is the only thing I took from Wikipedia}}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
@@ -177,10 +175,7 @@ where $\beta$ is a value depending on the parameters of the grating and the lens
 \end{figure}
 
 As can be seen in figure~\ref{fig:group-velocity-dispersion}, a group velocity dispersion has a similar effect on a Gaussian pulse as a chirp.
-In fact, the frequency chirp rate $a_{gauss}$ introduced in equation~\eqref{eq:phi-gauss} can be put into relation with it by:~\cite{orfanidis_electromagnetic_2002}\todo{1) What chirp parameter do I need for our dots?\\
-	2) How do I define this chirp with the expander?\\
-	3) How do I measure this chirp? \\
-\textbf{2) and 3) should be fine now, how about 1)?} }
+In fact, the frequency chirp rate $a_{gauss}$ introduced in equation~\eqref{eq:phi-gauss} can be put into relation with it by:~\cite{orfanidis_electromagnetic_2002}
 \begin{equation}
 a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{d \omega^2}\right)^2}
 \end{equation}

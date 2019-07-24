@@ -463,26 +463,26 @@ Instead, the mirror distances have to be adjusted and in the confocal setup disc
 
 The zero-phonon line is described with a Cauchy distribution
 \begin{equation}
-\Phi_{dot,zero}(\lambda) = \frac{1}{\pi \cdot \Delta\lambda_{zero} \cdot 0.5 \left[1+\left(\frac{\lambda - \lambda_{0, zero}}{\Delta\lambda_{zero} \cdot 0.5}\right)^2\right]}
+\Phi_{ZPL}(\lambda) = \frac{1}{\pi \cdot \Delta\lambda_{ZPL} \cdot 0.5 \left[1+\left(\frac{\lambda - \lambda_{0, ZPL}}{\Delta\lambda_{ZPL} \cdot 0.5}\right)^2\right]}
 \end{equation}
-with $\lambda_{0, zero}$ as the center wavelength and $\Delta\lambda_{zero}$ as the spectral range of the zero-phonon line which can be found in table~\ref{tab:quantum-dot-emission}.
+with $\lambda_{0, zero}$ as the center wavelength and $\Delta\lambda_{ZPL}$ as the spectral range of the zero-phonon line which can be found in table~\ref{tab:quantum-dot-emission}.
 
 The phonon side band is described with a Gauss distribution
 \begin{equation}
-\Phi_{dot,side}(\lambda) = \frac{1}{\sqrt{2\cdot\pi\cdot \Delta\lambda_{side}^2}}\cdot exp\left(-\frac{(\lambda - \lambda_{0, side})^2}{2\cdot \Delta\lambda_{side}^2}\right)
+\Phi_{PSB}(\lambda) = \frac{1}{\sqrt{2\cdot\pi\cdot \Delta\lambda_{PSB}^2}}\cdot exp\left(-\frac{(\lambda - \lambda_{0, PSB})^2}{2\cdot \Delta\lambda_{PSB}^2}\right)
 \end{equation}
-with $\lambda_{0, side}$ as the center wavelength and $\Delta\lambda_{side}$ as the spectral range of the phonon side band which can be found in table~\ref{tab:quantum-dot-emission} as well.
+with $\lambda_{0, PSB}$ as the center wavelength and $\Delta\lambda_{PSB}$ as the spectral range of the phonon side band which can be found in table~\ref{tab:quantum-dot-emission} as well.
 
 Together they describe the excitonic emission of the \ac{QD}
 \begin{equation}
-\Phi_{dot}(\lambda) = \Phi_{dot,zero}(\lambda) + \Phi_{dot,phonon}(\lambda)
+\Phi_{dot}(\lambda) = \Phi_{ZPL}(\lambda) + \Phi_{PSB}(\lambda)
 \end{equation}
 depicted in figure~\ref{fig:quantumdotemissionwavelengthenergy}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics{figures/fabry-perot/plots/quantum_dot_emission_wavelength_energy}
-	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on the wavelength $\lambda$ and the Energy $E$.
+	\caption[Simulated exciton emission of a GaAs quantum dot]{Simulated exciton emission of a GaAs quantum dot plotted dependant on (a) the wavelength $\lambda$ or (b) the energy $E$.
 		The parameters can be found in table~\ref{tab:quantum-dot-emission}.}
 	\label{fig:quantumdotemissionwavelengthenergy}
 \end{figure}
@@ -490,8 +490,6 @@ depicted in figure~\ref{fig:quantumdotemissionwavelengthenergy}.
 $\Phi_{dot}(E)$ is transmitted through the \ac{FPI}.
 As discussed the mirror distance $l$ is adjusted to a value which depends if a resolved \ac{ZPL} or a resolved \ac{PSB} is desired.
 A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~\ref{eq:A-trans} with $R_1=R_2=\SI{98}{\percent}$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}.
-\todo{Make also the left Y axis logarithmic.
-	Also: Can you normalize the intensities?}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-modes}
@@ -505,47 +503,49 @@ This process is sketched in figure~\ref{fig:simulation-comparison-dot-fabry-pero
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-sweep}
-	\caption{Transmissions of the FPI modes $A'_{trans}$ for different mirror distances $l - m \cdot \Delta l$ with $m \in \mathbb{N}$ compared to the exciton emission $\Phi_{dot}(E)$.}
+	\caption{Transmissions of the FPI modes $A'_{trans}$ (blue) for different mirror distances $l - m \cdot \Delta l$ with $m \in \mathbb{N}$ compared to the exciton emission $\Phi_{dot}(E)$ (red).}
 	\label{fig:simulation-comparison-dot-fabry-perot-sweep}
 \end{figure}
 
 
-The output-photon-flux of the scanning \ac{FPI} is then described with the convolution of $\Phi_{dot}(E)$ and $A'_{trans}(E)$
+The unnormalized output-photon-flux of the scanning \ac{FPI} is then described with the convolution of $\Phi_{dot}(E)$ and $A'_{trans}(E)$
 \begin{equation}
-\Phi_{fabry,perot, unnormalized}(\nu) = \int^{\nu_0 + \Delta \nu_{FSR} \cdot n_{peaks} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot n_{peaks}\cdot 0.5}  \Phi_{dot}(\nu')A'_{trans}(\nu - \nu') d\nu'
+\tilde{\Phi}_{FPI}(E) = \int^{E_0 + n \cdot \Delta}_{E_0 - n  \cdot \Delta}  \Phi_{dot}(E')A'_{trans}(E - E') dE'
 \end{equation}
-with $\nu_0$ as the central frequency of the exciton emission line and $n_{peaks}=4$ as the number of airy peaks considered for the numerical convolution.
+with $E_0$ as the central energy of the exciton emission line, $\Delta$ as the free spectral range and $2n=4$ as the number of airy peaks considered for the numerical convolution.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output}
-	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$ for (a) ZPl and (b) PSB.}
+	\caption{Output-photon-flux of the scanning FPI $\Phi_{FPI}(E)$ (blue) compared to the exciton emission $\Phi_{dot}(E)$ (red) for (a) ZPl and (b) PSB.}
 	\label{fig:simulation-comparison-dot-fabry-perot-output}
 \end{figure}
 
-$\Phi_{fabry,perot,unnormalized}(\nu)$ can then be normalized with the integral of $A'_{trans}(\nu)$ over the same range
+$\tilde{\Phi}_{FPI}(E)$ can then be normalized with the integral of $A'_{trans}(E)$ over the same range
 \begin{equation}
-\Phi_{fabry,perot}(\nu) =\frac{\Phi_{fabry,perot, unnormalized}(\nu)}{\int^{\nu_0 + \Delta \nu_{FSR}  \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR}  \cdot 0.5} A'_{trans}(\nu) d\nu}
+\Phi_{FPI}(E) =\frac{\tilde{\Phi}_{FPI}(E)}{\int^{E_0 + n \cdot \Delta}_{E_0 - n \cdot \Delta} A'_{trans}(E) dE}
 \end{equation}
-A comparison of $\Phi_{fabry,perot}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
+A comparison of $\Phi_{FPI}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output}.
 
 
 From now on, only the \ac{ZPL}-path is shown as no new information is gained by examining both.
-In order to estimate the accuracy of the scanning \ac{FPI}, one the of the \ac{FPI} modes is shifted in order to overlap with $\Phi_{fabry,perot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a).
-Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{fabry,perot}(E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
-Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
-\todo{The indices are a mess.. try to get it a bit more astethic. phi-FABRI,PEROT, that's far too long...}
+In order to estimate the accuracy of the scanning \ac{FPI}, the \ac{FPI} modes are shifted by $\Delta E$ in order to overlap with $\Phi_{dot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a)
 \begin{equation}
-\epsilon_{fabry,perot} = \frac{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right| d \nu }{\int^{\nu_0 + \Delta \nu_{FSR} \cdot 0.5}_{\nu_0 - \Delta \nu_{FSR} \cdot 0.5} \Phi_{\text{dot}}(\nu) d \nu}
+\overline{\Phi}_{FPI}(E) = \Phi_{FPI}(E - \Delta E).
 \end{equation}
-For the parameters in the \ac{ZPL} path this gives $\epsilon_{fabry,perot,ZPL}=\SI{10.57}{\percent}$.
+Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{FPI}(E-\Delta E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
+Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
+\begin{equation}
+\epsilon = \frac{\int^{E_0 + \Delta / 2}_{E_0 - \Delta / 2} \left|\overline{\Phi}_{\text{FPI}}(E) - \Phi_{\text{dot}}(E)\right| dE }{\int^{E_0 + \Delta / 2}_{E_0 - \Delta / 2} \Phi_{\text{dot}}(E) dE}
+\end{equation}
+For the parameters in the \ac{ZPL} path this gives $\epsilon_{ZPL}=\SI{10.57}{\percent}$.
 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/simulation-comparison-dot-fabry-perot-output-error}
-	\caption{Output-photon-flux of the scanning FPI $\Phi_{fabry,perot}(E)$ compared to the exciton emission $\Phi_{dot}(E)$.
-	In (a) $\Phi_{fabry,perot}(E)$ is $\Phi_{dot}(E)$, then in (b) the absolute difference $\left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right|$ is displayed $\left|\Phi_{\text{fabry,perot,shifted}}(\nu) - \Phi_{\text{dot}}(\nu)\right|$.}
+	\caption{In (a) the shifted output-photon-flux of the scanning FPI $\overline{\Phi}_{FPI}(E)$ (blue) compared to the exciton emission $\Phi_{dot}(E)$ (red) is displayed.
+	In (b) the absolute difference between those two $ \left|\overline{\Phi}_{\text{FPI}}(E) - \Phi_{\text{dot}}(E)\right|$ (light blue) is additionally shown.}
 	\label{fig:simulation-comparison-dot-fabry-perot-output-error}
 \end{figure}
 
