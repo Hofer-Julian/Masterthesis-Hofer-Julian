@@ -62,9 +62,33 @@ which is one of the four Bell states, representing the maximal entangled two-par
 
 Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
 In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
+The electron-hole exchange Hamilton is described by
+\begin{equation}
+\label{eq:hamiltonian}
+\mathcal{H}_{ex} = - \sum_{i=x,y,z}a_i J_{h,i}S_{e_i}+b_i J^3_{h_i}S_{e_i}
+\end{equation}
+with $a_i$ and $b_i$ as the spin-coupling constants, $J_{h_i}$ as the holes' and $S_{e_i}$ the electrons' total angular momentum.
+The $z$-direction is assigned as the crystal growth direction and the bright \ac{X} states are defined by the projections of $J_{h_i}$ and  $S_{e_i}$ to the $z$-axis, so that $\ket{+1} =\ket{+\frac{3}{2},-\frac{1}{2}}$ and $\ket{-1}=\ket{-\frac{3}{2},+\frac{1}{2}}$.
+The Hamiltonian of equation~\eqref{eq:hamiltonian} can the by described in the bases $\{\ket{+1},\ket{-1}\}$
+\begin{equation}
+\mathcal{H}_{ex}=
+\begin{pmatrix}
+\braket{+1|\mathcal{H_{ex}}|+1} & \braket{+1|\mathcal{H_{ex}}|-1} \\
+\braket{-1|\mathcal{H_{ex}}|+1} & \braket{-1|\mathcal{H_{ex}}|-1}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\Delta_0 & \Delta_1 \\
+\Delta_1 & \Delta_0
+\end{pmatrix}
+\end{equation}
+with $\Delta_0=\frac{3}{4}(a_z+\frac{9}{4}b_z)$ and $\Delta_1=-\frac{3}{8}(b_x-b_y)$.
 
+In the ideal case the \ac{QD} is perfectly symmetric along the $z$-axis, $b_x=b_y$, $\Delta_1$ vanishes and $\ket{+1}$ and $\ket{-1}$ are degenerate eigenstates.
+If that is not the case, the angular momentum $M$ along the $z$-direction is not preserved and $\ket{+1}$ and $\ket{-1}$ are no eigenstates of $\mathcal{H}_{ex}$.
+The new basis can be found by diagonalising $\mathcal{H}_{ex}$, described by $\frac{1}{\sqrt{2}}(\ket{+1}+\ket{-1})$ and $\frac{1}{\sqrt{2}}(\ket{+1}-\ket{-1})$.
 In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
-In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear polariser are shown.\todo{Describe it better (with some math)}
+In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear polariser are shown.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
