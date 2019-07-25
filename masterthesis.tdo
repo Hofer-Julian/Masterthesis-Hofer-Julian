@@ -7,12 +7,11 @@
 \contentsline {todo}{Please reformulate. This sounds "inverted". Start with what a Fabry-Perot is and that it does what we want.}{2}{section*.18}
 \contentsline {todo}{Einleitung}{15}{section*.38}
 \contentsline {todo}{Pulse shaper 4F geometrie, florian sipek}{15}{section*.40}
-\contentsline {todo}{helium flow crystat 4K}{15}{section*.41}
-\contentsline {todo}{Here I miss details about the measurement strategy. Explain why we measured such a short pulse. The goal was expanding much longer pulses for the final ARP. Go deeper here.}{25}{section*.57}
-\contentsline {todo}{Conclusion? What can we do to overcome this in the future? }{26}{section*.60}
-\contentsline {todo}{where do this elements come from and which basis is used by this matrix formalism. Without these definitions, these letters mean nothing.}{30}{section*.63}
-\contentsline {todo}{Better: 4.5 Setup and Measurement General stuff 4.5.1 Scanning mode with fast photodiodes 4.5.2 Stepwise mode (find better name) with CCD}{45}{section*.78}
-\contentsline {todo}{1) What APDs, which time resolution 2) What scanning frequency and why 3) Show pictures of the measurement itself and discribe features, errors etc. 5) What time range did you define, how did you configure the correlation hardware. 4) We did not connect the TTL-Output of the Funky-Generator directly to the Hydraharp, as it uses a different standard (NIM).}{45}{section*.80}
-\contentsline {todo}{how does this work. Explain more details, this is not trivial}{46}{section*.84}
-\contentsline {todo}{What does this comparison tell us? Did it fit the calculation? Where are the side peaks we saw in the HeNe measurement? What a about the stability? Are there calculations, expected temperature drifts, etc. Are there differences between the expected Finesse and the measured one, and why? Is this expected?}{47}{section*.86}
-\contentsline {todo}{Don't refer all the time to the main text. Imagine I'm a reader from a different field. I read the abstract, the introduction and the summary/outlook. Now I should know what you did and why and what are the future plans. At this point I have no idea what MOSAIC is, I have no idea what a pulse expander is, etc. unless you give me a hint in the summary.}{49}{section*.88}
+\contentsline {todo}{Here I miss details about the measurement strategy. Explain why we measured such a short pulse. The goal was expanding much longer pulses for the final ARP. Go deeper here.}{25}{section*.56}
+\contentsline {todo}{Conclusion? What can we do to overcome this in the future? }{26}{section*.59}
+\contentsline {todo}{where do this elements come from and which basis is used by this matrix formalism. Without these definitions, these letters mean nothing.}{30}{section*.62}
+\contentsline {todo}{Better: 4.5 Setup and Measurement General stuff 4.5.1 Scanning mode with fast photodiodes 4.5.2 Stepwise mode (find better name) with CCD}{45}{section*.77}
+\contentsline {todo}{1) What APDs, which time resolution 2) What scanning frequency and why 3) Show pictures of the measurement itself and discribe features, errors etc. 5) What time range did you define, how did you configure the correlation hardware. 4) We did not connect the TTL-Output of the Funky-Generator directly to the Hydraharp, as it uses a different standard (NIM).}{45}{section*.79}
+\contentsline {todo}{how does this work. Explain more details, this is not trivial}{46}{section*.83}
+\contentsline {todo}{What does this comparison tell us? Did it fit the calculation? Where are the side peaks we saw in the HeNe measurement? What a about the stability? Are there calculations, expected temperature drifts, etc. Are there differences between the expected Finesse and the measured one, and why? Is this expected?}{47}{section*.85}
+\contentsline {todo}{Don't refer all the time to the main text. Imagine I'm a reader from a different field. I read the abstract, the introduction and the summary/outlook. Now I should know what you did and why and what are the future plans. At this point I have no idea what MOSAIC is, I have no idea what a pulse expander is, etc. unless you give me a hint in the summary.}{49}{section*.87}
