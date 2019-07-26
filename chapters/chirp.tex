@@ -79,9 +79,15 @@ This means they cannot even measure the duration of these ultrashort pulses let 
 	\label{fig:chirpedlaserpulse}
 \end{figure}
 
+\newpage
 
 \section{Measuring the chirp with interferometric autocorrelation}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/chirp/Optical-interferometric-autocorrelation-setup.png}
+	\caption[Schematics of an interferometric autocorrelator]{Schematics of an interferometric autocorrelator, where \textbf{L} is a converging lens, \textbf{SHG} a second-harmonic generation crystal, \textbf{BS} a beam splitter, $\mathbf{\tau}$ the interval between two pulses, \textbf{D} the detector and \textbf{F} a spectral filter to block the fundamental wavelength~\cite{noauthor_optical_nodate}.}
+	\label{fig:optical-field-autocorrelation-setup}
+\end{figure}
 In order to estimate the pulse width $\tau_0$ \ac{IAC} is used.
 Basically, a nonlinear crystal is added to a Michelson interferometer in order to generate a signal governed by~\cite{diels_ultrashort_2006}
 \begin{equation}
@@ -89,25 +95,18 @@ Basically, a nonlinear crystal is added to a Michelson interferometer in order t
 I_M(\tau) = \int_{-\infty}^{+\infty}\langle|(E(t)+E(t-\tau))^2|^2\rangle dt.
 \end{equation}
 Here $\langle \rangle$ denotes averaging over fast oscillations of the electric field.
-Under the use of equation~\ref{eq:electric-field-laser} it can be expanded to
-\begin{align}
-I_M(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) cos(2 \omega \tau + 2 \Delta \phi) dt \nonumber\\
-&+ 2 \int f^{1/2}(t) f^{3/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt + 2 \int f^{3/2}(t) f^{2/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt
-\end{align}
-where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\linewidth]{figures/chirp/Optical-interferometric-autocorrelation-setup.png}
-	\caption[Schematics of an interferometric autocorrelator]{Schematics of an interferometric autocorrelator, where \textbf{L} is a converging lens, \textbf{SHG} a second-harmonic generation crystal, \textbf{BS} a beam splitter, $\mathbf{\tau}$ the interval between two pulses, \textbf{D} the detector and \textbf{F} a spectral filter to block the fundamental wavelength~\cite{noauthor_optical_nodate}.}
-	\label{fig:optical-field-autocorrelation-setup}
-\end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
 	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
 	\label{fig:imgausschirpwithoutslitwithoutmosaic}
 \end{figure}
-
+Under the use of equation~\ref{eq:electric-field-laser}, equation~\eqref{eq:i-m-integral} can be expanded to
+\begin{align}
+I_M(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) cos(2 \omega \tau + 2 \Delta \phi) dt \nonumber\\
+&+ 2 \int f^{1/2}(t) f^{3/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt + 2 \int f^{3/2}(t) f^{2/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt
+\end{align}
+where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 
 As can be seen in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
 However, certain modifications to the \ac{IAC} signal introduced by \textcite{hirayama_real-time_2002} make it much more sensitive to the temporal chirp.
@@ -125,6 +124,9 @@ Here the influence of the chirp is clearly visible in the lower envelope.
 	\caption{Intensity of IAC of a Gaussian laser pulse of pulse duration $\tau_0=\SI{0.5}{\pico \second}$ with applied MOSAIC filter for chirp of (a) $\alpha = \SI{0}{\pico \second \squared}$ and (b) $\alpha = \SI{0.5}{\pico \second \squared}$}
 	\label{fig:mosaicchirpedlaserpulse}
 \end{figure}
+
+\newpage
+
 The points of the lower envelope can be obtained by determining the local minima of the signal as shown in figure~\ref{fig:mosaicchirpedlaserpulsefindenvelope}.
 
 \begin{figure}[H]
@@ -157,6 +159,17 @@ It is visible that the fitted values of $\alpha$ correspond to the expected valu
 
 \section{Deterministically adjusting the chirp with a pulse expander}
 \label{sec:pulse-expander}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
+	\caption{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.
+		The light enters on the right side, passes the halfmirror, and enters the system of transmission grating, lens and mirrors.
+		Afterwards it hits the halfmirror and exits on the left hand.}
+	\label{fig:pulse-expander}
+\end{figure}
+
+
+
 In the optimal case the chirp of the pulse can be deterministically adjusted in order to most efficiently excite the \ac{QD} via adiabatic rapid passage (which will be introduced in section~\ref{sec:arp}).
 Grating compressors as discussed by \textcite{martinez_3000_1987} were originally used to compensate the broadening effect fibers have on pulses.
 However, together with a telescope they have the inverse effect and can be used to induce a chirp.
@@ -167,6 +180,7 @@ The accumulated group velocity dispersion can be adjusted by varying the optical
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
 where $\beta$ is a value depending on the parameters of the grating and the lens.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/chirp/group-velocity-dispersion}
@@ -180,14 +194,7 @@ In fact, the frequency chirp rate $a_{gauss}$ introduced in equation~\eqref{eq:p
 a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{d \omega^2}\right)^2}
 \end{equation}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
-	\caption{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.
-	The light enters on the right side, passes the halfmirror, and enters the system of transmission grating, lens and mirrors.
-Afterwards it hits the halfmirror and exits on the left hand.}
-	\label{fig:pulse-expander}
-\end{figure}
+
 
 \section{Adiabatic rapid passage}
 \label{sec:arp}
@@ -218,6 +225,7 @@ However, for $\alpha \gg 0$ biexciton preparation becomes insensitive to small v
 This is therefore the regime which would be the most suitable to work in.
 In the case of $\alpha < 0$ this insensitivity does not appear for moderate values of $\Delta$ as can be seen in figure~\ref{fig:biexciton-occupation}(b).
 
+\newpage
 \section{Measurements and discussion}
 \todo{Here I miss details about the measurement strategy. Explain why we measured such a short pulse. The goal was expanding much longer pulses for the final ARP. Go deeper here.}
 In order to determine the chirp of a laser pulse which only passed the pulse shaper as shown in figure~\ref{fig:setupflat}, it was sent to the \ac{IAC}.

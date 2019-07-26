@@ -15,9 +15,22 @@ The setup used for the measurements described in following chapters is sketched 
 	\label{fig:setupflat}
 \end{figure}
 
-\todo{Pulse shaper 4F geometrie, florian sipek}
+\section{Pulse shaper}
 
-Pulse shaper~\cite{sipek_spectral_2016}.
+In order to resonantly excite the $\ket{XX}$ state a pulsed Ti:Sa laser with a \ac{FWHM} pulse duration of $\tau_P\approx\SI{100}{\femto \second}$ is used.
+Under the assumption that the laser pulse is of Gaussian shape and that it is chirp-free (more on that in chapter~\ref{cha:chirp}), the spectral bandwidth $\Delta \nu$ can be described by
+\begin{equation}
+\Delta \nu \tau_P \approx 0.44.
+\end{equation}
+This corresponds to a spectral range of $\Delta E = h\Delta \nu = \SI{18.2}{\milli \electronvolt}$.
+As can be seen in equation~\eqref{eq:e_p}, the spectral range should be smaller that $E_B/2\approx\SI{1.89}{\milli \electronvolt}$, which is not fulfilled with the laser beam alone.
+
+The pulse shaper sketched in the upper part of figure~\ref{fig:setupflat} is used in order to tune $\Delta E$ and additionally the centre emission energy to our requirements.
+The laser beam is sent through a Keplerian telescope in order to expand its beam diameter from \SI{3.4}{\milli \meter} to \SI{6}{\milli \meter}.
+It gets dispersed by a diffraction grating and the focused by a lens so that the spectral components are ordered along a plane where the slit is placed.
+The centre energy can be adjusted with the slit position and the spectral range with the slit width.
+The setup is mirrored with an additional lens and diffraction grating, which transform the laser beam again into real space. 
+
 
 \section{Micro photo-luminescence}
 \begin{figure}[H]

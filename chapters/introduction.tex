@@ -4,16 +4,30 @@
 In the past century, technology was transformed by the first quantum revolution. Scientists and engineers all around the world utilized certain features of quantum mechanics such as energy quantization and wave-particle duality to create devices which are a nowadays a fixed part of everyone's life.
 These technologies, ranging from semiconductor devices to LEDs and lasers, became high-performance components which drive the global communication networks and information processing.
 The second quantum revolution will make use of superposition, entanglement and quantum interference~\cite{macfarlane_quantum_2003}.
-It will provide quantum simulations as well as secure communication via \ac{QKD}.\todo{Citations. In general: The introduction should be quite citation heavy}
-\ac{QKD} enables to produce a shared random key, which only the two parties wishing to exchange messages know, and which can be used by one of them to encrypt a message and be used by the other to decrypt it.
+Entanglement is already the basis of many experiments in quantum computation and its distinct properties are used for quantum cryptography protocols as well.~\cite{zeilinger_light_2017}.
+It describes a physical phenomenon involving two or more particles which quantum states cannot be described independently from each other.
+Modern optical fibre networks allow to transport photons (and their quantum states) over long distances and are therefore ideal to build up quantum networks~\cite{gisin_quantum_2002}.
+With \ac{QKD} inherently secure communication would be possible, as it enables to produce a shared random key, which only the two parties wishing to exchange messages know, and which can be used by one of them to encrypt a message and be used by the other to decrypt it.
 An implementation under the E$91$ protocol allows to detect eavesdropping even with lossy channels by using entangled photon pairs~\cite{ekert_quantum_1991}.
-However, this requires deterministic sources of single entangled photons.\todo{Motivate more (+citations): Quantum repeater schemes for a "quantum internet" (cite Marcus teleportation paper), quantum computer, etc. There is so many fancy stuff QDs could cover, you mentioned the most boring one which can be done even with attenuated lasers (QKD). Also, compare with other sources: Spontaneous parametric downconverters, cold atoms. Nitrogen vacancies in diamonds (Cite like hell)}
 
-\todo{Explain the figures of merit necessary for these applications: Indistinguishability and Entanglement. To this point, the reader has no idea what these terms mean.
-	Only after then you can start introducing dots as good sources for meeting these demands.}With this motivation in mind, droplet-etched GasAs quantum dots as potential sources are investigated, as they are quasi strain-free, of high symmetry and exhibit low values of \ac{FSS}.
-Quantum dots can serve as emitters of single indistinguishable photons, \sout{yet entanglement fidelity is limited by the \acs{FSS} between the two exciton states \cite{bayer_fine_2002} and re-excitation of photons at the exciton level to the biexciton level before they can decay to the ground state.
-The \ac{FSS} can be eliminated by using external perturbations~\cite{plumhof_experimental_2012}}\todo{keep the FSS details for the QD chapter. (Introduce this chaper, as you did with chapter 3 and 4) It's too special for the introduction and actually irrelevant for your topics.
-Focus on the two-photon excitation and keep it as simple as possible for the introductin. Imaging beeing a reader with minor knowledge about QDs.} and re-excitation of the photons at the exciton level can be avoided by resonant two-photon excitation.
+However, in order to solve this task several problems have to be solved first.
+Fibre channels suffer from decoherence and losses, degrading the quantum information to a point where they are unusable for quantum protocols and therefore limiting the maximal communication distance.
+Usually classical amplifiers would be used in order to counteract transmission losses, however this does not work with quantum states.
+That is why, multiple teams looked into developing quantum repeaters~\cite{reindl_all-photonic_2018}\cite{duan_long-distance_2001}\cite{simon_quantum_2007}.
+The quantum repeater uses an entangled state in order to transmit a quantum state to another repeater station using quantum teleportation~\cite{bennett_teleporting_1993}.
+
+Additionally, the E$91$ protocol requires deterministic sources of single entangled photons.
+Parametric down conversion crystals~\cite{shih_new_1988} or single atoms~\cite{aspect_experimental_1981} could serve as sources.
+Sources based on parametric down conversion are currently the brightest ones, but their emission is probabilistic.
+The number of entangled photon pairs emitted per excitation pulse is statistically distributed.
+Single atoms offer sharp electronic transitions, are free from charge fluctuations and are energetically isolated.
+Nowadays advanced techniques~\cite{kuhn_deterministic_2002} are used in order to operate with single-atom-based sources, but their dynamics are relatively low, leading to slow operation rates.
+
+Quantum dots provide an alternative source of single entangled photons.
+Quantum dots are deterministic, emitting maximal one photon pair per excitation and are scalable to nanosized dimensions.
+With this motivation in mind, droplet-etched GasAs quantum dots as potential sources are investigated, as they are quasi strain-free, of high symmetry and exhibit low values of \ac{FSS}.
+However, entanglement fidelity is limited by re-excitation of photons at the exciton level to the biexciton level before they can decay to the ground state. 
+This effect can be avoided by resonant two-photon excitation.
 With these measures on-demand generation of entangled photons gets within reach~\cite{jayakumar_deterministic_2013}.
 However, resonant two-photon excitation requires precise control of the intensity of the exciting field in order to inverse the quantum dot from the ground state to the biexciton state.
 Exciting via adiabitic rapid passage with frequency-chirped pulses can be an alternative, which is further discussed in chapter~\ref{cha:chirp}.
