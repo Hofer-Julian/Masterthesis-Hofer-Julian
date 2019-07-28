@@ -4,11 +4,13 @@
 In the past century, technology was transformed by the first quantum revolution. Scientists and engineers all around the world utilized certain features of quantum mechanics such as energy quantization and wave-particle duality to create devices which are a nowadays a fixed part of everyone's life.
 These technologies, ranging from semiconductor devices to LEDs and lasers, became high-performance components which drive the global communication networks and information processing.
 The second quantum revolution will make use of superposition, entanglement and quantum interference~\cite{macfarlane_quantum_2003}.
-Entanglement is already the basis of many experiments in quantum computation and its distinct properties are used for quantum cryptography protocols as well.~\cite{zeilinger_light_2017}.
+Entanglement is already the basis of many experiments in quantum computation and its distinct properties can be used for quantum cryptography protocols as well.~\cite{zeilinger_light_2017}.
 It describes a physical phenomenon involving two or more particles which quantum states cannot be described independently from each other.
-Modern optical fibre networks allow to transport photons (and their quantum states) over long distances and are therefore ideal to build up quantum networks~\cite{gisin_quantum_2002}.
-With \ac{QKD} inherently secure communication would be possible, as it enables to produce a shared random key, which only the two parties wishing to exchange messages know, and which can be used by one of them to encrypt a message and be used by the other to decrypt it.
-An implementation under the E$91$ protocol allows to detect eavesdropping even with lossy channels by using entangled photon pairs~\cite{ekert_quantum_1991}.
+Entanglement is especially useful when the entangled particles are photons, as they can be transported over long distances with modern fibre networks and are therefore ideal to build up quantum networks~\cite{gisin_quantum_2002}.
+\ac{QKD} under the E$91$ protocol could be implemented by exchanging entangled photons over the quantum networks and then generate a shared encryption key.
+Since the photons are entangled, the key can be generated in a way that only two parties wishing to exchange messages know it.
+Afterwards, the key can be used to encrypt/decrypt the data with (symmetric) algorithms and send exchange them via classical channels.
+The E$91$ protocol with its use of entanglement has the advantage that it guarantees to detect eavesdropping even with lossy channels, which can be a problem with other implementations of \ac{QKD}~\cite{ekert_quantum_1991}.
 
 However, in order to solve this task several problems have to be solved first.
 Fibre channels suffer from decoherence and losses, degrading the quantum information to a point where they are unusable for quantum protocols and therefore limiting the maximal communication distance.
