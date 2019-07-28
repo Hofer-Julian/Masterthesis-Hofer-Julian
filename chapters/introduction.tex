@@ -7,35 +7,36 @@ The second quantum revolution will make use of superposition, entanglement and q
 Entanglement is already the basis of many experiments in quantum computation and its distinct properties can be used for quantum cryptography protocols as well.~\cite{zeilinger_light_2017}.
 It describes a physical phenomenon involving two or more particles which quantum states cannot be described independently from each other.
 Entanglement is especially useful when the entangled particles are photons, as they can be transported over long distances with modern fibre networks and are therefore ideal to build up quantum networks~\cite{gisin_quantum_2002}.
-\ac{QKD} under the E$91$ protocol could be implemented by exchanging entangled photons over the quantum networks and then generate a shared encryption key.
-Since the photons are entangled, the key can be generated in a way that only two parties wishing to exchange messages know it.
-Afterwards, the key can be used to encrypt/decrypt the data with (symmetric) algorithms and send exchange them via classical channels.
-The E$91$ protocol with its use of entanglement has the advantage that it guarantees to detect eavesdropping even with lossy channels, which can be a problem with other implementations of \ac{QKD}~\cite{ekert_quantum_1991}.
+Quantum key distribution \acs{QKD} \acused{QKD} under the E$91$ protocol can be implemented by exchanging entangled photons over the quantum networks and then generate a shared encryption key.
+Since the photons are entangled, the key can be generated in a way that only two parties wishing to exchange messages obtain the key.
+Afterwards, the key is used to encrypt the data with (symmetric) algorithms, the encrypted data is transmitted via classical channels and then encrypted with the very same key by the other party.
+The E$91$ protocol with its use of entanglement has the advantage that it guarantees to detect eavesdropping even with lossy channels, which can be an obstacle with other implementations of \ac{QKD}~\cite{ekert_quantum_1991}.
 
-However, in order to solve this task several problems have to be solved first.
-Fibre channels suffer from decoherence and losses, degrading the quantum information to a point where they are unusable for quantum protocols and therefore limiting the maximal communication distance.
+However, in order to use entangled photons for \ac{QKD} several problems have to be solved first.
+Fibre channels suffer from de-coherence and optical losses, degrading the quantum information to a point where they are unusable for quantum protocols and therefore limiting the maximal communication distance.
 Usually classical amplifiers would be used in order to counteract transmission losses, however this does not work with quantum states.
-That is why, multiple teams looked into developing quantum repeaters~\cite{reindl_all-photonic_2018}\cite{duan_long-distance_2001}\cite{simon_quantum_2007}.
-The quantum repeater uses an entangled state in order to transmit a quantum state to another repeater station using quantum teleportation~\cite{bennett_teleporting_1993}.
+In order to solve this problems, multiple teams are in the process of developing quantum repeaters~\cite{reindl_all-photonic_2018}\cite{duan_long-distance_2001}\cite{simon_quantum_2007}.
+Quantum repeaters are based on quantum teleportation, and use this phenomena in order to transmit a quantum state to another location using quantum teleportation~\cite{bennett_teleporting_1993}.
+Therefore, the transmission distance can be broken up into segments where the losses are acceptable and than the state of the photon gets teleported to a photon at the next repeater station destroying the state of the original photon.
+
 
 Additionally, the E$91$ protocol requires deterministic sources of single entangled photons.
-Parametric down conversion crystals~\cite{shih_new_1988} or single atoms~\cite{aspect_experimental_1981} could serve as sources.
-Sources based on parametric down conversion are currently the brightest ones, but their emission is probabilistic.
-The number of entangled photon pairs emitted per excitation pulse is statistically distributed.
+Two prominent sources are parametric down conversion crystals~\cite{shih_new_1988} and single atoms~\cite{aspect_experimental_1981}.
+Sources based on parametric down conversion are currently the brightest ones, however their emission is probabilistic, which means that the number of entangled photon pairs emitted per excitation pulse is statistically distributed.
+This can be overcome by filtering which has the disadvantage of reducing the throughput.
 Single atoms offer sharp electronic transitions, are free from charge fluctuations and are energetically isolated.
-Nowadays advanced techniques~\cite{kuhn_deterministic_2002} are used in order to operate with single-atom-based sources, but their dynamics are relatively low, leading to slow operation rates.
+Nowadays advanced techniques~\cite{kuhn_deterministic_2002} are used in order to operate with single-atom-based sources, but their dynamics are still relatively low, leading to slow operation rates.
 
 Quantum dots provide an alternative source of single entangled photons.
 Quantum dots are deterministic, emitting maximal one photon pair per excitation and are scalable to nanosized dimensions.
-With this motivation in mind, droplet-etched GasAs quantum dots as potential sources are investigated, as they are quasi strain-free, of high symmetry and exhibit low values of \ac{FSS}.
-However, entanglement fidelity is limited by re-excitation of photons at the exciton level to the biexciton level before they can decay to the ground state. 
-This effect can be avoided by resonant two-photon excitation.
-With these measures on-demand generation of entangled photons gets within reach~\cite{jayakumar_deterministic_2013}.
-However, resonant two-photon excitation requires precise control of the intensity of the exciting field in order to inverse the quantum dot from the ground state to the biexciton state.
-Exciting via adiabitic rapid passage with frequency-chirped pulses can be an alternative, which is further discussed in chapter~\ref{cha:chirp}.
+With this motivation in mind, droplet-etched GasAs quantum dots as potential sources are investigated in chapter~\ref{chapter:quantum-dot}, as they are quasi strain-free, of high symmetry and exhibit low values of \ac{FSS}
+Entanglement fidelity is limited by re-excitation of photons at the exciton level to the biexciton level before they can decay to the ground state, but this effect can be avoided by resonant two-photon excitation.
+Resonant two-photon excitation usually requires precise control of the intensity of the exciting field in order to inverse the quantum dot from the ground state to the biexciton state~\cite{jayakumar_deterministic_2013}.
+Adiabitic rapid passage with frequency-chirped pulses does not suffer from this requirement, which motivates its discussion in chapter~\ref{cha:chirp}.
 
-When it comes to characterizing \ac{QD} emission, more obstacles arise as fine features of the emission spectrum are not resolvable with a CCD-based spectrometer alone.
-However, a small-band bandpass filter with adjustable center frequency could scan through the ranges of interest and its output could then be recorded with the CCD.
-Chapter~\ref{chapter:scanning-fabry-perot} describes the efforts to build up a scanning Fabry-Pérot interferometer to do exactly that. \todo{Please reformulate. This sounds "inverted". Start with what a Fabry-Perot is and that it does what we want.}
+When it then comes to characterizing \ac{QD} emission, more obstacles arise as fine features of the emission spectrum are not resolvable with a CCD-based spectrometer alone.
+A Fabry-Pérot interferometer transmits signals of certain resonant frequencies and these frequencies can be adjusted in order to scan through the ranges of interest.
+\ac{QD} emission can be sent through the scanning interferometer and its output could then be recorded with the CCD allowing to reassemble the complete spectrum.
+Chapter~\ref{chapter:scanning-fabry-perot} describes the efforts to build up a scanning Fabry-Pérot interferometer to do exactly that.
 
 
