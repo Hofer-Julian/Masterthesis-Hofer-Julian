@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="61.522846mm"
+   width="79.555031mm"
    height="45.903622mm"
-   viewBox="0 0 61.522846 45.903622"
+   viewBox="0 0 79.555031 45.903622"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -99,10 +99,10 @@
     </marker>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="-2.8348214 : 169.47768 : 1"
+       inkscape:vp_x="-2.8348216 : 169.47768 : 1"
        inkscape:vp_y="0 : 999.99998 : 0"
-       inkscape:vp_z="210 : 148.5 : 1"
-       inkscape:persp3d-origin="105 : 98.999998 : 1"
+       inkscape:vp_z="210.00001 : 148.5 : 1"
+       inkscape:persp3d-origin="105.00001 : 98.999998 : 1"
        id="perspective817" />
   </defs>
   <sodipodi:namedview
@@ -113,8 +113,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="61.001145"
-     inkscape:cy="72.453543"
+     inkscape:cx="136.24993"
+     inkscape:cy="72.453536"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -131,7 +131,7 @@
     <inkscape:grid
        type="xygrid"
        id="grid849"
-       originx="2.6458332"
+       originx="2.6458334"
        originy="-174.814" />
   </sodipodi:namedview>
   <metadata
@@ -142,7 +142,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -216,5 +216,23 @@
          y="87.626389"
          style="stroke-width:0.26458332"
          id="tspan2050" /></text>
+    <rect
+       style="fill:#87aade;fill-opacity:1;stroke:#333333;stroke-width:0.36006117;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect867-0"
+       width="14.552082"
+       height="7.9375"
+       x="62.177082"
+       y="89.302078" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.76111126px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="62.970833"
+       y="95.122917"
+       id="text871-7"><tspan
+         sodipodi:role="line"
+         id="tspan869-8"
+         x="62.970833"
+         y="95.122917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">CCD</tspan></text>
   </g>
 </svg>
