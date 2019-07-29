@@ -10,20 +10,19 @@ The discussion in this section is based on the PhD thesis of \textcite{huber_gaa
 
 Gallium arsenide \acp{QD} investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
 As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the Al forms droplets on Al$_{0.4}$Ga$_{0.6}$As after evaporation.
-The Al reacts with Al$_{0.4}$Ga$_{0.6}$As, which produces nanoholes etched into the surface.
-Under ideal conditions, these nanoholes are highly symmetric as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
-This results into \acp{QD} with high in-plane symmetry.
+The Al reacts with Al$_{0.4}$Ga$_{0.6}$As, etching nanoholes into the surface.
+Under ideal conditions, these nanoholes are highly symmetric resulting into \acp{QD} with high in-plane symmetry  as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
 The next step is the annealing process in which GaAs is deposited to fill the nanoholes.
 The \ac{QD} is finalized by capping the layer with Al$_{0.4}$Ga$_{0.6}$As acting as top barrier.
 
 Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, GaAs has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
-The energy difference between the Al$_{0.4}$Ga$_{0.6}$As bandgap and the discrete energy levels forming in the \ac{QD} are responsible for the $3$D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c.
+The energy difference between the bandgaps and the discrete energy levels forming in the \ac{QD} are responsible for the $3$D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c.
 Inside of the \ac{QD}, optical transitions are possible.
 Transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell, are here of special interest.
 The carriers involved are the electrons ($e^-$) and the holes ($h^+$) left behind.
 These are fermions and therefore only up to two of them can, in accordance with Pauli's exclusion principle, occupy a single energy state.
 Electrons and holes are strongly localized inside the \ac{QD} by the confinment potential and influence each other by Coulomb attraction and exchange interaction~\cite{bimberg_quantum_1999}.
-This leads to multi-particle complexes with the most fundamental being the \acf{X}, a state of an electron and a hole, bound by Coulomb interaction.
+This leads to multi-particle complexes with the most fundamental being the \acf{X}, a quasi-particle consisting of an electron and a hole, bound by Coulomb interaction.
 Fully occupied s-shells form the \acf{XX}, consisting of two electrons and two holes of opposite spins.
 
 \begin{figure}[H]
@@ -38,6 +37,7 @@ In a \ac{QD}, polarization-entangled photon pairs can be generated via a biexcit
 The $\ket{XX}$ state forms a full shell, which means that the total angular momentum projection along the quantization axis of the \ac{XX} complex sums up to $M=0$.
 The \ac{QD} is radially symmetric, therefore $M$ is preserved and $\ket{M}$ are eigenstates of the system.
 After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
+\newpage
 The two dipole-allowed radiative transitions lead to only two possible angular momentum states of the exciton:
 \begin{itemize}
 	\item $\ket{-1}$ under emission of a right-circularly-polarized photon $\ket{R_{XX}}$
@@ -60,8 +60,8 @@ which is one of the four Bell states, representing the maximal entangled two-par
 \end{figure}
 
 In order to calculate the life time of the \ac{X} and \ac{XX} states and the respective spectral description of the emission the radiative transition rate $\Gamma$ between quantum mechanical states has to be derived.
-$\Gamma$ describes the transition probability per unit time from an initial state $\ket{i}$ to a final state $\ket{f}$ and it can be calculated by Fermi's golden rule if the the transition occurs because of a weak perturbation.
-In the dipole approximation it can be described by
+$\Gamma$ describes the transition probability per unit time from an initial state $\ket{i}$ to a final state $\ket{f}$ and can be calculated by Fermi's golden rule if the the transition occurs because of a weak perturbation.
+In the dipole approximation it depends on
 \begin{equation}
 \Gamma \propto \left|\braket{f|\mathbf{e}\cdot\mathbf{\hat{p}}|i}\right|^2 \delta(E_i-E_f-E_P)
 \end{equation}
@@ -95,7 +95,7 @@ The electron-hole exchange Hamilton is described by
 \end{equation}
 with $a_i$ and $b_i$ as the spin-coupling constants, $J_{h_i}$ as the holes' and $S_{e_i}$ the electrons' total angular momentum.
 The $z$-direction is assigned as the crystal growth direction and the bright \ac{X} states are defined by the projections of $J_{h_i}$ and  $S_{e_i}$ to the $z$-axis, so that $\ket{+1} =\ket{+\frac{3}{2},-\frac{1}{2}}$ and $\ket{-1}=\ket{-\frac{3}{2},+\frac{1}{2}}$.
-The Hamiltonian of equation~\eqref{eq:hamiltonian} can the by described in the bases $\{\ket{+1},\ket{-1}\}$
+The Hamiltonian of equation~\eqref{eq:hamiltonian} can then by described in the bases $\{\ket{+1},\ket{-1}\}$
 \begin{equation}
 \mathcal{H}_{ex}=
 \begin{pmatrix}
@@ -112,7 +112,7 @@ with $\Delta_0=\frac{3}{4}(a_z+\frac{9}{4}b_z)$ and $\Delta_1=-\frac{3}{8}(b_x-b
 
 In the ideal case the \ac{QD} is perfectly symmetric along the $z$-axis, $b_x=b_y$, $\Delta_1$ vanishes and $\ket{+1}$ and $\ket{-1}$ are degenerate eigenstates.
 If that is not the case, the angular momentum $M$ along the $z$-direction is not preserved and $\ket{+1}$ and $\ket{-1}$ are no eigenstates of $\mathcal{H}_{ex}$.
-The new basis can be found by diagonalising $\mathcal{H}_{ex}$, described by $\frac{1}{\sqrt{2}}(\ket{+1}+\ket{-1})$ and $\frac{1}{\sqrt{2}}(\ket{+1}-\ket{-1})$.
+The new basis can be found by diagonalising $\mathcal{H}_{ex}$ and are described by $\frac{1}{\sqrt{2}}(\ket{+1}+\ket{-1})$ and $\frac{1}{\sqrt{2}}(\ket{+1}-\ket{-1})$.
 In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
 In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear polariser are shown.
 \begin{figure}[H]
@@ -153,11 +153,11 @@ The intensity distribution between the two components depends strongly on temper
 		The emission shape can be determined by mirroring the absorption shape at $\omega'$.}
 	\label{fig:line-shape}
 \end{figure}
-To determine the frequency gap $\Delta$ in figure~\ref{fig:line-shape}, the Franc-Condon principles~\cite{franck_elementary_1926} are used.
-It states that electronic transition between ground and excited state is much faster than the motion in the lattice as the photons carry nearly no momentum.
+To determine the frequency gap $\Delta$ in figure~\ref{fig:line-shape}, the \ac{FCP}~\cite{franck_elementary_1926} are used.
+The \ac{FCP} state that electronic transition between ground and excited state is much faster than the motion in the lattice as the photons carry nearly no momentum.
 Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
 The transitions can be displayed as vertical arrows with the shorter arrow describing the \ac{ZPL} and the longer one describing the \ac{PSB}.
-According to the Franc-Condon principles, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
+According to the \ac{FCP}, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
 In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $E_{pi} = \hbar \Omega_i$.
 The emission follows the same principle.
 \begin{figure}[H]
@@ -181,14 +181,16 @@ The emission follows the same principle.
 	\label{fig:zero-phonon-line-phonon-side-band}
 \end{figure}
 
-Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the Franck-Condon principles.
+Figure~\ref{fig:phonon-energy-diagram} and \ref{fig:lattice-modes} implicitly assume approximations in addition to the \ac{FCP}.
 The lattice vibrational mode has to be well described by a quantum harmonic oscillator.
 Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
 These preconditions are visible in the parabolic shaped potential wells and equally spaced phonon energy levels in figure~\ref{fig:phonon-energy-diagram}.
 
-The reason why zero-phonon line is stronger than the phonon side band can be found by examining the superpositon of the lattice modes.
+The reason why the \ac{ZPL} is stronger than the \ac{PSB} can be found by examining the superpositon of the lattice modes.
 Each lattice mode $m$ leads to a different energy difference $\hbar \Omega_m$ between phonons.
 That is why the transitions with phonons result in a energy distribution and the zero-phonon transition add up at the electronic origin $E_1 - E_0$ as can be seen in figure~\ref{fig:lattice-modes}b.
+
+\newpage
 
 The theoretical limit of the spectral range of the zero-phonon line for a GaAs quantum dot can be calculated with the time-energy uncertainty relation
 \begin{equation}
@@ -259,9 +261,9 @@ Because of Coulomb interaction, two times the \ac{X} energy with respect to the 
 The laser is therefore tuned to
 \begin{equation}
 \label{eq:e_p}
-E_P = E_X - E_B / 2.
+E_P = E_X - E_B / 2
 \end{equation}
-Empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for GaAs \acp{QD}.
+with empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for GaAs \acp{QD}.
 Resonant two-photon absorption is a third-order non-linear effect which involves two photons and electrons at once.
 It depends on the third-order-susceptibility $\chi^{(3)}$ of GaAs and therefore requires relatively high laser power.
 
@@ -271,7 +273,8 @@ The final population of the \ac{XX} can be described by
 \label{eq:n-xx}
 N_{XX} = \sin^2\left(\frac{\theta}{2}\right)
 \end{equation}
-with $\theta$ as the pulse area in relation to the Rabi oscillations. $\theta$ is not the area of the excitation pulse, but depends on it in a non-trivial way~\cite{stufler_two-photon_2006}.
+with $\theta$ as the pulse area in relation to the Rabi oscillations.
+It has to be noted that $\theta$ is not the area of the excitation pulse, but depends on it in a non-trivial way~\cite{stufler_two-photon_2006}.
 Measured Rabi oscillations of \ac{X} and \ac{XX} are shown in figure~\ref{fig:rabi-oscillations}~\cite{reindl_phonon-assisted_2017}.
 Theoretically, the curve should oscillate between occupancies $N/N_0$, with $N_0$ as the maximum population, of $0$ and $1$.
 However, as a consequence of phonon damping the occupancy converges to a purely probabilistic value of $0.5$~\cite{forstner_phonon-assisted_2003}.
@@ -299,14 +302,14 @@ However, as a consequence of phonon damping the occupancy converges to a purely 
 \section{Single photon emission}
 The XX-X cascade shown in figure~\ref{fig:qd-resonant} results in a single photon pair per emission cycle.
 Single photons are necessary for quantum cryptography and quantum optics in general which motivates the following discussion of this topic based on the thesis of \textcite{huber_gaas_2019}.
-The single photon purity of the $\ket{XX}$ to $\ket{X}$ and the $\ket{X}$ to $\ket{G}$ signals, respectively, can be determined by performing a \acf{HBT} experiment.
+The single photon purity of the $\ket{XX}$ to $\ket{X}$ and the $\ket{X}$ to $\ket{G}$ decay emissions, respectively, can be determined by performing a \acf{HBT} experiment.
 An example of an \ac{HBT} setup is shown in figure~\ref{fig:hbt-fiber} and consists of two \acp{APD} used as single photon detectors and a beam splitter.
-The measurements at the two detectors can be used in order to calculate the second-order correlation function, which is defined as
+The measurements at the two detectors can be used in order to calculate the second-order correlation function
 \begin{equation}
-g^{(2)} = \frac{\langle I(t) I(t+\tau)\rangle}{\langle I(t) \rangle \langle I(t+\tau)\rangle}
+g^{(2)} = \frac{\langle n_1(t) n_2(t+\tau)\rangle}{\langle n_1(t) \rangle \langle n_2(t+\tau) \rangle}
 \end{equation}
-with $I(t)$ as the light intensity and $\tau$ as the time delay. When a single photon enters the input of the \ac{BS} it can only be measured at one output, but never at both simultaneously.
-Assuming a perfect single photon emitter, a coincidence measurement between \ac{APD}$1$ and \ac{APD}$2$ will result in $g^{(2)}(\tau) = 0$ at zero time delay.
+where $n_i(t)$ is the number of counts registered on \ac{APD} $i$ at time $t$ and $\tau$ is the time delay. When a single photon enters the input of the \ac{BS} it can only be measured at one output, but never at both simultaneously.
+Assuming a perfect single photon emitter, a coincidence measurement between \ac{APD}~$1$ and \ac{APD}~$2$ will result in $g^{(2)}(\tau=0) = 0$.
 Subsequently, side peaks are expected at $\tau_s=z/R$ with $R$ as the repetition rate of the laser and $z\in \mathbb{Z}\backslash \{0\}$.
 The single photon purity can then be defined as
 \begin{equation}

@@ -1,19 +1,21 @@
 % !TEX root = ../masterthesis.tex
 \chapter{Methods}
 
-\todo{Einleitung}
-
 
 \section{Optical setup}
 
-The setup used for the measurements described in following chapters is sketched in figure~\ref{fig:setupflat}.
-
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{figures/setup/Setup_flat}
+	\includegraphics[width=1\linewidth]{figures/setup/Setup_flat}
 	\caption[Complete experimental setup]{Complete experimental setup, which was used in order to quantify the chirp of the Ti:Sa Laser and resolve spectral emission of a quantum dot~\cite{schimpf_towards_2017}.}
 	\label{fig:setupflat}
 \end{figure}
+
+
+The setup used for the measurements described in following chapters is sketched in figure~\ref{fig:setupflat}.
+It involves a pulsed Ti:Sa laser which is sent through a pulse shaper and its chirp can be modified with the pulse expander and measured with the interferometric autocorrelator as will be discussed in chapter~\ref{cha:chirp}.
+The CW diode laser is used in order to find a suitable \ac{QD} and the white light enhances the brightness of some \acp{QD}.
+The spectrometer is then used to measure \ac{QD} emission either with the CCD or the APD.  
 
 \section{Pulse shaper}
 
@@ -33,12 +35,7 @@ The setup is mirrored with an additional lens and diffraction grating, which tra
 
 
 \section{Micro photo-luminescence}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{figures/setup/micro-pl}
-	\caption{Laser beam of different spot sizes illuminating quantum dots~\cite{reindl_characterisation_2014}.}
-	\label{fig:micro-pl}
-\end{figure}
+
 The following chapters will investigate the optical properties of \ac{QD}.
 In order to achieve that, it is necessary to excite and collect light of only a single one.
 This is achieved by \ac{MPL}, which involves (i) reducing the diameter of the excitation laser beam and (ii) using samples with a low \ac{QD} density~\cite{reindl_characterisation_2014}.
@@ -50,6 +47,13 @@ with $NA$ as the numerical aperture.
 As the wavelength of the laser $\lambda$ is adjusted according parameter of the \ac{QD}, $NA$ is the adjustable factor.
 In our laboratory, an objective of $NA=0.62$ is used, allowing laser spot sizes in the order of the excitation wavelength.
 A \ac{QD} density of $\approx 1 / \lambda^2$ is therefore necessary in order to examine single \ac{QD} emission.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/setup/micro-pl}
+	\caption{Laser beam of different spot sizes illuminating quantum dots~\cite{reindl_characterisation_2014}.}
+	\label{fig:micro-pl}
+\end{figure}
 
 The sample containing the \acp{QD} is mounted inside the cryostat, which is cooled down to \SI{4}{\kelvin}.
 This is necessary as the influence of dephasing processes increases with higher temperature due to carrier-phonon interaction.

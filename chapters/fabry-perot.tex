@@ -97,7 +97,7 @@ The parameters of the Gaussian beam are transformed by the ray transfer matrix
 \label{eq:ABCD-rule}
 q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 \end{equation}
-with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.\todo{where do this elements come from and which basis is used by this matrix formalism. Without these definitions, these letters mean nothing.}
+with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
 
 \subsection{Higher Gauss modes}
 The wave equation~\eqref{eq:wave-equation} can be simplified by only allowing monochromatic waves with harmonic time dependence
@@ -369,7 +369,7 @@ In practise, additional measures are necessary such as matching the radius of cu
 	\label{fig:gaussian-beam-focusing}
 \end{figure}
 
-In order to match the radius of curvature of the incoming Gaussian beam with the radius of curvature of the resonator a lens is inserted as depicted in figure~\ref{fig:gaussian-beam-focusing}. Light with a beam waist of $\omega_{01}$ gets focused into the resonator. Transformations by thin lenses can be described with the ABCD-rule introduced in subsection~\ref{subsec:gaussian-beam}:
+In order to match the radius of curvature of the incoming Gaussian beam with the radius of curvature of the resonator a lens is inserted as depicted in figure~\ref{fig:gaussian-beam-focusing}. Light with a beam waist of $\omega_{01}$ gets focused into the resonator. Transformations by thin lenses can be described with the ray transfer matrix introduced in subsection~\ref{subsec:gaussian-beam}:
 \begin{equation}
 \begin{pmatrix}
 A & B \\
@@ -564,6 +564,40 @@ The measurements discussed in section~\ref{sec:fabry-measurements} are obtained 
 However, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
 That is why the confocal setup will be used in the future, even though the freedom to adjust the free-spectral range is lost.
 
+\subsection{Scanning mode with fast photodiodes}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/live-apd-setup}
+	\caption{Live avalanche photodiode setup with using a function generator driving the piezo actuator of the FPI and the sync input of the correlation hardware.
+	APDs are used because of their speed, allowing to live-adjusting the FPI-parameters.}
+	\label{fig:live-apd-setup}
+\end{figure}
+
+Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
+\acp{APD} are used for aligning the \ac{FPI} as they are fast enough to measure the multiple free spectral ranges with a scanning frequency in the order of \si{\hertz}.
+A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator.
+The correlation hardware uses \ac{NIM} as input, while the TTL-output uses \ac{BNC}.
+Because of that a \ac{NIM}-\ac{BNC} converter had to be used in between.
+The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
+
+Figure~\ref{fig:2019-03-1914-10fabry-perot-live-apdrealigned} shows the measurement of the scanning \ac{FPI} with the \acp{APD}.
+The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
+The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.
+The stability for one snapshot as visible here appears good, however the modes shift visibly over a longer period of time.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/2019-03-19_14-10_Fabry-Perot-Live-APD_realigned}
+	\caption{Measurement of scanning FPI with APDs.
+	         The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
+             The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.}
+	\label{fig:2019-03-1914-10fabry-perot-live-apdrealigned}
+\end{figure}
+
+\subsection{Scanning mode with CCD}
+
 In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
 Here one of the mirrors is attached to a piezoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. A minimal sketch of the setup is visible in figure~\ref{fig:setupflat}.
 \begin{figure}[H]
@@ -572,29 +606,8 @@ Here one of the mirrors is attached to a piezoelectric actuator which moves the 
 	\caption{Scanning Fabry Pérot interferometer}
 	\label{fig:setup}
 \end{figure}
-\newpage
-\todo{Better:
-	4.5 Setup and Measurement
-	General stuff
-	4.5.1 Scanning mode with fast photodiodes
-	4.5.2 Stepwise mode (find better name) with CCD}
-Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
-As every sweep with the \acp{CCD} takes time in the order of minutes, \acp{APD} were used.
-A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator.
-The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
-\todo{1) What APDs, which time resolution
-	2) What scanning frequency and why
-	3) Show pictures of the measurement itself and discribe features, errors etc.
-	5) What time range did you define, how did you configure the correlation hardware.
-	4) We did not connect the TTL-Output of the Funky-Generator directly to the Hydraharp, as it uses a different standard (NIM).}
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/live-apd-setup}
-	\caption{Live avalanche photodiode setup}
-	\label{fig:live-apd-setup}
-\end{figure}
 
 
 \section{Measurements and discussion}

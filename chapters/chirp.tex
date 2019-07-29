@@ -51,11 +51,12 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 		\end{equation}
 		where $\tau = \sqrt{\alpha^2 / \tau_0^2 + \tau_0^2}$ characterizes the chirped pulse length and $a = \alpha / (\alpha ^ 2 + \tau _0 ^ 4)$ is the frequency chirp rate.
 	\end{itemize}
+	\newpage
 	\item Secant pulse:
 	\begin{itemize}
 		\item Pulse shape of
 		\begin{equation}
-		f_{secant}(t) = A_{secant} \cdot sech^2\left(\frac{t}{\tau_0}\right) = A_{secant} \cdot \left(\frac{2}{exp(\frac{t}{\tau_0}) + exp(-\frac{t}{\tau_0})}\right)^2
+		f_{secant}(t) = A_{secant} \cdot \textrm{sech}^2\left(\frac{t}{\tau_0}\right) = A_{secant} \cdot \left(\frac{2}{\exp(\frac{t}{\tau_0}) + \exp(-\frac{t}{\tau_0})}\right)^2
 		\end{equation}
 		with the normalization constant $A_{secant}$, the pulse duration $\tau_0$, the central frequency $\omega$ and the chirp coefficient $\alpha$.
 		\item Linear chirp of
@@ -66,10 +67,10 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 \end{itemize}
 
 The following discussion will assume a Gaussian laser shape as described by equation~\eqref{eq:f_gauss} and \eqref{eq:phi-gauss}.
-A simulation for $E$ is plotted for different chirp parameters $\alpha$ suitable to display strong and weak chirps in figure~\ref{fig:chirpedlaserpulse}.
+A simulation for $E$ is plotted in figure~\ref{fig:chirpedlaserpulse} for different chirp parameters $\alpha$ suitable to display examples for strong and weak chirps.
 As can be seen there, the chirp parameter strongly influences the shape of the electric field.
 If $E$ could be measured directly, the chirp could be easily estimated.
-Unfortunately our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilliscopes are in the best case in the order of \SI{200}{\femto \second}.
+That this not feasible for our use case, as our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilloscopes are in the best case in the order of \SI{200}{\femto \second}.
 This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.
 
 \begin{figure}[H]
@@ -89,11 +90,12 @@ This means they cannot even measure the duration of these ultrashort pulses let 
 	\label{fig:optical-field-autocorrelation-setup}
 \end{figure}
 In order to estimate the pulse width $\tau_0$ \ac{IAC} is used.
-Basically, a nonlinear crystal is added to a Michelson interferometer in order to generate a signal governed by~\cite{diels_ultrashort_2006}
+Basically, a nonlinear crystal is added to a Michelson interferometer in order to generate a signal governed by
 \begin{equation}
 \label{eq:i-m-integral}
 I_M(\tau) = \int_{-\infty}^{+\infty}\langle|(E(t)+E(t-\tau))^2|^2\rangle dt.
 \end{equation}
+and plotted in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic}~\cite{diels_ultrashort_2006}.
 Here $\langle \rangle$ denotes averaging over fast oscillations of the electric field.
 \begin{figure}[H]
 	\centering
@@ -103,18 +105,18 @@ Here $\langle \rangle$ denotes averaging over fast oscillations of the electric 
 \end{figure}
 Under the use of equation~\ref{eq:electric-field-laser}, equation~\eqref{eq:i-m-integral} can be expanded to
 \begin{align}
-I_M(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) cos(2 \omega \tau + 2 \Delta \phi) dt \nonumber\\
-&+ 2 \int f^{1/2}(t) f^{3/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt + 2 \int f^{3/2}(t) f^{2/2}(t + \tau) cos(\omega \tau + \Delta \phi) dt
+I(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) \cos(2 \omega \tau + 2 \Delta \phi) dt \nonumber\\
+&+ 2 \int f^{1/2}(t) f^{3/2}(t + \tau) \cos(\omega \tau + \Delta \phi) dt + 2 \int f^{3/2}(t) f^{2/2}(t + \tau) \cos(\omega \tau + \Delta \phi) dt
 \end{align}
 where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 
 As can be seen in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
 However, certain modifications to the \ac{IAC} signal introduced by \textcite{hirayama_real-time_2002} make it much more sensitive to the temporal chirp.
-It is called \ac{MOSAIC} and it performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
+It is called \ac{MOSAIC} and performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
 The \ac{MOSAIC} signal is then described by
 \begin{equation}
 \label{eq:i-m-filtered}
-I_{M, filtered}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) cos(2\omega \tau + 2\Delta \phi) dt.
+I_{M}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) \cos(2\omega \tau + 2\Delta \phi) dt.
 \end{equation}
 When the MOSAIC filter is applied on the data shown in is applied on figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse}.
 Here the influence of the chirp is clearly visible in the lower envelope.
@@ -137,7 +139,7 @@ The points of the lower envelope can be obtained by determining the local minima
 	\label{fig:mosaicchirpedlaserpulsefindenvelope}
 \end{figure}
 
-The lower bound (minima envelope) of the MOSAIC trace can be derived by use of the standard textbook procedure~\cite{klein_optics_1986}
+The lower bound (minima envelope) of the MOSAIC trace can be derived by use of standard textbook procedure~\cite{klein_optics_1986}
 \begin{equation}
 S^{min}_{MOSAIC}(\tau)= 1 + 2 \cdot g(\tau) - 2 \cdot [g_s^2(\tau)+g_c^2(\tau)]^{1/2}
 \end{equation}
@@ -170,12 +172,12 @@ It is visible that the fitted values of $\alpha$ correspond to the expected valu
 
 
 
-In the optimal case the chirp of the pulse can be deterministically adjusted in order to most efficiently excite the \ac{QD} via adiabatic rapid passage (which will be introduced in section~\ref{sec:arp}).
+In the optimal case the chirp of the pulse can be deterministically adjusted in order to most efficiently excite the \ac{QD} via adiabatic rapid passage (going to be introduced in section~\ref{sec:arp}).
 Grating compressors as discussed by \textcite{martinez_3000_1987} were originally used to compensate the broadening effect fibers have on pulses.
 However, together with a telescope they have the inverse effect and can be used to induce a chirp.
 A setup like this is sketched in figure~\ref{fig:pulse-expander} and it will in future references in this work be called \textit{pulse expander}.
-Its main elements are the transmission grating and the lens and a folded setup using a mirror after the lens is used in order to need only one of each. and the accumulated group velocity dispersion of the setup can be adjusted by changing the optical distance between these two.
-The accumulated group velocity dispersion can be adjusted by varying the optical distance $d$ between the focal plane of the lens and the transmission grating and it is described by
+Its main elements are the transmission grating and the lens and this folded setup uses a mirror after the lens in order to need only one lens and mirror.
+The accumulated group velocity dispersion can be adjusted by varying the optical distance $d$ between the focal plane of the lens and the transmission grating and is described by
 \begin{equation}
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
@@ -200,7 +202,7 @@ a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{
 \label{sec:arp}
 One way to invert the \ac{QD} from the ground state $\ket{G}$ to the biexciton state $\ket{XX}$ is by exciting it with a narrow-band laser pulse of constant centre frequency, which is equals to half of the ground state biexciton transition frequency.
 As described in equation~\eqref{eq:n-xx}, if the pulse area $\theta=\pi$, a population inversion from the $\ket{G}$ state to the $\ket{XX}$ occurs.
-However, the $\pi$-pulse method is not generally a robust scheme.
+However, the $\pi$-pulse method is not a generally robust scheme.
 In order to ensure the inversion, precise control of the field intensity is required~\cite{glassl_biexciton_2013}.
 Adiabatic rapid passage \acused{ARP} (\acs{ARP}) with frequency chirped is a much more robust alternative to this Rabi-flopping scheme.
 Here, the frequency of the laser signal is swept through resonance, starting slightly above or below the resonance frequency.
@@ -227,11 +229,14 @@ In the case of $\alpha < 0$ this insensitivity does not appear for moderate valu
 
 \newpage
 \section{Measurements and discussion}
-\todo{Here I miss details about the measurement strategy. Explain why we measured such a short pulse. The goal was expanding much longer pulses for the final ARP. Go deeper here.}
-In order to determine the chirp of a laser pulse which only passed the pulse shaper as shown in figure~\ref{fig:setupflat}, it was sent to the \ac{IAC}.
-Afterwards, a signal was measured where an additional pulse expander was inserted as discussed in section~\ref{sec:pulse-expander}.
+As discussed in the sections above, the final goal is to excite \ac{QD} via \ac{ARP}.
+The first step to do that is to determine the chirp of a laser pulse which only passed the pulse shaper with the \ac{IAC}.
+Here laser pulse of only $\tau_0=\SI{344}{\femto \second}$ was used as the \ac{IAC} can not resolve fine enough details for greater $\tau_0$.
+Even though broader peaks will be necessary in order to excite the \ac{QD} with \ac{ARP}, this is not a problem as the equivalent chirp can be calculated for greater $\tau_0$ with equation~\eqref{eq:phi-gauss}.
+
+Afterwards, a signal was measured where an additional pulse expander inserted as discussed in section~\ref{sec:pulse-expander} and sketched in figure~\ref{fig:setupflat}.
 The comparison between these two is shown in figure~\ref{fig:measuredchirpedlaserpulsebeforemosaic}.
-Compared to the simulations in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it is visible that the IAC of the laser pulse without the pulse expander fits the expected shape well, while the one with the pulse expander does not.
+Compared to the simulations in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it is visible that the \ac{IAC} of the laser pulse without the pulse expander fits the expected shape well, while the one with the pulse expander does not.
 Possible reasons could be that the chirp is too high for the model used in the simulation to work or that the pulse expander introduces side effects not considered in the simulation.
 
 \begin{figure}[H]
@@ -253,4 +258,6 @@ One explanatory approach could be that the laser was already chirped to begin wi
 	\label{fig:measuredchirpedlaserpulseaftermosaic}
 \end{figure}
 
-\todo{Conclusion? What can we do to overcome this in the future? }
+The next step would have been to deterministically excite the \ac{QD} with \ac{ARP}.
+However it might be advisable to repeat the same procedure with another ultrashort pulsed laser beforehand in order to rule out that our laser is already heavily chirped to begin with.
+Alternatively, \ac{ARP} with the pulse expander can be attempted without measuring the chirp first and iteratively adjusting the lens-grating distance until the optimum is reached. 
