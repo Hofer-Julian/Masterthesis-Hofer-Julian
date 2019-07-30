@@ -550,26 +550,23 @@ For the parameters in the \ac{ZPL} path this gives $\epsilon_{ZPL}=\SI{10.57}{\p
 \end{figure}
 
 
-\newpage
-
-
 \section{Setup and measurement}
 
+
 Multiple \ac{FPI} setups were built up in order to test their suitability to resolve \ac{QD} emission.
-The first version featured planar mirrors, while their distance was coarsely tunable with an adjustable platform and finely tunable with a piezoelectrical actuator.
-However this setup with planar mirrors proved to be highly unstable and was therefore discarded.
-The second version used smaller, planar-convex mirrors and a ground plate made of molybdenum.
-This resulted in a stable \ac{FPI} which was also adjustable for various free-spectral ranges.
-The measurements discussed in section~\ref{sec:fabry-measurements} are obtained with this setup.
-However, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
-That is why the confocal setup will be used in the future, even though the freedom to adjust the free-spectral range is lost.
+The first version shown in figure~\ref{fig:old} featured planar ($r=\SI{12.7}{\milli \meter}$) mirrors, while their distance was coarsely tunable with an adjustable platform and finely tunable with a piezoelectrical actuator.
+It used a lens in order to minimize the spot size at the \ac{FPI} and a second lens with the same focal length in order to restore the original spot size.
+The mirror-distances are in the order of sub-micrometer as can be seen in figure~\ref{fig:topview}.
+This makes it difficult to ensure parallelism of the mirrors and also to estimate the mirror distances beforehand.
+In figure~\ref{fig:casing}, a casing is shown, built to block thermal fluctuations of the \acp{FPI} environment. 
+However these measures proved to be not sufficient as the setup with planar mirrors turned out to be highly unstable.
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/old}
-		\caption{}
+		\caption{FPI on adjustable platform and finely tunable with a piezoelectrical actuator and planar mirrors of $r=\SI{12.7}{\milli \meter}$.\\}
 		\label{fig:old}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
@@ -577,19 +574,29 @@ That is why the confocal setup will be used in the future, even though the freed
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/new}
-		\caption{}
+		\caption{FPI on molybdenum plate, coarsely tunable with elongated hole and finely tunable with a piezoelectrical actuator and planar mirrors of $r=\SI{6.35}{\milli \meter}$.}
 		\label{fig:new}
 	\end{subfigure}
-	\caption{}
+	\caption{Comparison between two setups where one uses bigger, planar mirrors and one uses smaller, planar-convex mirrors}
 	\label{fig:old-new-fpi}
 \end{figure}
+
+
+The second version shown in figure~\ref{fig:new} used smaller ($r=\SI{6.35}{\milli \meter}$), planar-convex mirrors and a ground plate made of molybdenum.
+Convex mirrors were implemented to allow mode-matching of the incoming beam.
+Molybdenum has a low thermal expansion coefficient, which is advantageous because of the \acp{FPI} sensitivity to mirror-distance-changes. 
+This resulted in a stable \ac{FPI} which was also adjustable for various free-spectral ranges.
+The measurements discussed in section~\ref{sec:fabry-measurements} are obtained with this setup.
+However, the effort needed to mode-match for every measurement is too large to actually use it in further experiments.
+That is why the confocal setup will be used in the future, even though the freedom to adjust the free-spectral range is lost.
+
 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/topview}
-		\caption{}
+		\caption{Top view of FPI with planar mirrors and mirror distance of \\$\approx\SI{1}{\micro \meter}$.}
 		\label{fig:topview}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
@@ -597,10 +604,10 @@ That is why the confocal setup will be used in the future, even though the freed
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/casing}
-		\caption{}
+		\caption{Casing made of aluminium, built to block thermal fluctuations of the \acp{FPI} environment.}
 		\label{fig:casing}
 	\end{subfigure}
-	\caption{}
+	\caption{Top view of FPI and casing.}
 	\label{fig:topview-casing}
 \end{figure}
 
@@ -615,40 +622,39 @@ That is why the confocal setup will be used in the future, even though the freed
 	\label{fig:live-apd-setup}
 \end{figure}
 
-Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first.
+Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first usually with a (HeNe) laser.
 \acp{APD} are used for aligning the \ac{FPI} as they are fast enough to measure the multiple free spectral ranges with a scanning frequency in the order of \si{\hertz}.
 A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator.
 The correlation hardware uses \ac{NIM} as input, while the TTL-output uses \ac{BNC}.
 Because of that a \ac{NIM}-\ac{BNC} converter had to be used in between.
 The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/2019-03-19_14-10_Fabry-Perot-Live-APD_realigned}
+	\caption{Measurement of scanning FPI with APDs.
+		The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
+		The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.}
+	\label{fig:2019-03-1914-10fabry-perot-live-apdrealigned}
+\end{figure}
 Figure~\ref{fig:2019-03-1914-10fabry-perot-live-apdrealigned} shows the measurement of the scanning \ac{FPI} with the \acp{APD}.
 The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
 The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.
 The stability for one snapshot as visible here appears good, however the modes shift visibly over a longer period of time.
 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/2019-03-19_14-10_Fabry-Perot-Live-APD_realigned}
-	\caption{Measurement of scanning FPI with APDs.
-	         The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
-             The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.}
-	\label{fig:2019-03-1914-10fabry-perot-live-apdrealigned}
-\end{figure}
   
 \subsection{Scanning mode with CCD}
 
+In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
+First the \ac{FPI} has to be aligned, preferably with \acp{APD} and a (HeNe) laer.
+Afterwards, the signal of interest will be measured, in our case \ac{QD} emission.
+The piezoelectric actuator moves step-wisely one of the mirror and after every step the output is recorded with the \ac{CCD}.
+A minimal sketch of the setup is visible in figure~\ref{fig:setup}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/fabry-perot/setup/setup}
 	\caption{Scanning Fabry Pérot interferometer with CCD}
 	\label{fig:setup}
 \end{figure}
-
-In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
-Here one of the mirrors is attached to a piezoelectric actuator which moves the mirror stepwise after every measurement as shown in figure~\ref{fig:setup}. A minimal sketch of the setup is visible in figure~\ref{fig:setupflat}.
-
 
 
 
@@ -691,8 +697,11 @@ To counteract, a pinhole is inserted and adjusted which results in the measureme
 \end{figure}
 
 Set up like this, the GaAs \ac{QD} sample AS208 was measured.
-First a polarization map of the exciton was recorded in order to determine the \ac{FSS} $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$ with the data shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
-\todo{how does this work. Explain more details, this is not trivial}
+First a polarization map of the exciton was recorded in order to determine the \ac{FSS}.
+This works by putting a polarizer and a $\lambda/2$-plate between the \ac{QD} and the spectrometer.
+The $\lambda/2$-plate gets step-wisely rotated and the output will be recorded after every step.
+Because of the \ac{FSS} of the \ac{QD} the recorded centre energy of the exciton-groundstate emission will shift after step resulting in the plot shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+From these data the \ac{FSS} can be estimated which results in $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$.
 
 \begin{figure}[H]
 	\centering
