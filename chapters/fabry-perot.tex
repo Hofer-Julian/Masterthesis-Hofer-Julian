@@ -688,6 +688,12 @@ This involves for one setting the mirrors coming before the \ac{FPI} so that the
 
 Without spatial restriction strong TEM-modes of higher order are visible in figure~\ref{fig:measurement-fabry-perot-hene}(a).
 To counteract, a pinhole is inserted and adjusted which results in the measurement visible in figure~\ref{fig:measurement-fabry-perot-hene}(b).
+With figure~\ref{fig:measurement-fabry-perot-hene}(b) the finesse can be calculated.
+As the mirror reflectivities $R=R_1=R_2=\SI{97}{\percent}$ a finesse of $155.50$ is expected.
+The measured finesse is $45$ and obviously much lower than the expected one.
+This can be traced back to multiple reasons.
+Even though the stability is good (more on that later), every vibration and thermal fluctuation broadens the \ac{FWHM} of the peak and therefore reducing the finesse.
+The finesse also strongly depends on a correct positioning of the mirrors, i.e. parallelism in all spacial directions and proper mode matching. 
 
 \begin{figure}[H]
 	\centering
@@ -696,12 +702,14 @@ To counteract, a pinhole is inserted and adjusted which results in the measureme
 	\label{fig:measurement-fabry-perot-hene}
 \end{figure}
 
-Set up like this, the GaAs \ac{QD} sample AS208 was measured.
-First a polarization map of the exciton was recorded in order to determine the \ac{FSS}.
-This works by putting a polarizer and a $\lambda/2$-plate between the \ac{QD} and the spectrometer.
-The $\lambda/2$-plate gets step-wisely rotated and the output will be recorded after every step.
-Because of the \ac{FSS} of the \ac{QD} the recorded centre energy of the exciton-groundstate emission will shift after step resulting in the plot shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
-From these data the \ac{FSS} can be estimated which results in $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$.
+As can be seen in figure~\ref{fig:measurement-fabry-perot-hene} the stability is good, as fine details, in that case the higher modes, are visible.
+The temperature shift can be estimated under consideration of the expansion of the molybdenum-based groundplate.
+The coefficient of linear thermal expansion at room temperature of molybdenum is \SI{5.2e-6}{\meter /(\meter \kelvin)}.
+This means that the shift for a mounting distance of the mirror holders of $\approx \SI{50}{\milli \meter}$ is \SI{260}{\nano \meter / \kelvin}.
+As a change of $\lambda/2$ in the mirror separation corresponds to scan of one free spectral range and as this can be linearised in the order of one free spectral range, the corresponding \ac{FPI} mode shift can be estimated.
+While measuring the excitonic emission of a GaAs \ac{QD} of $\lambda_X = \SI{785}{\nano \meter}$, a temperature change of $\SI{1}{\kelvin}$ would result in a \ac{FPI} mode shift of \SI{66.24}{\percent} of one free spectral range.
+It is therefore necessary to use a casing and to let the temperature stabilize before the measurement.
+However, it is empirically stable enough to conduct measurements which last shorter than $\SI{1}{\hour}$.
 
 \begin{figure}[H]
 	\centering
@@ -710,19 +718,29 @@ From these data the \ac{FSS} can be estimated which results in $E_{FSS}=\SI{24.4
 	\label{fig:measurement-fabry-perot-dot-exciton-pol-map}
 \end{figure}
 
-Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwisely changed which is shown in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
-The x-scale on the top of figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss} was calculated by correlating the distance between the two adjacent peaks with the \ac{FSS} determined with the data of figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
-For this \ac{QD} results in a conversion between the deviations $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
-\todo{What does this comparison tell us? Did it fit the calculation? Where are the side peaks we saw in the HeNe measurement? What a about the stability? Are there calculations, expected temperature drifts, etc. Are there differences between the expected Finesse and the measured one, and why? Is this expected?}
-
+Set up like this, the GaAs \ac{QD} sample AS208 was measured.
+First a polarization map of the exciton was recorded in order to determine the \ac{FSS}.
+This works by putting a polarizer and a $\lambda/2$-plate between the \ac{QD} and the spectrometer.
+The $\lambda/2$-plate gets step-wisely rotated and the output will be recorded after every step.
+Because of the \ac{FSS} of the \ac{QD} the recorded centre energy of the exciton-groundstate emission will shift after every step resulting in the plot shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
+The peak-to-peak amplitude then gives $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-biexciton-FSS}
 	\caption{Finestructure measurement of biexcition of QD in sample AS208 by passing thorugh FPI and sweeping the mirror distance.
-	Ground mirror distance was  $l \approx \SI{2}{\milli \meter}$.}
+		Ground mirror distance was  $l \approx \SI{2}{\milli \meter}$.}
 	\label{fig:measurement-fabry-perot-dot-biexciton-fss}
 \end{figure}
+
+Afterwards the output of the \ac{QD} through the \ac{FPI} was measured while the mirror distance was stepwisely changed as in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
+The two peaks per period display the splitted exciton-groundstate emission because of the \ac{FSS}.
+As the distance between the peaks $E_{FSS}$ was calculated beforehand it is possible to convert the x-scale on the bottom in \si{\nano \meter} into the x-scale on the top in \si{\micro \electronvolt}.
+For this \ac{QD}, it results in a conversion between the deviations of $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
+This gives a measured free spectral range of \SI{241 (4)}{\micro \electronvolt} which is in the same order of the (coarsely) estimated mirror distance $l\approx\SI{2}{\milli \meter}$ free spectral range of \SI{315}{\micro \electronvolt}.
+
+
+
 
 
 
