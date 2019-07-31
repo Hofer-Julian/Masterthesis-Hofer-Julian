@@ -1,19 +1,25 @@
 % !TEX root = ../masterthesis.tex
 \chapter{Summary and outlook}
-\todo{Don't refer all the time to the main text. 
-	Imagine I'm a reader from a different field. I read the abstract, the introduction and the summary/outlook. Now I should know what you did and why and what are the future plans. At this point I have no idea what MOSAIC is, I have no idea what a pulse expander is, etc. unless you give me a hint in the summary.}
-The first topic presented in this thesis is entangled photon generation using \ac{ARP} with frequency-chirped-pulses.
-The obstacles in quantifying the chirp just with \ac{IAC} were discussed and one possible solution (\ac{MOSAIC}) was presented.
-Finally, the pulse expander, used for deterministically adjusting the chirp, was introduced and measurements with and without the pulse expander were presented.
-However, the Ti:Sa laser used for these experiments later turned out to be heavily chirped to begin with, which made comparisons difficult.
-Additionally, it had to be sent away for reparation, which blocked further investigations.
-The next steps will be to investigate \ac{MOSAIC} under different scenarios and then, if the chirp can be adjusted, attempt to excite the GaAs \acp{QD} via \ac{ARP}.
 
-The second topic presented is the build-up of a scanning \ac{FPI} from scratch.
-After setting up the theoretical foundation of electromagnetic waves and different \ac{FPI} setups, simulations were presented in order to determine component parameters suitable for the wanted \ac{FPI} mode properties.
-Afterwards, measurements were presented, which involved aligning the \ac{FPI} with a HeNe laser, mode matching and spatial filtering
-Finally, measurements of the \ac{FSS} of a GaAs \ac{QD} were presented and evaluated in order to confirm the consistency between the measured and the simulated results for the free spectral range.
-The next steps will be to set up the \ac{FPI} in the confocal mode and measure with it the \ac{FSS} as well.
-It might be advisable to buy multiple sets of mirrors in order to fulfil different needs regarding spectral width and resolution.
-When this is accomplished the scanning \ac{FPI} can be used as "black box", which comes into action whenever fine details of \ac{QD} emission need to be resolved.
+This thesis described the efforts to improve excitation of quantum dots (\ac{QD}s) and to build up a scanning \acl{FPI} which allows to resolve fine details of \ac{QD} emission.
+In order to excite the \ac{QD} via adiabatic rapid passage the chirp of the exciting laser beam needed to be deterministically adjustable.
+This again required to build up a setup suitable to manipulate the chirp and a way to determine the chirp parameter $\alpha$.
+The laser beam was measured with an interferometric auto correlator, however the shape of this measurement depends only weakly $\alpha$.
+Therefore the numerical filter \ac{MOSAIC} was applied, which resulted in a signal of which the lower envelope depends strongly on $\alpha$.
+The simulations showed that a fit of the lower envelope of the \ac{MOSAIC} signal allowed to determine the chirp parameter.
+A pulse expander was built up, with the goal of deterministically adjusting the chirp by adapting the distance between two optical elements.
+Measurements with a Ti:Sa laser with and without a pulse expander were conducted, which suggested that the laser signal without the pulse expander is already heavily chirped.
+That is why, future experiments will investigate different laser models and then compare the measurements with the chirped signal after the pulse expander.
+Afterwards, \acp{QD} will be excited via adiabatic rapid passage.
 
+The second topic of this thesis is the build-up of a scanning \ac{FPI}.
+Simulations showed that common optical components are sufficient to build up a \ac{FPI} which is able to resolve the zero-phonon line and the phonon sideband of the \ac{QD} emission.
+Measurements with planar mirrors showed the instability of this arrangement, leading to a switch to planar-concave mirrors.
+The \ac{FPI} was aligned with a HeNe laser and fast photodiodes, allowing to "live" adjusting \ac{FPI} parameters.
+Together with mode matching and spatial filtering, this allowed to resolve the fine structure.
+The transmission was determined to be \SI{5}{\percent} and the shift of the \ac{FPI} modes was estimated to be $\approx \SI{66}{\percent}$ of one free spectral range per Kelvin temperature drift.
+Both the transmission and the thermal drift proved to be sufficient, however the measured finesse of $45$ is too low for our purpose.
+Also mode-matching and spatial-filtering is time consuming and error prone, which makes them unusable for common measurements.
+Therefore, the \ac{FPI} is going to be used with mirrors of higher reflectivity and lower curvature radius and order to gain higher finesse and to use the \ac{FPI} in the confocal mode.
+Here the curvature radius is equals to the mirror distance, which removes the flexibility to change resolution and free spectral range of the \ac{FPI}.
+However, the cavity becomes mode-degenerate and therefore liberates from mode matching considerations.
