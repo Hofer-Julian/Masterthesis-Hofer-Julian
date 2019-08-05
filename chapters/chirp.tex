@@ -79,7 +79,7 @@ The following discussion will assume a Gaussian laser shape as described by equa
 A simulation for $E$ is plotted in figure~\ref{fig:chirpedlaserpulse} for different chirp parameters $\alpha$ suitable to display examples for strong and weak chirps.
 As can be seen there, the chirp parameter strongly influences the shape of the electric field.
 If $E$ could be measured directly, the chirp could be easily estimated.
-This not feasible for our use case, as our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilloscopes are in the best case in the order of \SI{200}{\femto \second}.
+This not feasible in our case, as our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilloscopes are in the best case in the order of \SI{200}{\femto \second}.
 This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.
 
 \begin{figure}[H]
@@ -105,7 +105,7 @@ Basically, a nonlinear crystal is added to a Michelson interferometer in order t
 I_M(\tau) = \int_{-\infty}^{+\infty}\langle|(E(t)+E(t-\tau))^2|^2\rangle dt.
 \end{equation}
 and plotted in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic}~\cite{diels_ultrashort_2006}.
-Here $\langle \rangle$ denotes averaging over fast oscillations of the electric field.
+Here, $\langle \rangle$ denotes averaging over fast oscillations of the electric field.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/plots/I_M_gauss_chirp_without_slit_without_MOSAIC}
@@ -119,15 +119,15 @@ I(\tau) = 1 &+ 2 \int f(t) f(t + \tau) dt + \int f(t) f(t + \tau) \cos(2 \omega 
 \end{align}
 where $\Delta \phi(t, \tau) = \phi(t + \tau) - \phi(t)$ and $\int f(t) dt = 1$.
 
-As can be seen in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
+As can be seen in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic}, the chirp parameter $\alpha$ has hardly any measurable influence on the resulting signal.
 However, certain modifications to the \ac{IAC} signal introduced by \textcite{hirayama_real-time_2002} make it much more sensitive to the temporal chirp.
-It is called \ac{MOSAIC} and performs the following transformations on the \ac{IAC} spectrum: the $\omega$ terms are eliminated and the $2\omega$ term is doubled.
+It is called \ac{MOSAIC} and performs the following transformations on the \ac{IAC} spectrum: The $\omega$ terms are eliminated and the $2\omega$ term is doubled.
 The \ac{MOSAIC} signal is then described by
 \begin{equation}
 \label{eq:i-m-filtered}
 I_{M}(\tau) = 1 + 2 \int f(t) f(t + \tau) dt + 2 \int f(t) f(t + \tau) \cos(2\omega \tau + 2\Delta \phi) dt.
 \end{equation}
-When the MOSAIC filter is applied on the data shown in is applied on figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse}.
+When the MOSAIC filter is applied to the data in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic}, this results in a signal as shown in figure~\ref{fig:mosaicchirpedlaserpulse}.
 Here the influence of the chirp is clearly visible in the lower envelope.
 \begin{figure}[H]
 	\centering
@@ -156,7 +156,7 @@ with
 \begin{align}
 g(\tau)&=\int f(t)f(t+\tau)dt\\
 g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
-g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt
+g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt.
 \end{align}
 The points of the lower envelope determined before can now be fitted in order to obtain the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
 It is visible that the fitted values of $\alpha$ correspond to the expected values.
@@ -191,11 +191,11 @@ The accumulated group velocity dispersion can be adjusted by varying the optical
 \begin{equation}
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
-where $\beta$ is described by
+where $\beta$ is given by
 \begin{equation}
 \beta = \frac{\lambda}{2 \pi \omega_0 \cos \theta}
 \end{equation}
-where $\lambda$ is the centre wavelength, $\omega_0$ the beam waist and $\theta$ the emerging angle as sketched in figure~\ref{fig:pulse-expander}.
+with $\lambda$ denoting the centre wavelength, $\omega_0$ the beam waist and $\theta$ the emerging angle as sketched in figure~\ref{fig:pulse-expander}.
 
 \begin{figure}[H]
 	\centering
@@ -204,7 +204,7 @@ where $\lambda$ is the centre wavelength, $\omega_0$ the beam waist and $\theta$
 	\label{fig:group-velocity-dispersion}
 \end{figure}
 
-As can be seen in figure~\ref{fig:group-velocity-dispersion}, a group velocity dispersion has a similar effect on a Gaussian pulse as a chirp.
+As can be seen in figure~\ref{fig:group-velocity-dispersion}, group velocity dispersion has a similar effect on a Gaussian pulse as a chirp.
 In fact, the frequency chirp rate $a_{gauss}$ introduced in equation~\eqref{eq:phi-gauss} can be put into relation with it by:~\cite{orfanidis_electromagnetic_2002}
 \begin{equation}
 a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{d \omega^2}\right)^2}
