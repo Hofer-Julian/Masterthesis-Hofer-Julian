@@ -345,9 +345,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="1118.7518"
-     inkscape:cy="462.80865"
+     inkscape:zoom="0.7"
+     inkscape:cx="861.68998"
+     inkscape:cy="447.50045"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -362,7 +362,7 @@
      inkscape:bbox-paths="false"
      inkscape:snap-page="false"
      inkscape:snap-grids="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -381,7 +381,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -955,5 +955,23 @@
        d="m 231.775,97.239583 h -4.23334"
        id="path7519"
        inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#afafe9;stroke:#00002b;stroke-width:0.19702893"
+       id="rect3788-5"
+       width="40.008537"
+       height="10.479272"
+       x="-0.3210372"
+       y="76.743935" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.76111126px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="2.3623505"
+       y="84.629402"
+       id="text3792-8"><tspan
+         sodipodi:role="line"
+         id="tspan3790-1"
+         x="2.3623505"
+         y="84.629402"
+         style="stroke-width:0.26458332">Inverter</tspan></text>
   </g>
 </svg>

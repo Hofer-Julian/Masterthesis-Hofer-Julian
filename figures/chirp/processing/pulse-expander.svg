@@ -102,9 +102,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.12374369"
-     inkscape:cx="296.56811"
-     inkscape:cy="450.25076"
+     inkscape:zoom="0.25"
+     inkscape:cx="986.81454"
+     inkscape:cy="1384.6216"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -129,7 +129,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -382,5 +382,28 @@
        d="m -151.56833,-150.14584 h -72.57143"
        id="path5035"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="73.311295"
+       y="23.89535"
+       id="text886"><tspan
+         sodipodi:role="line"
+         id="tspan884"
+         x="73.311295"
+         y="23.89535"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">θ</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.40000001;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path893"
+       sodipodi:type="arc"
+       sodipodi:cx="74.11454"
+       sodipodi:cy="8.3749971"
+       sodipodi:rx="23.573172"
+       sodipodi:ry="23.573172"
+       sodipodi:start="0.31415927"
+       sodipodi:end="2.1886429"
+       sodipodi:open="true"
+       d="M 96.533959,15.659508 A 23.573172,23.573172 0 0 1 81.516338,30.755967 23.573172,23.573172 0 0 1 60.459045,27.590144" />
   </g>
 </svg>

@@ -1,5 +1,5 @@
 % !TEX root = ../masterthesis.tex
-\chapter{Building up a scanning Fabry-Pérot interferometer from scratch}
+\chapter{Planning and building a Fabry-Pérot interferometer}
 \label{chapter:scanning-fabry-perot}
 \section{Introduction and motivation}
 
@@ -98,8 +98,12 @@ The parameters of the Gaussian beam are transformed by the ray transfer matrix
 q_{out}=\frac{A q_{in} + B}{C q_{in} + D}
 \end{equation}
 with the parameters $A, B, C, D$ determined by the optical element transforming the Gaussian beam described by $q_{in}$.
+The ABCD-matrix transforms rays at distance $x_1$ from the optical axis at an angle $\theta$ according to
+\begin{equation}
+\begin{pmatrix} x_2 \\ \theta_2 \end{pmatrix} = \begin{pmatrix} A & B \\ C & D \end{pmatrix}\begin{pmatrix} x_1 \\ \theta_2 \end{pmatrix}
+\end{equation}
 
-\subsection{Higher Gauss modes}
+\subsection{Hermite–Gaussian modes}
 The wave equation~\eqref{eq:wave-equation} can be simplified by only allowing monochromatic waves with harmonic time dependence
 \begin{equation}
 \mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i\omega t}\right).
@@ -550,7 +554,7 @@ For the parameters in the \ac{ZPL} path this gives $\epsilon_{ZPL}=\SI{10.57}{\p
 \end{figure}
 
 
-\section{Setup and measurement}
+\section{Setup and testing}
 
 
 Multiple \ac{FPI} setups were built up in order to test their suitability to resolve \ac{QD} emission.
@@ -624,9 +628,10 @@ That is why the confocal setup will be used in the future, even though the freed
 
 Before the scanning \ac{FPI} can be used to measure \ac{QD} emission, it has to be aligned first usually with a (HeNe) laser.
 \acp{APD} are used for aligning the \ac{FPI} as they are fast enough to measure the multiple free spectral ranges with a scanning frequency in the order of \si{\hertz}.
-A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator.
-The correlation hardware uses \ac{NIM} as input, while the TTL-output uses \ac{BNC}.
-Because of that a \ac{NIM}-\ac{BNC} converter had to be used in between.
+A function generator is used to drive the piezoelectrical actuator and the correlation hardware (here: Picoquant Hydraharp 400) correlates the measurements of the \ac{APD} with the TTL-output of the function generator in the time domain.
+In order to do that the TTL-output has to be converted to the NIM standard beforehand, as this is the only one our correlation hardware accepts.
+TTL interprets \SI{0}{\volt} as LOW and \SI{5}{\volt} as HIGH and NIM interprets \SI{0}{\volt} as LOW and negative values not lower than \SI{-1}{\volt} as HIGH.
+The conversion therefore the inversion and attenuation of the signal.
 The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
 \begin{figure}[H]
 	\centering
@@ -637,17 +642,17 @@ The complete setup is sketched in figure~\ref{fig:live-apd-setup}.
 	\label{fig:2019-03-1914-10fabry-perot-live-apdrealigned}
 \end{figure}
 Figure~\ref{fig:2019-03-1914-10fabry-perot-live-apdrealigned} shows the measurement of the scanning \ac{FPI} with the \acp{APD}.
-The scanning frequency is \SI{5}{\hertz} and the range is \SI{1}{\micro \meter}.
-The measured finesse is $\approx 5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.
+The scanning frequency is \SI{5}{\hertz} and the scanning distance is \SI{1}{\micro \meter}.
+The measured finesse is approximately $5$ and the free spectral range corresponds to \SI{280}{\nano \meter}.
 The stability for one snapshot as visible here appears good, however the modes shift visibly over a longer period of time.
 
   
 \subsection{Scanning mode with CCD}
 
-In order to obtain the spectral emission of the input signal, the \ac{FPI} is used in the scanning mode.
-First the \ac{FPI} has to be aligned, preferably with \acp{APD} and a (HeNe) laer.
+In order to obtain the line shape of the input signal, the \ac{FPI} is used in the scanning mode.
+The \ac{FPI} is aligned with \acp{APD} and a HeNe laser as the former offers direct feedback and the latter emits visible light simplifying the procedure.
 Afterwards, the signal of interest will be measured, in our case \ac{QD} emission.
-The piezoelectric actuator moves step-wisely one of the mirror and after every step the output is recorded with the \ac{CCD}.
+The piezoelectric actuator moves step-wisely one of the mirrors and after every step the output is recorded with the \ac{CCD}.
 A minimal sketch of the setup is visible in figure~\ref{fig:setup}.
 \begin{figure}[H]
 	\centering
@@ -671,17 +676,17 @@ Afterwards, the \ac{FPI} mirrors are adjusted so that they are parallel and a si
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-1}
+		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/setup-higher-modes-1}
 		\caption{}
-		\label{fig:confocal-setup-higher-modes-1}
+		\label{fig:setup-higher-modes-1}
 	\end{subfigure}%
 	~ % An dieser Stelle kann ein zusätzlicher Zwischenraum eingebunden werden: ~, \quad, \qquad, \hfill usw.
 	% Eine leere Zeile erzwingt, dass die zweite Grafik darunter erscheint.
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
-		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/confocal-setup-higher-modes-2}
+		\includegraphics[width=0.95\textwidth]{figures/fabry-perot/setup/setup-higher-modes-2}
 		\caption{}
-		\label{fig:confocal-setup-higher-modes-2}
+		\label{fig:setup-higher-modes-2}
 	\end{subfigure}
 	\caption{Aligning the Fabry Pérot interferometer}
 	\label{fig:align-fpi}
@@ -691,11 +696,15 @@ Without spatial restriction strong TEM-modes of higher order are visible in figu
 To counteract, a pinhole is inserted and adjusted which results in the measurement visible in figure~\ref{fig:measurement-fabry-perot-hene}(b).
 The intensity with and without \ac{FPI} were compared in order to calculate its transmission at the peak of its modes, leading to $T_{peak}=\SI{5}{\percent}$.
 With figure~\ref{fig:measurement-fabry-perot-hene}(b) the finesse can be calculated.
-As the mirror reflectivities $R=R_1=R_2=\SI{97}{\percent}$, a finesse of $155.50$ is expected.
-The measured finesse is $45$ and obviously much lower than the expected one.
-This can be traced back to multiple reasons.
-Even though the stability is good (more on that later), every vibration and thermal fluctuation broadens the \ac{FWHM} of the peak and therefore reducing the finesse.
-The finesse also strongly depends on a correct positioning of the mirrors, i.e. parallelism in all spacial directions and proper mode matching. 
+As the mirror reflectivities $R=R_1=R_2=\SI{97}{\percent}$, the mirror reflectivity finesse is $F=155$.
+The measured finesse is $45$ and obviously much lower.
+This is because the measured finesse $F_t$ also depends on the mirror surface quality finesse $F_q$ and the finesse due to illumination conditions (beam alignment and diameter) of the mirrors $F_i$ as described by~\cite{noauthor_scanning_nodate}
+\begin{equation}
+1/F_t = \left[(1/F)^2+(1/F_q)^2+(1/F_i)^2\right].
+\end{equation}
+
+
+
 
 \begin{figure}[H]
 	\centering
@@ -704,7 +713,7 @@ The finesse also strongly depends on a correct positioning of the mirrors, i.e. 
 	\label{fig:measurement-fabry-perot-hene}
 \end{figure}
 
-As can be seen in figure~\ref{fig:measurement-fabry-perot-hene} the stability is good, as fine details, in that case the higher modes, are visible.
+As can be seen in figure~\ref{fig:measurement-fabry-perot-hene} the arrangement is stable enough that Cauchy peaks are symmetric and not distorted and fine details like the higher modes are resolvable.
 The temperature shift can be estimated under consideration of the expansion of the molybdenum-based groundplate.
 The coefficient of linear thermal expansion at room temperature of molybdenum is \SI{5.2e-6}{\meter /(\meter \kelvin)}.
 This means that the shift for a mounting distance of the mirror holders of $\approx \SI{50}{\milli \meter}$ is \SI{260}{\nano \meter / \kelvin}.
@@ -716,7 +725,8 @@ However, it is empirically stable enough to conduct measurements which last shor
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-exciton-pol-map}
-	\caption{Polarization map of exciton of QD in sample AS208.}
+	\caption{Polarization map of exciton-groundstate decay emission of QD in sample AS208.
+	The peak to peak amplitude corresponds to the fine structure splitting.}
 	\label{fig:measurement-fabry-perot-dot-exciton-pol-map}
 \end{figure}
 
@@ -730,8 +740,9 @@ The peak-to-peak amplitude then gives $E_{FSS}=\SI{24.42 (39)}{\micro \electronv
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{figures/fabry-perot/plots/measurement-fabry-perot-dot-biexciton-FSS}
-	\caption{Finestructure measurement of biexcition of QD in sample AS208 by passing thorugh FPI and sweeping the mirror distance.
-		Ground mirror distance was  $l \approx \SI{2}{\milli \meter}$.}
+	\caption{Finestructure measurement of biexcition-exciton decay emission of QD in sample AS208.
+		 It is measured by passing the QD emission through a FPI and sweeping the mirror distance.
+		The ground mirror distance is  $l \approx \SI{2}{\milli \meter}$.}
 	\label{fig:measurement-fabry-perot-dot-biexciton-fss}
 \end{figure}
 
@@ -740,6 +751,15 @@ The two peaks per period display the splitted exciton-groundstate emission becau
 As the distance between the peaks $E_{FSS}$ was calculated beforehand it is possible to convert the x-scale on the bottom in \si{\nano \meter} into the x-scale on the top in \si{\micro \electronvolt}.
 For this \ac{QD}, it results in a conversion between the deviations of $\eta=\SI{1}{\nano \meter} \equalhat \zeta = \SI{1.19 (2)}{\micro \electronvolt}$.
 This gives a measured free spectral range of \SI{241 (4)}{\micro \electronvolt} which is in the same order of the (coarsely) estimated mirror distance $l\approx\SI{2}{\milli \meter}$ free spectral range of \SI{315}{\micro \electronvolt}.
+In contrast to measurements with the HeNe-laser in figure~\ref{fig:measurement-fabry-perot-hene}, the higher transverse modes are not visible in figure~\ref{fig:measurement-fabry-perot-dot-biexciton-fss}.
+This is because there a two lines overlapping and the linewidth of a single one is already broader than the HeNe laser linewidth.
+Therefore the  higher transverse modes are overlaid by the fundamental mode.
+
+From the performed measurements and the considerations about the stability can be deduced that with mirrors of correct geometry fine details of \ac{QD} emission can be resolved.
+In order to use this in daily measurements however, mirrors with different curvature radii will be used in order to set up the \ac{FPI} in order to satisfy the confocal conditions.
+This would liberate from time-consuming and error-prone mode-matching and spatial filtering.
+
+
 
 
 

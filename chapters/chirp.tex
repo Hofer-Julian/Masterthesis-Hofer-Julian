@@ -26,7 +26,7 @@ where $f_0$ is the starting frequency at $t=0$ and $c$ is the chirpyness. A line
 	\label{fig:chirped-sin}
 \end{figure}
 
-As this chapter is concentrated on exciting \acp{QD} with frequency-chirped pulses, the mathematical description of chirped laser pulses will now be discussed. The electric field of a laser $E(t)$ has the shape
+As this chapter is concentrated on exciting \acp{QD} with frequency-chirped pulses, the mathematical description of chirped laser pulses will now be discussed. The shape of the electric field of a laser $E(t)$ can be approximated by
 \begin{equation}
 \label{eq:electric-field-laser}
 E(t) \sim \mathrm{Re}\left(f^{1/2}(t) \cdot \exp\left(-i \omega t - i \phi(t)\right)\right)
@@ -49,7 +49,16 @@ Depending on the laser either a Gaussian or a hyperbolic secant describes the pu
 		\label{eq:phi-gauss}
 		\phi_{gauss}(t) = \frac{a_{gauss} t^2}{2}
 		\end{equation}
-		where $\tau = \sqrt{\alpha^2 / \tau_0^2 + \tau_0^2}$ characterizes the chirped pulse length and $a = \alpha / (\alpha ^ 2 + \tau _0 ^ 4)$ is the frequency chirp rate.
+		where 
+		\begin{equation}
+		\tau = \sqrt{\alpha^2 / \tau_0^2 + \tau_0^2}
+		\end{equation}
+		characterizes the chirped pulse length and
+		\begin{equation}
+		\label{eq:chirp-parameter}
+		a = \alpha / (\alpha ^ 2 + \tau _0 ^ 4)
+		\end{equation}
+		is the frequency chirp rate.
 	\end{itemize}
 	\newpage
 	\item Secant pulse:
@@ -70,7 +79,7 @@ The following discussion will assume a Gaussian laser shape as described by equa
 A simulation for $E$ is plotted in figure~\ref{fig:chirpedlaserpulse} for different chirp parameters $\alpha$ suitable to display examples for strong and weak chirps.
 As can be seen there, the chirp parameter strongly influences the shape of the electric field.
 If $E$ could be measured directly, the chirp could be easily estimated.
-That this not feasible for our use case, as our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilloscopes are in the best case in the order of \SI{200}{\femto \second}.
+This not feasible for our use case, as our Ti:Sa laser can produce laser pulses as short as \SI{100}{\femto \second} and response times of photodiodes and oscilloscopes are in the best case in the order of \SI{200}{\femto \second}.
 This means they cannot even measure the duration of these ultrashort pulses let alone resolve the pulse shape.
 
 \begin{figure}[H]
@@ -166,7 +175,8 @@ It is visible that the fitted values of $\alpha$ correspond to the expected valu
 	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
 	\caption{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.
 		The light enters on the right side, passes the halfmirror, and enters the system of transmission grating, lens and mirrors.
-		Afterwards it hits the halfmirror and exits on the left hand.}
+		Afterwards it hits the halfmirror and exits on the left hand.
+		It induces an accumulated group velocity dispersion on the signal depending on the optical distance between the transmission grating and the lens.}
 	\label{fig:pulse-expander}
 \end{figure}
 
@@ -181,7 +191,11 @@ The accumulated group velocity dispersion can be adjusted by varying the optical
 \begin{equation}
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
-where $\beta$ is a value depending on the parameters of the grating and the lens.
+where $\beta$ is described by
+\begin{equation}
+\beta = \frac{\lambda}{2 \pi \omega_0 \cos \theta}
+\end{equation}
+where $\lambda$ is the centre wavelength, $\omega_0$ the beam waist and $\theta$ the emerging angle as sketched in figure~\ref{fig:pulse-expander}.
 
 \begin{figure}[H]
 	\centering
@@ -200,13 +214,13 @@ a_{gauss} = \frac{\frac{d^2 \Phi}{d \omega^2}}{\tau_0^4 + \left(\frac{d^2 \Phi}{
 
 \section{Adiabatic rapid passage}
 \label{sec:arp}
-One way to invert the \ac{QD} from the ground state $\ket{G}$ to the biexciton state $\ket{XX}$ is by exciting it with a narrow-band laser pulse of constant centre frequency, which is equals to half of the ground state biexciton transition frequency.
+One way to invert the \ac{QD} from the ground state $\ket{G}$ to the biexciton state $\ket{XX}$ is by exciting it with a narrow-band laser pulse of constant centre frequency, which equals to half of the ground state biexciton transition frequency.
 As described in equation~\eqref{eq:n-xx}, if the pulse area $\theta=\pi$, a population inversion from the $\ket{G}$ state to the $\ket{XX}$ occurs.
 However, the $\pi$-pulse method is not a generally robust scheme.
 In order to ensure the inversion, precise control of the field intensity is required~\cite{glassl_biexciton_2013}.
 Adiabatic rapid passage \acused{ARP} (\acs{ARP}) with frequency chirped is a much more robust alternative to this Rabi-flopping scheme.
 Here, the frequency of the laser signal is swept through resonance, starting slightly above or below the resonance frequency.
-The biexciton state can be populated with nearly perfect efficiency~\cite{glassl_biexciton_2013} if the process is performed adiabatically~\cite{malinovsky_general_2001}
+The biexciton state can be populated with nearly perfect efficiency~\cite{glassl_biexciton_2013} if the process is performed adiabatically, i.e. if~\cite{malinovsky_general_2001}
 \begin{equation}
 \Omega_0 \gg |\frac{d}{dt} \omega(t)|
 \end{equation}
@@ -218,10 +232,10 @@ Here, a linearly-chirped Gaussian laser pulse as discussed in section~\ref{sec:c
 	\centering
 	\includegraphics[width=\linewidth]{figures/chirp/biexciton-occupation}
 	\caption[Final biexciton occupation after chirped Gaussian pulse of pulse duration $\tau_0 = \SI{2}{\pico \second}$]{Final biexciton occupation after chirped Gaussian pulse of pulse duration $\tau_0 = \SI{2}{\pico \second}$.
-		It is plotted vertically as a function of the original pulse area $A$ and vertically as a function of the chirp $\alpha$ for biexciton binding energies of (a) $\Delta=0$, (b) 1, and (c) \SI{3}{\milli \electronvolt}~\cite{glassl_biexciton_2013}.}
+		It is plotted against the original pulse area $A$ (vertical axis) and the chirp parameter $\alpha$ for biexciton binding energies of (a) $\Delta=0$, (b) 1, and (c) \SI{3}{\milli \electronvolt}~\cite{glassl_biexciton_2013}.}
 	\label{fig:biexciton-occupation}
 \end{figure}
-The central frequency is chosen so that for $\alpha=0$ it resonates to ground state biexction transition, which is sketched in figure~\ref{fig:biexciton-occupation}.
+The central frequency is chosen so that for $\alpha=0$ it resonates to groundstate-to-biexction transition, which is sketched in figure~\ref{fig:biexciton-occupation}.
 For $\alpha=0$ Rabi oscillations are visible and its period depends strongly on the biexciton binding energy $\Delta$.
 However, for $\alpha \gg 0$ biexciton preparation becomes insensitive to small variations to the pulse area $A$ as long it exceeds a certain threshold.
 This is therefore the regime which would be the most suitable to work in.
@@ -232,9 +246,9 @@ In the case of $\alpha < 0$ this insensitivity does not appear for moderate valu
 As discussed in the sections above, the final goal is to excite \ac{QD} via \ac{ARP}.
 The first step to do that is to determine the chirp of a laser pulse which only passed the pulse shaper with the \ac{IAC}.
 Here laser pulse of only $\tau_0=\SI{344}{\femto \second}$ was used as the \ac{IAC} can not resolve fine enough details for greater $\tau_0$.
-Even though broader peaks will be necessary in order to excite the \ac{QD} with \ac{ARP}, this is not a problem as the equivalent chirp can be calculated for greater $\tau_0$ with equation~\eqref{eq:phi-gauss}.
+Even though broader peaks will be necessary in order to excite the \ac{QD} with \ac{ARP}, this is not a problem as the equivalent chirp can be calculated for greater $\tau_0$ with equation~\eqref{eq:chirp-parameter}.
 
-Afterwards, a signal was measured where an additional pulse expander inserted as discussed in section~\ref{sec:pulse-expander} and sketched in figure~\ref{fig:setupflat}.
+Afterwards, a signal was measured after passing a pulse expander as discussed in section~\ref{sec:pulse-expander} and sketched in figure~\ref{fig:setupflat}.
 The comparison between these two is shown in figure~\ref{fig:measuredchirpedlaserpulsebeforemosaic}.
 Compared to the simulations in figure~\ref{fig:imgausschirpwithoutslitwithoutmosaic} it is visible that the \ac{IAC} of the laser pulse without the pulse expander fits the expected shape well, while the one with the pulse expander does not.
 Possible reasons could be that the chirp is too high for the model used in the simulation to work or that the pulse expander introduces side effects not considered in the simulation.
