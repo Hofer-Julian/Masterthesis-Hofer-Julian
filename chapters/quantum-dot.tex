@@ -8,15 +8,15 @@ Quantum dots (\acs{QD}) are nanostructures which confine the motion of electrons
 Confinement results in discrete energy levels, which is why \acp{QD} are sometimes referred to as \textit{artificial atoms}.
 The discussion in this section is based on the PhD thesis of \textcite{huber_gaas_2019} and on the master's thesis of \textcite{schimpf_towards_2017}.
 
-Gallium arsenide \acp{QD} investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
+The Gallium arsenide \acp{QD} investigated within this master's thesis are grown by \ac{MBE} with the self-assembled nanodrill technology described in the work of \textcite{wang_nanoholes_2007}.
 As displayed in figure~\ref{fig:droplet-etched-gaas-qds}a the Al forms droplets on Al$_{0.4}$Ga$_{0.6}$As after evaporation.
 The Al reacts with Al$_{0.4}$Ga$_{0.6}$As, etching nanoholes into the surface.
-Under ideal conditions, these nanoholes are highly symmetric resulting into \acp{QD} with high in-plane symmetry  as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
-The next step is the annealing process in which GaAs is deposited to fill the nanoholes.
+Under ideal conditions, these nanoholes are highly symmetric, resulting into \acp{QD} with high in-plane symmetry, as can be seen in figure~\ref{fig:droplet-etched-gaas-qds}b.
+The next step is the annealing process, in which GaAs is deposited to fill the nanoholes.
 The \ac{QD} is finalized by capping the layer with Al$_{0.4}$Ga$_{0.6}$As acting as top barrier.
 
 Compared to the band gap of the host material Al$_{0.4}$Ga$_{0.6}$As of \SI{1.92}{\electronvolt} at room temperature, the core of the \ac{QD}, GaAs has a band gap of only \SI{1.42}{\electronvolt} at room temperature.
-The energy difference between the bandgaps and the discrete energy levels forming in the \ac{QD} are responsible for the $3$D confinement and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c.
+The energy difference between the bandgaps and the type-I band alignment depicted in figure~\ref{fig:droplet-etched-gaas-qds}c are responsible for the 3D confinement, leading to discrete energy levels.
 Inside of the \ac{QD}, optical transitions are possible.
 Transitions between the first energy level in the \ac{CB} and the \ac{VB}, often called the s-shell, are here of special interest.
 The carriers involved are the electrons ($e^-$) and the holes ($h^+$) left behind.
@@ -35,7 +35,7 @@ Fully occupied s-shells form the \acf{XX}, consisting of two electrons and two h
 \end{figure}
 In a \ac{QD}, polarization-entangled photon pairs can be generated via a biexciton-exciton decay cascade~\cite{stevenson_semiconductor_2006}, illustrated in figure~\ref{fig:biexciton-exciton-cascade}.
 The $\ket{XX}$ state forms a full shell, which means that the total angular momentum projection along the quantization axis of the \ac{XX} complex sums up to $M=0$.
-The \ac{QD} is radially symmetric, therefore $M$ is preserved and $\ket{M}$ are eigenstates of the system.
+If the \ac{QD} is radially symmetric, $M$ is preserved and $\ket{M}$ are eigenstates of the system.
 After exciting the \ac{QD} into the $\ket{XX}$ state (e.g. by optical pumping) it decays by spontaneous recombination of an electron-hole-pair accompanied by the emission of a single photon into the $\ket{X}$ state.
 \newpage
 The two dipole-allowed radiative transitions lead to only two possible angular momentum states of the exciton:
@@ -48,7 +48,7 @@ The resulting two-photon state is then described by
 \begin{equation}
 \ket{\psi^+}=\frac{1}{\sqrt{2}}\left(\ket{L_{XX}}\ket{R_X}+\ket{R_{XX}\ket{L_X}}\right)
 \end{equation}
-which is one of the four Bell states, representing the maximal entangled two-particle states.
+which is one of the four Bell states, representing the maximally entangled two-particle states.
 
 \begin{figure}[H]
 	\centering
@@ -59,25 +59,25 @@ which is one of the four Bell states, representing the maximal entangled two-par
 	\label{fig:biexciton-exciton-cascade}
 \end{figure}
 
-In order to calculate the life time of the \ac{X} and \ac{XX} states and the respective spectral description of the emission the radiative transition rate $\Gamma$ between quantum mechanical states has to be derived.
+In order to calculate the life time of the \ac{X} and \ac{XX} states and the respective spectral distribution of the emission, the radiative transition rate $\Gamma$ between quantum mechanical states has to be derived.
 $\Gamma$ describes the transition probability per unit time from an initial state $\ket{i}$ to a final state $\ket{f}$ and can be calculated by Fermi's golden rule if the the transition occurs because of a weak perturbation.
 In the dipole approximation it depends on
 \begin{equation}
 \Gamma \propto \left|\braket{f|\mathbf{e}\cdot\mathbf{\hat{p}}|i}\right|^2 \delta(E_i-E_f-E_P)
 \end{equation}
-with $\mathbf{e}$ as the unit polarisation vector of the emission, $\mathbf{\hat{p}}$ as the momentum operator of the electron and $E_f$, $E_i$ and $E_P$ as the energies of the final state, of the initial state and of the emitted photon respectively.
+with $\mathbf{e}$ the unit polarisation vector of the emission, $\mathbf{\hat{p}}$ the momentum operator of the electron and $E_f$, $E_i$ and $E_P$ as the energies of the final state, of the initial state and of the emitted photon respectively.
 The rate equation for the population of the initial state can then be described by
 \begin{equation}
 \frac{dN_i(t)}{dt} = - \Gamma N_i(t)
 \end{equation}
-which results into a potential decays as solution
+which results into exponential decays as solution
 \begin{equation}
 N_i(t) = N_i(0)e^{-t/\tau}
 \end{equation}
 where the lifetime of the initial state is defined as $\tau = 1/\Gamma$.
 
 This can be applied for the \ac{X} and \ac{XX} states with decay constants $\tau_\nu$ and intensity for the emitted light $I_\nu(t)$ where $\nu \in \{X,XX\}$.
-The Fourier transformation of the electric field yields a Cauchy distribution
+The Fourier transform of the electric field yields a Cauchy distribution
 \begin{equation}
 I_{\nu}(\omega) = \frac{1}{2\pi\tau_\nu}\frac{1}{(\omega-\omega_\nu)^2+\left(\frac{1}{2\tau_\nu}\right)^2}
 \end{equation}
@@ -86,21 +86,20 @@ with $\omega_\nu=e_\nu/\hbar$ as its center frequency.
 
 \section{Fine structure splitting}
 
-Fine structure splitting (\acs{FSS}) in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states.
-In GaAs it originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
+The \ac{FSS} in a \ac{QD} describes the energy splitting between the two possible bright $\ket{X}$ states, which originates from the exchange interaction between electrons and holes.~\cite{bayer_fine_2002}.
 The electron-hole exchange Hamilton is described by
 \begin{equation}
 \label{eq:hamiltonian}
 \mathcal{H}_{ex} = - \sum_{i=x,y,z}a_i J_{h,i}S_{e_i}+b_i J^3_{h_i}S_{e_i}
 \end{equation}
-with $a_i$ and $b_i$ as the spin-coupling constants, $J_{h_i}$ as the holes' and $S_{e_i}$ the electrons' total angular momentum.
-The $z$-direction is assigned as the crystal growth direction and the bright \ac{X} states are defined by the projections of $J_{h_i}$ and  $S_{e_i}$ to the $z$-axis, so that $\ket{+1} =\ket{+\frac{3}{2},-\frac{1}{2}}$ and $\ket{-1}=\ket{-\frac{3}{2},+\frac{1}{2}}$.
+with $a_i$ and $b_i$ the spin-coupling constants, $J_{h_i}$ the holes' and $S_{e_i}$ the electrons' total angular momentum.
+The $z$-direction is assigned as the crystal growth direction and the bright \ac{X} states are defined by the projections of $J_{\textbf{h}}$ and  $S_{\textbf{e}}$ to the $z$-axis, so that $\ket{+1} =\ket{+\frac{3}{2},-\frac{1}{2}}$ and $\ket{-1}=\ket{-\frac{3}{2},+\frac{1}{2}}$.
 The Hamiltonian of equation~\eqref{eq:hamiltonian} can then by described in the bases $\{\ket{+1},\ket{-1}\}$
 \begin{equation}
 \mathcal{H}_{ex}=
 \begin{pmatrix}
-\braket{+1|\mathcal{H_{ex}}|+1} & \braket{+1|\mathcal{H_{ex}}|-1} \\
-\braket{-1|\mathcal{H_{ex}}|+1} & \braket{-1|\mathcal{H_{ex}}|-1}
+\braket{+1|\mathcal{H}_{ex}|+1} & \braket{+1|\mathcal{H}_{ex}|-1} \\
+\braket{-1|\mathcal{H}_{ex}|+1} & \braket{-1|\mathcal{H}_{ex}|-1}
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -110,7 +109,7 @@ The Hamiltonian of equation~\eqref{eq:hamiltonian} can then by described in the 
 \end{equation}
 with $\Delta_0=\frac{3}{4}(a_z+\frac{9}{4}b_z)$ and $\Delta_1=-\frac{3}{8}(b_x-b_y)$.
 
-In the ideal case the \ac{QD} is perfectly symmetric along the $z$-axis, $b_x=b_y$, $\Delta_1$ vanishes and $\ket{+1}$ and $\ket{-1}$ are degenerate eigenstates.
+In the ideal case in which the \ac{QD} is perfectly symmetric along the $z$-axis, $b_x=b_y$, $\Delta_1$ vanishes and $\ket{+1}$ and $\ket{-1}$ are degenerate eigenstates.
 If that is not the case, the angular momentum $M$ along the $z$-direction is not preserved and $\ket{+1}$ and $\ket{-1}$ are no eigenstates of $\mathcal{H}_{ex}$.
 The new basis can be found by diagonalising $\mathcal{H}_{ex}$ and is described by $\frac{1}{\sqrt{2}}(\ket{+1}+\ket{-1})$ and $\frac{1}{\sqrt{2}}(\ket{+1}-\ket{-1})$.
 In figure~\ref{fig:qd-energy-levels-fss} the $\ket{XX}$ decay path with splitted $\ket{X}$ eigenstates is shown.  $\ket{XX}$ exhibit no splitting as the angular momentum of the electrons and holes add to zero and therefore no exchange interaction occurs.
