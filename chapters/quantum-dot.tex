@@ -65,23 +65,23 @@ In the dipole approximation it depends on
 \begin{equation}
 \Gamma \propto \left|\braket{f|\mathbf{e}\cdot\mathbf{\hat{p}}|i}\right|^2 \delta(E_i-E_f-E_P)
 \end{equation}
-with $\mathbf{e}$ the unit polarisation vector of the emission, $\mathbf{\hat{p}}$ the momentum operator of the electron and $E_f$, $E_i$ and $E_P$ as the energies of the final state, of the initial state and of the emitted photon respectively.
-The rate equation for the population of the initial state can then be described by
+with $\mathbf{e}$ the unit polarisation vector of the emission, $\mathbf{\hat{p}}$ the momentum operator of the electron and $E_f$, $E_i$ and $E_P$ the energies of the final state, of the initial state and of the emitted photon respectively.
+The rate equation for the population of the initial state can then be expressed as
 \begin{equation}
 \frac{dN_i(t)}{dt} = - \Gamma N_i(t)
 \end{equation}
-which results into exponential decays as solution
+which results into exponential decay as solution
 \begin{equation}
 N_i(t) = N_i(0)e^{-t/\tau}
 \end{equation}
 where the lifetime of the initial state is defined as $\tau = 1/\Gamma$.
 
-This can be applied for the \ac{X} and \ac{XX} states with decay constants $\tau_\nu$ and intensity for the emitted light $I_\nu(t)$ where $\nu \in \{X,XX\}$.
+This can be applied for the \ac{X} and \ac{XX} states with decay constants $\tau_\nu$ and intensity for the emitted light $I_\nu(t)$, where $\nu \in \{X,XX\}$.
 The Fourier transform of the electric field yields a Cauchy distribution
 \begin{equation}
 I_{\nu}(\omega) = \frac{1}{2\pi\tau_\nu}\frac{1}{(\omega-\omega_\nu)^2+\left(\frac{1}{2\tau_\nu}\right)^2}
 \end{equation}
-with $\omega_\nu=e_\nu/\hbar$ as its center frequency.
+with $\omega_\nu=e_\nu/\hbar$ its center frequency.
 
 
 \section{Fine structure splitting}
@@ -94,7 +94,7 @@ The electron-hole exchange Hamilton is described by
 \end{equation}
 with $a_i$ and $b_i$ the spin-coupling constants, $J_{h_i}$ the holes' and $S_{e_i}$ the electrons' total angular momentum.
 The $z$-direction is assigned as the crystal growth direction and the bright \ac{X} states are defined by the projections of $J_{\textbf{h}}$ and  $S_{\textbf{e}}$ to the $z$-axis, so that $\ket{+1} =\ket{+\frac{3}{2},-\frac{1}{2}}$ and $\ket{-1}=\ket{-\frac{3}{2},+\frac{1}{2}}$.
-The Hamiltonian of equation~\eqref{eq:hamiltonian} can then by described in the bases $\{\ket{+1},\ket{-1}\}$
+The Hamiltonian of equation~\eqref{eq:hamiltonian} can then be described in the bases $\{\ket{+1},\ket{-1}\}$
 \begin{equation}
 \mathcal{H}_{ex}=
 \begin{pmatrix}
@@ -127,7 +127,7 @@ In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear po
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=1.05\textwidth]{figures/quantum-dot/FSS_Pol.png}
-		\caption{Photoluminescence spectra of X emission of a GaAs Qd plotted for different polarizer angles.
+		\caption{Photoluminescence spectra of X emission of a GaAs QD plotted for different polarizer angles.
 			In the image the effect of the linear polarization of the fine structure components is visible.~\cite{schimpf_towards_2017}}
 		\label{fig:fss-pol}
 	\end{subfigure}
@@ -139,12 +139,12 @@ In figure~\ref{fig:fss-pol} photo-luminescence spectra recorded with a linear po
 \newpage
 \section{Zero-phonon line and phonon sideband}
 \label{sec:zero-phonon-side-band}
-The excitonic emission of GaAs \acp{QD} exhibits non-Lorentzian asymmetric broadening.
+The excitonic emission of GaAs \acp{QD} (and of solid-state quantum emitters in general) exhibits non-Lorentzian asymmetric broadening.
 These side bands can be traced back to a coupling to acoustic phonons \cite{peter_phonon_2004}\cite{reigue_probing_2017}.
 The discussion of \acp{PSB} is based on the works of \textcite{friedrich_photochemical_1984} and  \textcite{peter_phonon_2004}.
 
 Figure~\ref{fig:line-shape} displays a schematic representation of the \ac{ZPL} and \ac{PSB} absorption spectrum.
-The intensity distribution between the two components depends strongly on temperature.
+The intensity distribution between the two components depends strongly on temperature and can be described by the \ac{FCP}~\cite{franck_elementary_1926}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{figures/quantum-dot/Line-shape}
@@ -152,9 +152,7 @@ The intensity distribution between the two components depends strongly on temper
 		The emission shape can be determined by mirroring the absorption shape at $\omega'$.}
 	\label{fig:line-shape}
 \end{figure}
-To determine the frequency gap $\Delta$ in figure~\ref{fig:line-shape}, the \ac{FCP}~\cite{franck_elementary_1926} are used.
-The \ac{FCP} state that electronic transition between ground and excited state is much faster than the motion in the lattice as the photons carry nearly no momentum.
-Hence, there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
+The \ac{FCP} state that electronic transition between ground and excited state is much faster than the motion in the lattice, which is why there is no motion along the configurational coordinates $q_i$ during the energy transitions as depicted in figure~\ref{fig:phonon-energy-diagram}.
 The transitions can be displayed as vertical arrows with the shorter arrow describing the \ac{ZPL} and the longer one describing the \ac{PSB}.
 According to the \ac{FCP}, the more the wave functions of two vibrational energy levels overlap, the likelier is the electronic transition between these two.
 In the case of figure~\ref{fig:phonon-energy-diagram} this occurs when the photon energy equals to the energy difference $E_1-E_0$ plus three quanta of vibrational energy $E_{pi} = \hbar \Omega_i$.
@@ -185,7 +183,6 @@ The lattice vibrational mode has to be well described by a quantum harmonic osci
 Additionally, it is assumed that only the lowest lattice vibration is excited and that the harmonic oscillator potentials are equal in both states.
 These preconditions are visible in the parabolic shaped potential wells and equally spaced phonon energy levels in figure~\ref{fig:phonon-energy-diagram}.
 
-The reason why the \ac{ZPL} is stronger than the \ac{PSB} can be found by examining the superpositon of the lattice modes.
 Each lattice mode $m$ leads to a different energy difference $\hbar \Omega_m$ between phonons.
 That is why the transitions with phonons result in a energy distribution and the zero-phonon transition add up at the electronic origin $E_1 - E_0$ as can be seen in figure~\ref{fig:lattice-modes}b.
 
@@ -219,11 +216,12 @@ With equation~\eqref{eq:planck-einstein} and the center wavelength of the zero-p
 &\approx \SI{1.0}{\pico \metre}
 \end{align}
 
+In practise, the \ac{ZPL} is broadened by pure-dephasing due to interaction with phonons. 
 Together with data from \textcite{scholl_resonance_2019} and empirical values measured by our group, this leads to the parameters listed in table~\ref{tab:quantum-dot-emission}.
 
 \begin{table}[H]
 	\caption[Paramters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.]{Parameters of GaAs quantum dots used in the laboratory of semiconductor physics department in Linz.
-		Zero-phonon line calculates from from the theoretical limit according to the life time of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}) up to broader lines which are still valued enough to be measured.
+		Zero-phonon line calculates from the theoretical limit according to the lifetime of the excitonic state (as can be seen in equation~\eqref{eq:zero-phonon-theoretical-limit}).
 		The phonon sideband resembles data taken from \textcite{scholl_resonance_2019}.}
 	\label{tab:quantum-dot-emission}
 	\begin{tabular}{@{}llll@{}}
@@ -244,8 +242,8 @@ A common way is above-band excitation, depicted in figure~\ref{fig:optical-pumpi
 Electrons are optically excited by a laser with energies above the band gap of the \acp{QD} host material Al$_{0.4}$Ga$_{0.6}$As with $E_L = \SI{1.92}{\electronvolt}$ at room temperature.
 Subsequently, electrons and holes are captured by the \acp{QD} and relax via phonon-scattering to the lowest energy level, the s-shell.
 However, because of pronounced recapture processes~\cite{kuroda_symmetric_2013} and spin scattering processes~\cite{michler_single_2009}, above-band excitation is not favourable for entangled photon generation.
-Additionally, indistinguishability of the emitted photons is reduced because of fluctuating electric fields.
-Resonant excitation of electron-hole pairs provides an alternative which is less affected by fluctuating electric fields.
+Additionally, indistinguishability of the emitted photons is reduced because of fluctuating electric fields and time-jitter induced by the relaxation process.
+Resonant excitation of electron-hole pairs provides an alternative to alleviate these effects.
 As shown in figure~\ref{fig:optical-pumping-quantum-dot}b this technique creates electron-hole-pairs directly in the s-shell.
 \begin{figure}[H]
 	\centering
@@ -262,7 +260,7 @@ The laser is therefore tuned to
 \label{eq:e_p}
 E_P = E_X - E_B / 2
 \end{equation}
-with empirically $E_B \approx \SI{3.78}{\milli \electronvolt}$ for GaAs \acp{QD}.
+with $E_B \approx \SI{3.78}{\milli \electronvolt}$ for GaAs \acp{QD}.
 Resonant two-photon absorption is a third-order non-linear effect which involves two photons and electrons at once.
 It depends on the third-order-susceptibility $\chi^{(3)}$ of GaAs and therefore requires relatively high laser power.
 
@@ -300,12 +298,12 @@ However, as a consequence of phonon damping the occupancy converges to a purely 
 \end{figure}
 \section{Single photon emission}
 The \ac{XX}-\ac{X} decay cascade shown in figure~\ref{fig:qd-resonant} results in a single photon pair per emission cycle.
-Single photons are necessary for quantum cryptography and quantum optics in general which motivates the following discussion of this topic based on the thesis of \textcite{huber_gaas_2019}.
+Single photons are necessary for quantum cryptography and quantum optics in general, which motivates the following discussion of this topic based on the thesis of \textcite{huber_gaas_2019}.
 The single photon purity of the $\ket{XX}$ to $\ket{X}$ and the $\ket{X}$ to $\ket{G}$ decay emissions, respectively, can be determined by performing a \acf{HBT} experiment.
 An example of an \ac{HBT} setup is shown in figure~\ref{fig:hbt-fiber} and consists of two \acp{APD} used as single photon detectors and a beam splitter.
 The measurements at the two detectors can be used in order to calculate the second-order correlation function
 \begin{equation}
-g^{(2)} = \frac{\langle n_1(t) n_2(t+\tau)\rangle}{\langle n_1(t) \rangle \langle n_2(t+\tau) \rangle}
+g^{(2)}(\tau) = \frac{\langle n_1(t) n_2(t+\tau)\rangle}{\langle n_1(t) \rangle \langle n_2(t+\tau) \rangle}
 \end{equation}
 where $n_i(t)$ is the number of counts registered on \ac{APD} $i$ at time $t$ and $\tau$ is the time delay. When a single photon enters the input of the \ac{BS}, it can only be measured at one output, but never at both simultaneously.
 Assuming a perfect single photon emitter, a coincidence measurement between \ac{APD}~$1$ and \ac{APD}~$2$ will result in $g^{(2)}(\tau=0) = 0$.
@@ -323,7 +321,7 @@ If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen t
 	\begin{subfigure}[b]{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{figures/quantum-dot/HBT_Fiber.pdf}
-		\caption{Setup to measure to measure the Hanbury-Brown-Twiss effect.
+		\caption{Setup to measure the Hanbury-Brown-Twiss effect.
 		Single photons can be measured only at one APDs, but not at both at the same time.}
 		\label{fig:hbt-fiber}
 	\end{subfigure}%
@@ -333,7 +331,7 @@ If $b$ would be chosen too small it would falsely increase $\kappa$, if chosen t
 		\centering
 		\includegraphics[width=\textwidth]{figures/quantum-dot/G2_X_XX.png}
 		\caption{Second-order auto-correlation function $g^{(2)}$ of \ac{X} and \ac{XX}.
-		The low height of the peak at zero time delay compared to the height of the side peaks suggest the suitability of the quantum do as a single photon emitter.}
+		The low height of the peak at zero time delay compared to the height of the side peaks suggest the suitability of the quantum dot as a single photon emitter.}
 		\label{fig:gs2-x-xx}
 	\end{subfigure}
 	\caption{Hanbury-Brown-Twiss \acs{HBT} experiment~\cite{schimpf_towards_2017}}

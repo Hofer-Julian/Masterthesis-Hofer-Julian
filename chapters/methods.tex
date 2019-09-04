@@ -13,10 +13,10 @@
 
 
 The setup used for the measurements described in following chapters is sketched in figure~\ref{fig:setupflat}.
-This setup involves a pulsed Ti:Sa laser which is sent through a pulse shaper.
+This setup involves a Ti:Sa laser producing pulses which are sent through a pulse shaper.
 Its chirp can be modified with the pulse expander and measured with the interferometric autocorrelator as will be discussed in chapter~\ref{cha:chirp}.
-The CW diode laser is used in order to find a suitable \ac{QD} and the white light enhances the brightness of some \acp{QD} by suppressing blinking~\cite{jahn_artificial_2015}.
-The spectrometer is then used to measure \ac{QD} emission either with the CCD or the APD.  
+The CW diode laser is used in order to find a suitable \ac{QD} via photoluminescence spectroscopy and the white light enhances the brightness of some \acp{QD} by reducing blinking~\cite{jahn_artificial_2015}.
+The spectrometer is then used to measure \ac{QD} emission either with a CCD or an APD.  
 
 \section{Pulse shaper}
 
@@ -30,7 +30,7 @@ As can be seen in equation~\eqref{eq:e_p}, the spectral range should be smaller 
 
 The pulse shaper sketched in the upper part of figure~\ref{fig:setupflat} is used in order to tune $\Delta E$ and additionally the centre emission energy to our requirements.
 The laser beam is sent through a Keplerian telescope in order to expand its beam diameter from \SI{3.4}{\milli \meter} to \SI{6}{\milli \meter}.
-It gets dispersed by a diffraction grating and then focused by a lens so that the spectral components are ordered along the Fourier plane where the slit is placed.
+The beam gets dispersed by a diffraction grating and then focused by a lens so that the spectral components are ordered along the Fourier plane where a slit is placed.
 The centre energy can be adjusted with the slit position and the spectral range with the slit width.
 The setup is mirrored with an additional lens and diffraction grating, which transform the laser beam back into real space. 
 
@@ -56,6 +56,6 @@ A \ac{QD} density of approximately $1 / \lambda^2$ is therefore necessary in ord
 	\label{fig:micro-pl}
 \end{figure}
 
-The sample containing the \acp{QD} is mounted inside the cryostat, which is cooled down to \SI{4}{\kelvin}.
-Without this process, the excitons would not be stable anymore, as the thermal energy would be higher than the intraband-transition energies.
+The sample containing the \acp{QD} is mounted inside a cryostat, which is cooled down to \SI{4}{\kelvin}.
+This is necessary to limit spectral broadening due to phonons.
 The laser beam is focused on the sample by the objective and the \ac{QD} emission is then collected by the very same objective and passed through a beam splitter.
