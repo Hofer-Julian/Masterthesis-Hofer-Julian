@@ -24,11 +24,11 @@ They fulfil the Maxwell equations and therefore their electric field $\mathbf{E}
 Along the propagation direction $z$ a light beam behaves similarly to a plane wave with constant amplitude $A_0$ which is a known solution to the wave equation~\eqref{eq:wave-equation}
 \begin{equation}
 \label{eq:plain-wave}
-E(z,t)=A_0e^{-i(2 \pi \nu t - kz)}.
+E(z,t)=A_0e^{-i(\omega t - kz)}.
 \end{equation}
 However, far from its source light is expected to behave like a spherical wave
 \begin{equation}
-E(\mathbf{r},t)=A_0\frac{e^{-i(2 \pi \nu t -\mathbf{kr})}}{|\mathbf{kr}|}.
+E(\mathbf{r},t)=A_0\frac{e^{-i(\omega t -\mathbf{kr})}}{|\mathbf{kr}|}.
 \end{equation}
 To get a better understanding of the propagation of light, only paraxial (near the z-axis) parts  of the spherical wave are considered.
 Additionally, the wave is split into its longitudinal (z-axis) part and its transversal part and beams with axial symmetry are assumed, which only depend on a transversal coordinate $\rho$.
@@ -106,7 +106,7 @@ The ABCD-matrix transforms rays at distance $x_1$ from the optical axis at an an
 \subsection{Hermite–Gaussian modes}
 The wave equation~\eqref{eq:wave-equation} can be simplified by only allowing monochromatic waves with harmonic time dependence
 \begin{equation}
-\mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i2\pi\nu t}\right).
+\mathbf{E}(\mathbf{r},t) = \operatorname{Re}\left(\mathbf{E}(\mathbf{r})e^{-i\omega t}\right).
 \end{equation}
 With $\omega^2=c^2\mathbf{k}^2$, the \textit{Helmholtz equation} can be deduced, which only depends on the location \textbf{r}
 \begin{equation}
@@ -272,7 +272,7 @@ $A'_{trans}$ is displayed in figure~\ref{fig:airydistributionofafabry-perotinter
 
 
 \subsection{Airy linewidth and finesse}
-The airy linewidth is defined as the \ac{FWHM} of $A'_{trans}$. It can be set in relation with the free spectral range $\Delta \nu_{FSR}$ and the mirror reflectivities as follows.
+The Airy linewidth is defined as the \ac{FWHM} of $A'_{trans}$. It can be set in relation with the free spectral range $\Delta \nu_{FSR}$ and the mirror reflectivities as follows.
 
 $A'_{trans}$ decreases to half of its peak value at $A'_{trans}(v_q) / 2$ when the phase shift $\phi$ changes by the amount $\Delta\phi$ so that the denominator of $A'_{trans}$ in equation~\eqref{eq:A-trans}  is twice as big
 \begin{align}
@@ -373,7 +373,7 @@ In practice, additional measures are necessary such as matching the radius of cu
 	\label{fig:gaussian-beam-focusing}
 \end{figure}
 
-In order to match the radius of curvature of the incoming Gaussian beam with the radius of curvature of the resonator a lens is inserted as depicted in figure~\ref{fig:gaussian-beam-focusing}. Light with a beam waist of $\omega_{01}$ gets focused into the resonator. Transformations by thin lenses can be described with the ray transfer matrix introduced in subsection~\ref{subsec:gaussian-beam}:
+In order to match the radius of curvature of the incoming Gaussian beam with the radius of curvature of the resonator a lens is inserted as depicted in figure~\ref{fig:gaussian-beam-focusing}. Light with a beam radius of $w_{01}$ gets focused into the resonator. Transformations by thin lenses can be described with the ray transfer matrix introduced in subsection~\ref{subsec:gaussian-beam}:
 \begin{equation}
 \begin{pmatrix}
 A & B \\
@@ -388,8 +388,8 @@ C & D
 with $f$ as the wavelength of the lens.
 The incoming beam described by $q_{in}$ is transformed by the lens into a beam described by $q_{out}$ according to equation~\eqref{eq:beam-waist} and \eqref{eq:ABCD-rule}
 \begin{equation}
-q_{in} = z + i \frac{\pi n \omega_{0,in}^2}{\lambda} \qquad \mathrm{and} \qquad
-q_{out} = \frac{q_{in}}{q_{in} \cdot \frac{-1}{f} + 1} =  z + i \frac{\pi n \omega_{0,out}^2}{\lambda}
+q_{in} = z + i \frac{\pi n w_{0,in}^2}{\lambda} \qquad \mathrm{and} \qquad
+q_{out} = \frac{q_{in}}{q_{in} \cdot \frac{-1}{f} + 1} =  z + i \frac{\pi n w_{0,out}^2}{\lambda}
 \end{equation}
 with $n\approx 1$ for air. Together with equation~\eqref{eq:beam-waist} the following relation can be deduced
 \begin{equation}
@@ -504,7 +504,7 @@ A comparison of the \ac{FPI} transmission $A'_{trans}(E)$ described in equation~
 
 The \ac{FPI} is scanned by continuously varying the mirror distance $l$ with a certain stepsize $\Delta l$ and measuring the output-photon-flux every time.
 This process is sketched in figure~\ref{fig:simulation-comparison-dot-fabry-perot-sweep}.
-Similar to figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}(a) the \ac{PSB} can not be seen, as it is too weak to be visible in the linear scale.
+Similar to figure~\ref{fig:simulation-comparison-dot-fabry-perot-modes}a the \ac{PSB} can not be seen, as it is too weak to be visible in the linear scale.
 
 \begin{figure}[H]
 	\centering
@@ -535,11 +535,11 @@ A comparison of $\Phi_{FPI}(E)$ and $\Phi_{dot}(E)$ is shown in figure~\ref{fig:
 
 
 From now on, only the \ac{ZPL}-path is shown as no new information is gained by examining both.
-In order to estimate the accuracy of the scanning \ac{FPI}, the \ac{FPI} modes are shifted by $\Delta E$ in order to overlap with $\Phi_{dot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(a)
+In order to estimate the accuracy of the scanning \ac{FPI}, the \ac{FPI} modes are shifted by $\Delta E$ in order to overlap with $\Phi_{dot}(E)$ as depicted in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}a
 \begin{equation}
 \overline{\Phi}_{FPI}(E) = \Phi_{FPI}(E - \Delta E).
 \end{equation}
-Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{FPI}(E-\Delta E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}(b).
+Afterwards, the absolute difference between those two $|\Phi_{dot}(E) - \Phi_{FPI}(E-\Delta E)|$ is calculated as shown in figure~\ref{fig:simulation-comparison-dot-fabry-perot-output-error}b.
 Now the relative error of  $\Phi_{fabry,perot}(E)$  for the given parameters and compared to the actual excitonic \ac{QD} emission  can be calculated
 \begin{equation}
 \epsilon = \frac{\int^{E_0 + \Delta / 2}_{E_0 - \Delta / 2} \left|\overline{\Phi}_{\text{FPI}}(E) - \Phi_{\text{dot}}(E)\right| dE }{\int^{E_0 + \Delta / 2}_{E_0 - \Delta / 2} \Phi_{\text{dot}}(E) dE}
@@ -694,10 +694,10 @@ Afterwards, the \ac{FPI} mirrors are adjusted so that they are parallel and a si
 	\label{fig:align-fpi}
 \end{figure}
 
-Without spatial restriction strong TEM-modes of higher order are visible in figure~\ref{fig:measurement-fabry-perot-hene}(a).
-To counteract them, a pinhole is inserted and adjusted, which results in the measurement visible in figure~\ref{fig:measurement-fabry-perot-hene}(b).
+Without spatial restriction strong TEM-modes of higher order are visible in figure~\ref{fig:measurement-fabry-perot-hene}a.
+To counteract them, a pinhole is inserted and adjusted, which results in the measurement visible in figure~\ref{fig:measurement-fabry-perot-hene}b.
 The intensity with and without \ac{FPI} were compared in order to calculate the \ac{FPI}'s transmission at the peak of its modes, leading to $T_{peak}=\SI{5}{\percent}$.
-With figure~\ref{fig:measurement-fabry-perot-hene}(b) the finesse can be calculated.
+With figure~\ref{fig:measurement-fabry-perot-hene}b the finesse can be calculated.
 As the mirror reflectivities $R=R_1=R_2=\SI{97}{\percent}$, the mirror reflectivity finesse is $F=155$.
 The measured finesse is $45$ and obviously much lower.
 This is because the measured finesse $F_t$ also depends on the mirror surface quality finesse $F_q$ and the finesse due to illumination conditions (beam alignment and diameter) of the mirrors $F_i$ as described by~\cite{noauthor_scanning_nodate}
@@ -734,7 +734,7 @@ However, it is empirically stable enough to conduct measurements which last shor
 
 Set up like this, the GaAs \ac{QD} sample AS208 was measured.
 First, a polarization map of an exciton was recorded in order to determine the \ac{FSS}.
-This works by putting a$\lambda/2$-plate followed by a fixed linear polarizer between the \ac{QD} and the spectrometer.
+This works by putting a $\lambda/2$-plate followed by a fixed linear polarizer between the \ac{QD} and the spectrometer.
 The $\lambda/2$-plate gets step-wisely rotated and the output will be recorded after every step.
 Because of the \ac{FSS} of the \ac{QD}, the recorded centre energy of the exciton-groundstate emission will shift after every step resulting in the plot shown in figure~\ref{fig:measurement-fabry-perot-dot-exciton-pol-map}.
 The peak-to-peak amplitude then gives $E_{FSS}=\SI{24.42 (39)}{\micro \electronvolt}$.

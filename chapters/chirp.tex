@@ -155,8 +155,8 @@ S^{min}_{MOSAIC}(\tau)= 1 + 2 \cdot g(\tau) - 2 \cdot [g_s^2(\tau)+g_c^2(\tau)]^
 with
 \begin{align}
 g(\tau)&=\int f(t)f(t+\tau)dt\\
-g_s(\tau)&=\int f(t)f(t+\tau)sin(2\Delta\phi)dt\\
-g_c(\tau)&=\int f(t)f(t+\tau)cos(2\Delta\phi)dt.
+g_s(\tau)&=\int f(t)f(t+\tau)\sin(2\Delta\phi)dt\\
+g_c(\tau)&=\int f(t)f(t+\tau)\cos(2\Delta\phi)dt.
 \end{align}
 The points of the lower envelope determined before can now be fitted in order to obtain the chirp parameter $\alpha$ as shown in figure~\ref{fig:mosaicchirpedlaserpulsefitenvelope}.
 It is visible that the fitted values of $\alpha$ correspond to the expected values.
@@ -173,7 +173,7 @@ It is visible that the fitted values of $\alpha$ correspond to the expected valu
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/chirp/pulse-expander}
-	\caption{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.
+	\caption[Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.]{Scheme of a folded pulse expander as described by \textcite{martinez_3000_1987}.
 		The light enters on the right side, passes the halfmirror, and enters the system of transmission grating, lens and mirrors.
 		Afterwards it hits the halfmirror and exits on the left hand.
 		It induces an accumulated group velocity dispersion on the signal depending on the optical distance between the transmission grating and the lens.}
@@ -187,14 +187,14 @@ Grating compressors as discussed by \textcite{martinez_3000_1987} were originall
 However, together with a telescope they have the inverse effect and can be used to induce a chirp.
 A setup like this is sketched in figure~\ref{fig:pulse-expander} and it will in future references in this work be called \textit{pulse expander}.
 Its main elements are a transmission grating and a lens.
-This folded setup uses a mirror after the lens in order to need only one lens and mirror.
+This folded setup uses a mirror after the lens so that only one lens and one mirror are needed.
 The accumulated group velocity dispersion $\frac{d^2 \Phi}{d \omega^2}$ can be adjusted by varying the optical distance $d$ between the focal plane of the lens and the transmission grating and is described by
 \begin{equation}
 \frac{d^2 \Phi}{d \omega^2} = k \beta^2 2 d
 \end{equation}
 where $k$ is the wavenumber and $\beta$ is given by
 \begin{equation}
-\beta = \frac{\lambda}{2 \pi \omega_0 \cos \theta}
+\beta = \frac{\lambda}{2 \pi w_0 \cos \theta}
 \end{equation}
 with $\lambda$ denoting the centre wavelength, $w_0$ the beam waist (beam size at the point of its focus) and $\theta$ the emerging angle as sketched in figure~\ref{fig:pulse-expander}.
 
@@ -262,7 +262,7 @@ Possible reasons could be that the chirp is too high for the model used in the s
 \end{figure}
 
 The same signals after applying the \ac{MOSAIC} filter are shown in figure~\ref{fig:measuredchirpedlaserpulseaftermosaic}.
-It is visible that the lower envelopes in figure~\ref{fig:measuredchirpedlaserpulseaftermosaic}(a) and \ref{fig:measuredchirpedlaserpulseaftermosaic}(b) do not resemble the expected ones in figure~\ref{fig:mosaicchirpedlaserpulse}.
+It is visible that the lower envelopes in figure~\ref{fig:measuredchirpedlaserpulseaftermosaic}a and \ref{fig:measuredchirpedlaserpulseaftermosaic}b do not resemble the expected ones in figure~\ref{fig:mosaicchirpedlaserpulse}.
 As the laser signal without pulse expander was assumed to be relatively unchirped, it is already unexpected that the lower envelope differs that much from a constant line at zero intensity.
 One explanatory approach could be that the laser was already chirped to begin with. However, this would not explain why the shape of the lower envelope differs from the characteristic one of the simulation.
 The next approach was to send the laser without pulse shaper into the \ac{IAC}.
