@@ -1,4 +1,6 @@
-# Masterthesis
+# Masterthesis by Julian Hofer
+
+10/2019, Johannes Kepler University, Linz/Austria
 
 In this thesis excitation of quantum dots via adiabatic rapid passage and spectroscopy of quantum dot emission with a scanning Fabry Pérot interferometer (FPI) are discussed.
 First, the use of GaAs quantum dots as sources of (entangled) single photons is motivated and details of their fabrication and optical properties are presented.
