@@ -1,7 +1,5 @@
 # Advanced excitation and spectroscopy schemes of single quantum dots 
 
-<sub>Masterthesis, 10/2019, Johannes Kepler University, Linz/Austria<sub>
-
 In this thesis excitation of quantum dots via adiabatic rapid passage and spectroscopy of quantum dot emission with a scanning Fabry Pérot interferometer (FPI) are discussed.
 
 First, the use of GaAs quantum dots as sources of (entangled) single photons is motivated and details of their fabrication and optical properties are presented.
@@ -15,3 +13,6 @@ Also, scanning FPIs as tools to resolve fine features of quantum dot emission ar
 The reader is guided through the theory of Gaussian beams and the calculation of common FPI properties, ranging from resonator losses to its transmission spectrum.
 Methods to suppress higher Gauss modes are presented and simulations are shown used to size the FPI.
 Finally, measurements with fast photodiodes and CCD sensors are presented and with them the suitability for resolving the fine structure of a GaAs quantum dot is shown.   
+
+
+<sub>Masterthesis, 10/2019, Johannes Kepler University, Linz/Austria<sub>
