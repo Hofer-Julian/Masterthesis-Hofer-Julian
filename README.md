@@ -1,6 +1,6 @@
-# Masterthesis by Julian Hofer
+# Advanced excitation and spectroscopy schemes of single quantum dots 
 
-10/2019, Johannes Kepler University, Linz/Austria
+Masterthesis, 10/2019, Johannes Kepler University, Linz/Austria
 
 In this thesis excitation of quantum dots via adiabatic rapid passage and spectroscopy of quantum dot emission with a scanning Fabry Pérot interferometer (FPI) are discussed.
 
