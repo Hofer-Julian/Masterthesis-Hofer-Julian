@@ -14,5 +14,5 @@ The reader is guided through the theory of Gaussian beams and the calculation of
 Methods to suppress higher Gauss modes are presented and simulations are shown used to size the FPI.
 Finally, measurements with fast photodiodes and CCD sensors are presented and with them the suitability for resolving the fine structure of a GaAs quantum dot is shown.   
 
-
+------------------
 <sub>Masterthesis, 10/2019, Johannes Kepler University, Linz/Austria<sub>
